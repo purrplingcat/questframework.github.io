@@ -9,7 +9,7 @@
       "output": {
         ".html": {
           "relative_path": "README.html",
-          "hash": "21i1lF031JqMWxdlt4l2gQ=="
+          "hash": "etIPKlYK9SjlsSL0aGkjbg=="
         }
       },
       "is_incremental": false,
@@ -120,7 +120,7 @@
       "output": {
         ".html": {
           "relative_path": "api/QuestFramework.Events.ChangeStateEventArgs.html",
-          "hash": "3uZ6+qj1+MViEih9ERLV/w=="
+          "hash": "vP3h69Xm6a6jcVkVZisbNA=="
         }
       },
       "is_incremental": false,
@@ -132,7 +132,7 @@
       "output": {
         ".html": {
           "relative_path": "api/QuestFramework.Events.GettingReadyEventArgs.html",
-          "hash": "TUB//WmpP06WnbNbYeLutQ=="
+          "hash": "VG/q3P52OS2pYYtW4QUEcg=="
         }
       },
       "is_incremental": false,
@@ -144,7 +144,7 @@
       "output": {
         ".html": {
           "relative_path": "api/QuestFramework.Events.IQuestFrameworkEvents.html",
-          "hash": "tzW47yxUwQNP+JqbNYn4PQ=="
+          "hash": "PEzTU7F4ifJYF82pJ7Jyew=="
         }
       },
       "is_incremental": false,
@@ -156,7 +156,7 @@
       "output": {
         ".html": {
           "relative_path": "api/QuestFramework.Events.ReadyEventArgs.html",
-          "hash": "YOr185JQM20t7zaTZjEdjg=="
+          "hash": "weoGeve4ssHyQLSJ6wK/9Q=="
         }
       },
       "is_incremental": false,
@@ -168,7 +168,7 @@
       "output": {
         ".html": {
           "relative_path": "api/QuestFramework.Events.html",
-          "hash": "4iiZYcb+QQaBffenSShv6w=="
+          "hash": "fFEpXWfC9r9ErIgF5MPBiA=="
         }
       },
       "is_incremental": false,
@@ -180,7 +180,7 @@
       "output": {
         ".html": {
           "relative_path": "api/QuestFramework.Extensions.FarmerExtensions.html",
-          "hash": "/KNjYNFEQfiikImbXQ+rwA=="
+          "hash": "NR+VeprdmHwMqEpbMfn10A=="
         }
       },
       "is_incremental": false,
@@ -192,7 +192,7 @@
       "output": {
         ".html": {
           "relative_path": "api/QuestFramework.Extensions.QuestExtensions.html",
-          "hash": "sD5Up1K+P+U5aJzKcBkP9A=="
+          "hash": "k4sPcHOHyl7eHYM7MNDa9A=="
         }
       },
       "is_incremental": false,
@@ -204,7 +204,7 @@
       "output": {
         ".html": {
           "relative_path": "api/QuestFramework.Extensions.html",
-          "hash": "IXdYqh1VHmmkPvPv2cfFIQ=="
+          "hash": "TRpXZwZYP3+JChrBsAbwsw=="
         }
       },
       "is_incremental": false,
