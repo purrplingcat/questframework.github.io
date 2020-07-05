@@ -1,0 +1,551 @@
+{
+  "homepages": [],
+  "source_base_path": "C:/Users/Ellen/source/repos/PurrplingMod/QuestFramework",
+  "xrefmap": "xrefmap.yml",
+  "files": [
+    {
+      "type": "Conceptual",
+      "source_relative_path": "README.md",
+      "output": {
+        ".html": {
+          "relative_path": "README.html",
+          "hash": "21i1lF031JqMWxdlt4l2gQ=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "log_codes": [
+        "InvalidFileLink"
+      ],
+      "type": "Conceptual",
+      "source_relative_path": "docs/advanced-api-guide.md",
+      "output": {
+        ".html": {
+          "relative_path": "docs/advanced-api-guide.html",
+          "hash": "HlBlfHKGxByb/BIT74Demw=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "docs/content-pack-guide.md",
+      "output": {
+        ".html": {
+          "relative_path": "docs/content-pack-guide.html",
+          "hash": "g8/9hyHDyS99i6nN9NWgoA=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "docs/index.md",
+      "output": {
+        ".html": {
+          "relative_path": "docs/index.html",
+          "hash": "I+O+3Kv5l+tmHixRoeMgGA=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Toc",
+      "source_relative_path": "docs/toc.yml",
+      "output": {
+        ".html": {
+          "relative_path": "docs/toc.html",
+          "hash": "iiz3fZ7nMXCoKFdIqo87OA=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/temp/qfapi/QuestFramework.Api.IManagedQuestApi.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/QuestFramework.Api.IManagedQuestApi.html",
+          "hash": "O0c3XsORSJTFl28GyJl9Kg=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/temp/qfapi/QuestFramework.Api.IQuestApi.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/QuestFramework.Api.IQuestApi.html",
+          "hash": "RP/SuERW/xcy4k4fqSegYQ=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/temp/qfapi/QuestFramework.Api.QuestApi.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/QuestFramework.Api.QuestApi.html",
+          "hash": "vlkMxKjuAPqrIz/hBMq9Hg=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/temp/qfapi/QuestFramework.Api.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/QuestFramework.Api.html",
+          "hash": "XVi6NgfFdSKzZ2uhmGzvaw=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/temp/qfapi/QuestFramework.Events.ChangeStateEventArgs.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/QuestFramework.Events.ChangeStateEventArgs.html",
+          "hash": "3uZ6+qj1+MViEih9ERLV/w=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/temp/qfapi/QuestFramework.Events.GettingReadyEventArgs.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/QuestFramework.Events.GettingReadyEventArgs.html",
+          "hash": "TUB//WmpP06WnbNbYeLutQ=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/temp/qfapi/QuestFramework.Events.IQuestFrameworkEvents.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/QuestFramework.Events.IQuestFrameworkEvents.html",
+          "hash": "tzW47yxUwQNP+JqbNYn4PQ=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/temp/qfapi/QuestFramework.Events.ReadyEventArgs.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/QuestFramework.Events.ReadyEventArgs.html",
+          "hash": "YOr185JQM20t7zaTZjEdjg=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/temp/qfapi/QuestFramework.Events.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/QuestFramework.Events.html",
+          "hash": "4iiZYcb+QQaBffenSShv6w=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/temp/qfapi/QuestFramework.Extensions.FarmerExtensions.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/QuestFramework.Extensions.FarmerExtensions.html",
+          "hash": "/KNjYNFEQfiikImbXQ+rwA=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/temp/qfapi/QuestFramework.Extensions.QuestExtensions.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/QuestFramework.Extensions.QuestExtensions.html",
+          "hash": "sD5Up1K+P+U5aJzKcBkP9A=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/temp/qfapi/QuestFramework.Extensions.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/QuestFramework.Extensions.html",
+          "hash": "IXdYqh1VHmmkPvPv2cfFIQ=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/temp/qfapi/QuestFramework.Hooks.Actions.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/QuestFramework.Hooks.Actions.html",
+          "hash": "UICfh74T/wgkW8sdRp89Kg=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/temp/qfapi/QuestFramework.Hooks.Hook.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/QuestFramework.Hooks.Hook.html",
+          "hash": "1VYJUiBrdAg7k0asOq6hSA=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/temp/qfapi/QuestFramework.Hooks.HookObserver.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/QuestFramework.Hooks.HookObserver.html",
+          "hash": "yKNjhPZFQhKF5GPGp42hHw=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/temp/qfapi/QuestFramework.Hooks.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/QuestFramework.Hooks.html",
+          "hash": "OJAwirXgdbPyVwm3fVkorA=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/temp/qfapi/QuestFramework.IStatefull-1.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/QuestFramework.IStatefull-1.html",
+          "hash": "CFjQPph+zD/+MpcshjOV7g=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/temp/qfapi/QuestFramework.IStatefull.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/QuestFramework.IStatefull.html",
+          "hash": "zUAIG2b5Xmdwi4xsi72iqQ=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/temp/qfapi/QuestFramework.Offers.MailOfferAttributes.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/QuestFramework.Offers.MailOfferAttributes.html",
+          "hash": "ev6jn3C5Uw4JIw/VzalMzw=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/temp/qfapi/QuestFramework.Offers.NpcOfferAttributes.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/QuestFramework.Offers.NpcOfferAttributes.html",
+          "hash": "VdPbaIaDDMX5HbMdUaXPwQ=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/temp/qfapi/QuestFramework.Offers.QuestOffer-1.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/QuestFramework.Offers.QuestOffer-1.html",
+          "hash": "u6TreZMH0RxAcxG0OGplsA=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/temp/qfapi/QuestFramework.Offers.QuestOffer.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/QuestFramework.Offers.QuestOffer.html",
+          "hash": "lMRVz/Eyw3RmwdBXMmoZ0w=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/temp/qfapi/QuestFramework.Offers.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/QuestFramework.Offers.html",
+          "hash": "BfB846f8F83y1SCUVHQFhQ=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/temp/qfapi/QuestFramework.QuestFrameworkMod.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/QuestFramework.QuestFrameworkMod.html",
+          "hash": "CK+cxhMZlE5DzFIJDHolOw=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/temp/qfapi/QuestFramework.QuestType.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/QuestFramework.QuestType.html",
+          "hash": "bHdYPZmKFEIx9xQwmcGFHw=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/temp/qfapi/QuestFramework.Quests.CompletionArgs.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/QuestFramework.Quests.CompletionArgs.html",
+          "hash": "7bx7bZP9dl6uPBIydrkJMQ=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/temp/qfapi/QuestFramework.Quests.CustomQuest-1.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/QuestFramework.Quests.CustomQuest-1.html",
+          "hash": "/08hcTj3jINqcng8AI01cA=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/temp/qfapi/QuestFramework.Quests.CustomQuest.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/QuestFramework.Quests.CustomQuest.html",
+          "hash": "1evajcv+esk52gqHm6W12w=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/temp/qfapi/QuestFramework.Quests.ICompletionArgs.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/QuestFramework.Quests.ICompletionArgs.html",
+          "hash": "BnL1hG9viHgaS0p9kP6Ibw=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/temp/qfapi/QuestFramework.Quests.IQuestInfo.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/QuestFramework.Quests.IQuestInfo.html",
+          "hash": "rwwhXX3L1q9OlalFf9/EvA=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/temp/qfapi/QuestFramework.Quests.IQuestObserver.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/QuestFramework.Quests.IQuestObserver.html",
+          "hash": "vKprE0EESXVLBJCLnIwSxQ=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/temp/qfapi/QuestFramework.Quests.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/QuestFramework.Quests.html",
+          "hash": "7tb4fmTYzGwgI5OBgzuQxQ=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/temp/qfapi/QuestFramework.State.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/QuestFramework.State.html",
+          "hash": "69x1/XFM3dZXVpfYCpMHNg=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/temp/qfapi/QuestFramework.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/QuestFramework.html",
+          "hash": "s6PfaAvvkpDODQsDgCdrag=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Toc",
+      "source_relative_path": "obj/temp/qfapi/toc.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/toc.html",
+          "hash": "D/uW4P8XXZqpbP8/3Lu7DQ=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Toc",
+      "source_relative_path": "toc.yml",
+      "output": {
+        ".html": {
+          "relative_path": "toc.html",
+          "hash": "t0gJcNXfPSy0L4KCiv6rfg=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    }
+  ],
+  "incremental_info": [
+    {
+      "status": {
+        "can_incremental": false,
+        "details": "Disable incremental build by force rebuild option.",
+        "incrementalPhase": "build",
+        "total_file_count": 0,
+        "skipped_file_count": 0,
+        "full_build_reason_code": "ForceRebuild"
+      },
+      "processors": {
+        "ConceptualDocumentProcessor": {
+          "can_incremental": false,
+          "incrementalPhase": "build",
+          "total_file_count": 4,
+          "skipped_file_count": 0
+        },
+        "ManagedReferenceDocumentProcessor": {
+          "can_incremental": false,
+          "incrementalPhase": "build",
+          "total_file_count": 34,
+          "skipped_file_count": 0
+        },
+        "TocDocumentProcessor": {
+          "can_incremental": false,
+          "details": "Processor TocDocumentProcessor cannot support incremental build because the processor doesn't implement ISupportIncrementalDocumentProcessor interface.",
+          "incrementalPhase": "build",
+          "total_file_count": 0,
+          "skipped_file_count": 0
+        }
+      }
+    },
+    {
+      "status": {
+        "can_incremental": false,
+        "details": "Cannot support incremental post processing, the reason is: it's disabled.",
+        "incrementalPhase": "postProcessing",
+        "total_file_count": 0,
+        "skipped_file_count": 0
+      },
+      "processors": {}
+    }
+  ],
+  "version_info": {},
+  "groups": [
+    {
+      "xrefmap": "xrefmap.yml"
+    }
+  ]
+}

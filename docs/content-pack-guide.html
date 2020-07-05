@@ -1,0 +1,636 @@
+﻿<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+  
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Content pack guide </title>
+    <meta name="viewport" content="width=device-width">
+    <meta name="title" content="Content pack guide ">
+    <meta name="generator" content="docfx 2.56.0.0">
+    
+    <link rel="shortcut icon" href="../favicon.ico">
+    <link rel="stylesheet" href="../styles/docfx.vendor.css">
+    <link rel="stylesheet" href="../styles/docfx.css">
+    <link rel="stylesheet" href="../styles/main.css">
+    <meta property="docfx:navrel" content="../toc.html">
+    <meta property="docfx:tocrel" content="toc.html">
+    
+    
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+        
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              
+              <a class="navbar-brand" href="../index.html">
+                <img id="logo" class="svg" src="../logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+        
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+        
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="">
+
+<p>← <a href="../README.html">README</a></p>
+<h1 id="content-pack-guide">Content pack guide</h1>
+<p>aka how to use JSON API for creating content packs with your custom quests.</p>
+<h2 id="introduction">Introduction</h2>
+<h3 id="what-is-quest-framework">What is quest framework?</h3>
+<p>Quest framework is a &quot;core&quot; mod which provides a tools for work with quests in StardewValley. In the JSON api you can do these things:</p>
+<ul>
+<li>Create custom quests</li>
+<li>Handle quests with predefined hooks</li>
+</ul>
+<h2 id="define-quest">Define quest</h2>
+<h3 id="prepare-content-pack">Prepare content pack</h3>
+<p>For more info about SMAPI content packs see <a href="https://stardewvalleywiki.com/Modding:Content_packs">How to create content pack</a></p>
+<p>Create your <code>manifest.json</code> file which must contains these minimum contents:</p>
+<pre><code class="lang-js">{
+  &quot;Name&quot;: &quot;Your Project Name&quot;,
+  &quot;Author&quot;: &quot;your name&quot;,
+  &quot;Version&quot;: &quot;1.0.0&quot;,
+  &quot;Description&quot;: &quot;One or two sentences about the mod.&quot;,
+  &quot;UniqueID&quot;: &quot;YourName.YourProjectName&quot;,
+  &quot;MinimumApiVersion&quot;: &quot;3.6.0&quot;,
+  &quot;UpdateKeys&quot;: [],
+  &quot;ContentPackFor&quot;: {
+    &quot;UniqueID&quot;: &quot;PurrplingCat.QuestFramework&quot;, // Quest Framework unique id must be here
+    &quot;MinimumVersion&quot;: &quot;1.0.0-alpha&quot; // optional
+  }
+}
+</code></pre>
+<p>Then create file <code>quests.json</code> and follow next instructions.</p>
+<h3 id="the-content-pack-format">The content pack format</h3>
+<p>Your <code>quests.json</code> has this format:</p>
+<pre><code class="lang-js">{
+  &quot;Format&quot;: &quot;1.0&quot;, // this is required
+  &quot;Quests&quot;: [
+    // quests are defined here
+  ],
+  &quot;Offers&quot;: [
+    // quest offers are defined here (optional)
+  ]
+}
+</code></pre>
+<h3 id="quest-basics">Quest basics</h3>
+<p>In the <code>Quests</code> section you can define one ore more custom quests. Quest definition has these fields:</p>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Required?</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Name</td>
+<td>required</td>
+<td>(string) Name (UID) of your quest (this never shows to player)</td>
+</tr>
+<tr>
+<td>Type</td>
+<td>required</td>
+<td>(string) Vanilla SDV quest type (see quest type)</td>
+</tr>
+<tr>
+<td>CustomTypeId</td>
+<td></td>
+<td>(int) Custom Quest type id (see custom quest types in advanced API). Can be handled by any other mod.</td>
+</tr>
+<tr>
+<td>Title</td>
+<td>required</td>
+<td>(string) Quest title in the quest log</td>
+</tr>
+<tr>
+<td>Description</td>
+<td></td>
+<td>(string) Quest description</td>
+</tr>
+<tr>
+<td>Objective</td>
+<td>required</td>
+<td>(string) Quest objective</td>
+</tr>
+<tr>
+<td>NextQuests</td>
+<td></td>
+<td>(string[]) One of more next quests which will be added to player's quest log when this quest is completed.</td>
+</tr>
+<tr>
+<td>Reward</td>
+<td></td>
+<td>(int) Reward in SDV currency &quot;golds&quot;. If this field is not defined or has value <code>0</code>, then player will receive no money reward.</td>
+</tr>
+<tr>
+<td>RewardDescription</td>
+<td></td>
+<td>(string) Reward description</td>
+</tr>
+<tr>
+<td>Cancelable</td>
+<td></td>
+<td>(boolean) Can player cancel this quest?</td>
+</tr>
+<tr>
+<td>ReactionText</td>
+<td></td>
+<td>(string) NPC's reaction text when you complete this quest (only for quests which interacts with NPCs)</td>
+</tr>
+<tr>
+<td>Trigger</td>
+<td></td>
+<td>(string) or (int) Completion trigger (see quest types for more info)</td>
+</tr>
+<tr>
+<td>Hooks</td>
+<td></td>
+<td>(Hook) Quest hooks (see hooks for more info)</td>
+</tr>
+</tbody>
+</table>
+<h4 id="example">Example</h4>
+<pre><code class="lang-js">{
+  &quot;Format&quot;: &quot;1.0&quot;,
+  &quot;Quests&quot;: [
+    {
+      &quot;Name&quot;: &quot;abigail_amethyst&quot;, // No id needed, will be automatically generated
+      &quot;Type&quot;: &quot;ItemDelivery&quot;, // Vanilla quest type
+      &quot;Title&quot;: &quot;The purple lunch&quot;,
+      &quot;Description&quot;: &quot;Abigail are very hungry. She wants to eat something special from mines.&quot;,
+      &quot;Objective&quot;: &quot;Bring amethyst to Abigail&quot;,
+      &quot;Reward&quot;: 300, // 300g
+      &quot;Cancelable&quot;: true, // This quest can be cancelled by player
+      &quot;Trigger&quot;: &quot;Abigail 66&quot;, // Bring amethyst to Abby
+      &quot;ReactionText&quot;: &quot;Oh, it's looks delicious. I am really hungry.&quot;
+    }
+  ]
+}
+</code></pre>
+<h3 id="quest-types">Quest types</h3>
+<p>This part describes only vanilla StardewValley quest types existing in the game. If you want to define custom quests, see the <a href="advanced-api-guide.html">Advanced API guide</a> or Hooks bellow. For more information about SDV quests see the <a href="https://stardewvalleywiki.com/Quests">Quests wiki</a> and <a href="https://stardewvalleywiki.com/Modding:Quest_data">Modding quest data</a></p>
+<h4 id="basic">Basic</h4>
+<p>The basic SDV quest which is handled properly by the game (this is hardcoded in vanilla game).</p>
+<p><em>Trigger:</em> No trigger for this quest type</p>
+<h4 id="building">Building</h4>
+<p>Build a building quest. Hardcoded in SDV, but you can define which building type must player build for complete this quest (in the <code>Trigger</code> property)</p>
+<p><em>Trigger</em>: Building type name (like <code>Coop</code>). For available building types see <code>Data/Blueprints</code> SDV content resource.</p>
+<h4 id="crafting">Crafting</h4>
+<p>Craft a specified item.</p>
+<p><em>Trigger</em>: <code>&lt;int:item_id&gt; &lt;boolean:is_bigcraftable&gt;</code> (like <code>13 true</code> for craft furance to complete this quest).
+See the <code>Data/ObjectInformation</code> game resource for available items.</p>
+<h4 id="itemdelivery">ItemDelivery</h4>
+<p>Deliver specified item to specified NPC.</p>
+<p><em>Trigger</em>: <code>&lt;string:NPC_name&gt; &lt;int:item_id&gt;</code> like <code>Abigail 66</code> for bring Amethyst for Abigail.
+See the <code>Data/ObjectInformation</code> game resource for available items.</p>
+<p>This quest type accepts <code>ReactionText</code>.</p>
+<h4 id="itemharvest">ItemHarvest</h4>
+<p>Harvest or pick specific count of specific items.</p>
+<p><em>Trigger</em>: <code>&lt;int:item_id&gt; &lt;int:count&gt;</code>  like <code>334 3</code> for harvest 3 pieces of copper bar to complete this quest.
+See the <code>Data/ObjectInformation</code> game resource for available items.</p>
+<h4 id="location">Location</h4>
+<p>Go to specified location.</p>
+<p><em>Trigger</em>: Location name like <code>Town</code> for complete this quest when player enters Town.</p>
+<h4 id="lostitem">LostItem</h4>
+<p>Find a lost item and deliver it to an NPC.</p>
+<p><em>Trigger</em>: <code>&lt;string:NPC_name&gt; &lt;int:item_id&gt; &lt;string:Location_name&gt; &lt;int:TileX&gt; &lt;int:TileY&gt;</code> like <code>Robin 788 Forest 110 81</code> bring Robin Axe to robin which are spawned in Forest on tile location <code>X=110; Y=81</code>.
+See the <code>Data/ObjectInformation</code> game resource for available items.</p>
+<p>This quest type accepts <code>ReactionText</code>.</p>
+<h4 id="monster">Monster</h4>
+<p>Slay a specified count of specified monster.</p>
+<p><em>Trigger</em>: <code>&lt;string:Monster_name&gt; &lt;int:count&gt; [&lt;string:talkWithNpc&gt;]</code> (monster name can't contain spaces. Replace spaces with <code>_</code> in monster name) like <code>Green_Slime 10</code> slay 10 Green slimes to complete this quest. <code>Bat 5 Lewis</code> means slay five bats and then talk with <em>Lewis</em> to complete this quest.</p>
+<h4 id="secretlostitem">SecretLostItem</h4>
+<p>Same usage as <em>LostItem</em></p>
+<h4 id="custom">Custom</h4>
+<p>Custom quest type. You can specify field <code>CustomTypeId</code> for more explicit which custom quest type. In JSON api you can use hooks to create custom quest handling.</p>
+<p><em>Trigger</em>: Custom defined. In JSON api use hooks instead for handle your pure JSON custom quest. If you target a custom quest type defined by any other mod in your JSON content pack, follow instructions of the source mod of this quest type.</p>
+<h2 id="hooks">Hooks</h2>
+<p>You can add some &quot;magic&quot; to your custom quests with hooks. Hooks do specified action with your quests when something was triggered in the game.</p>
+<p>Hooks has conditions for check if the action of hook will be triggered or not. There are two types of conditions: local and environment. You don't must specify all available conditions. You can specify conditions which you need.</p>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>When</td>
+<td>When this hook will be trigered (see hook types)</td>
+</tr>
+<tr>
+<td>Action</td>
+<td>Which action will be executed (see actions)</td>
+</tr>
+<tr>
+<td>Has</td>
+<td>Conditions for execute the hook (see conditions)</td>
+</tr>
+</tbody>
+</table>
+<h4 id="example-1">Example</h4>
+<pre><code class="lang-js">{
+  &quot;Format&quot;: &quot;1.0&quot;,
+  &quot;Quests&quot;: [
+    {
+      &quot;Name&quot;: &quot;my_custom_quest&quot;,
+      &quot;Type&quot;: &quot;ItemDelivery&quot;, // Vanilla quest type
+      &quot;Title&quot;: &quot;The purple lunch&quot;,
+      &quot;Description&quot;: &quot;Abigail are very hungry. She wants to eat something special from mines.&quot;,
+      &quot;Objective&quot;: &quot;Bring amethyst to Abigail&quot;,
+      &quot;Reward&quot;: 300, // 300g
+      &quot;Cancelable&quot;: true,
+      &quot;Trigger&quot;: &quot;Abigail 66&quot;, // Bring amethyst to Abby
+      &quot;ReactionText&quot;: &quot;Oh, it's looks delicious. I am really hungry.&quot;,
+      &quot;Hooks&quot;: [
+         // Quest will be accepted (added to quest log) 
+         // when farmer go near the tree on the west side of graveyard in Town
+         // and when is sunny weather today
+        {
+          &quot;When&quot;: &quot;Tile&quot;,
+          &quot;Has&quot;: {
+            &quot;Location&quot;: &quot;Town&quot;,
+            &quot;Area&quot;: &quot;2038 5573 326 245&quot;,
+            &quot;Weather&quot;: &quot;sunny&quot;
+          },
+          &quot;Action&quot;: &quot;Accept&quot;
+        }
+      ]
+    }
+  ]
+}
+</code></pre>
+<h3 id="actions">Actions</h3>
+<p>There are these types of actions:</p>
+<table>
+<thead>
+<tr>
+<th>Action name</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Complete</td>
+<td>Complete the quest</td>
+</tr>
+<tr>
+<td>Remove</td>
+<td>Remove the quest from player's questlog (without completion, just remove)</td>
+</tr>
+<tr>
+<td>CheckIfComplete</td>
+<td>Handles completion checker and complete the quest if inner quest conditions are met.</td>
+</tr>
+<tr>
+<td>Accept</td>
+<td>Accept this quest and add it to player's quest log as new.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="hook-types">Hook types</h3>
+<h4 id="location-1">Location</h4>
+<p>This hook is triggered when player entered or leaved specific location and all other conditions are met.</p>
+<table>
+<thead>
+<tr>
+<th>Local condition</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Enter</td>
+<td>Location name of entered location by player</td>
+</tr>
+<tr>
+<td>Leave</td>
+<td>Location name of leaved location</td>
+</tr>
+</tbody>
+</table>
+<p>If you specify both, then the hook action will be triggered when player leaved specified location and entered to another specified location. For example:</p>
+<p>Enter condition is <code>Town</code> and leave condition is <code>BusStop</code>. This hook trigs their action when player entered Town from the Bus Stop.</p>
+<h4 id="tile">Tile</h4>
+<p>This hook is triggered when player stands on specific tile position or in specific area of specific location.</p>
+<table>
+<thead>
+<tr>
+<th>Local condition</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Location</td>
+<td>Game location</td>
+</tr>
+<tr>
+<td>Position</td>
+<td>Standing tile position (X, Y). Example <code>13 10</code></td>
+</tr>
+<tr>
+<td>Area</td>
+<td>Specified standing area (X, Y, Width, Height) Example: <code>2038 5573 326 245</code></td>
+</tr>
+<tr>
+<td>TouchAction</td>
+<td>Touch action property value must be this defined value for trig hook's action.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="common-environment-conditions">Common environment conditions</h3>
+<table>
+<thead>
+<tr>
+<th>Condition name</th>
+<th>Example value</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Weather</td>
+<td><code>sunny</code></td>
+<td>Current weather. Allowed values: <code>rainy</code>, <code>snowy</code>, <code>stormy</code>, <code>cloudy</code>, <code>sunny</code></td>
+</tr>
+<tr>
+<td>Date</td>
+<td><code>17 spring</code>, <code>5 summer Y2</code></td>
+<td>Game date in format <code>&lt;day&gt; &lt;season&gt;</code> or <code>&lt;day&gt; &lt;season&gt; Y&lt;year&gt;</code></td>
+</tr>
+<tr>
+<td>Days</td>
+<td><code>2 6 12</code></td>
+<td>Trig action only when today is one of these days. You can specify any count of days.</td>
+</tr>
+<tr>
+<td>Seasons</td>
+<td><code>summer fall</code></td>
+<td>Trig action only when current season is on of these seasons. You can specify any count of seasons.</td>
+</tr>
+<tr>
+<td>DaysOfWeek</td>
+<td><code>monday wednesday</code></td>
+<td>Trig action when today's weekday is one of these weekdays. You can specify any count of weekdays</td>
+</tr>
+<tr>
+<td>Friendship</td>
+<td><code>Abigail 8</code>, <code>Maru 5 Shane 4</code></td>
+<td>Trig action when friendship heart level is the same as specified value for specified NPC. You can specify more than one friendship conditions.</td>
+</tr>
+<tr>
+<td>MailReceived</td>
+<td><code>CF_Fish</code></td>
+<td>Trig action when this mail was received by farmer.</td>
+</tr>
+<tr>
+<td>EventSeen</td>
+<td><code>3910674</code></td>
+<td>Trig action when event with this event id seen by player.</td>
+</tr>
+<tr>
+<td>MailNotReceived</td>
+<td><code>JunimoKart</code></td>
+<td>Same as <code>MailReceived</code>, but trigs action when specified mail <strong>was not received</strong> by farmer.</td>
+</tr>
+<tr>
+<td>EventNotSeen</td>
+<td><code>3910674</code></td>
+<td>Same as <code>EventSeen</code> but trigs action when event was <strong>not seen yet</strong> by player.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="offers">Offers</h2>
+<p>You can define offers. Offers are descriptions when and by which source your quest will be offered to player for accepting (add to quest log). You can define one ore more offers (for different or for the same quest).</p>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>QuestName</td>
+<td>(string) Quest for schedule to offer (available for add to quest log).</td>
+</tr>
+<tr>
+<td>OfferedBy</td>
+<td>(string) Which source offers this quest to accept. (See quest sources bellow)</td>
+</tr>
+<tr>
+<td>OfferDetails</td>
+<td>(custom) Details for quest offer. This field is customized. (Optional. See quest sources bellow)</td>
+</tr>
+<tr>
+<td>When</td>
+<td>(dictionary&lt;string, string&gt;) When this quest will be offered (see environment conditions).</td>
+</tr>
+<tr>
+<td>OnlyMainPlayer</td>
+<td>(boolean) Set to true if you want to offer this quest only for main player (server).</td>
+</tr>
+</tbody>
+</table>
+<h3 id="quests-sources">Quests sources</h3>
+<p>There are available few quests sources provided by native Quest Framework. Some sources must have defined offer details. For some quest sources are different type of offer details.</p>
+<h4 id="bulletinboard">Bulletinboard</h4>
+<p>Offers quest on bulletinboard on the seeds shop house.</p>
+<p><em>This source NOT requires or accepts any offer details</em></p>
+<p><strong>Example</strong></p>
+<pre><code class="lang-js">{
+  &quot;Format&quot;: &quot;1.0&quot;,
+  &quot;Quests&quot;: [
+    {
+      &quot;Name&quot;: &quot;abigail_amethyst&quot;, // No id needed, will be automatically generated
+      &quot;Type&quot;: &quot;ItemDelivery&quot;, // Vanilla quest type
+      &quot;Title&quot;: &quot;The purple lunch&quot;,
+      &quot;Description&quot;: &quot;Abigail are very hungry. She wants to eat something special from mines.&quot;,
+      &quot;Objective&quot;: &quot;Bring amethyst to Abigail&quot;,
+      &quot;Reward&quot;: 300, // 300g
+      &quot;Cancelable&quot;: true,
+      &quot;Trigger&quot;: &quot;Abigail 66&quot;, // Bring amethyst to Abby
+      &quot;ReactionText&quot;: &quot;Oh, it's looks delicious. I am really hungry.&quot;,
+    }
+  ],
+  &quot;Offers&quot;: [
+    {
+      &quot;QuestName&quot;: &quot;abigail_amethyst&quot;,
+      &quot;OfferedBy&quot;: &quot;Bulletinboard&quot;,
+      &quot;When&quot;: {
+        &quot;DaysOfWeek&quot;: &quot;Monday Thursday Friday&quot;,
+        &quot;Seasons&quot;: &quot;spring fall&quot;,
+      }
+    }
+  ]
+}
+</code></pre>
+<h4 id="npc">NPC</h4>
+<p>NPC can offer your quest via dialogue (speek with them and get a quest)</p>
+<p><strong>Requires these offer details</strong>
+Field        | Description
+------------ | -----------
+NpcName      | (string) Which NPC offers this quest.
+DialogueText | (string) What to NPC say to offer this quest.</p>
+<p><strong>Example</strong></p>
+<pre><code class="lang-js">{
+  &quot;Format&quot;: &quot;1.0&quot;,
+  &quot;Quests&quot;: [
+    {
+      &quot;Name&quot;: &quot;abigail_amethyst&quot;, // No id needed, will be automatically generated
+      &quot;Type&quot;: &quot;ItemDelivery&quot;, // Vanilla quest type
+      &quot;Title&quot;: &quot;The purple lunch&quot;,
+      &quot;Description&quot;: &quot;Abigail is very hungry. She wants to eat something special from mines.&quot;,
+      &quot;Objective&quot;: &quot;Bring amethyst to Abigail&quot;,
+      &quot;Reward&quot;: 300, // 300g
+      &quot;Cancelable&quot;: true,
+      &quot;Trigger&quot;: &quot;Abigail 66&quot;, // Bring amethyst to Abby
+      &quot;ReactionText&quot;: &quot;Oh, this looks so delicious. I am really hungry, thank you, @!$h&quot;
+    }
+  ],
+  &quot;Offers&quot;: [
+    {
+      &quot;QuestName&quot;: &quot;abigail_amethyst&quot;,
+      &quot;OfferedBy&quot;: &quot;NPC&quot;,
+      &quot;OfferDetails&quot;: {
+        &quot;NpcName&quot;: &quot;Abigail&quot;, // Speak with Abigail to get this quest
+        &quot;DialogueText&quot;: &quot;I have a craving for something special.#$b#@, can you bring me amethyst?&quot;
+      },
+      &quot;When&quot;: {
+        &quot;DaysOfWeek&quot;: &quot;Monday Thursday Friday&quot;,
+        &quot;Seasons&quot;: &quot;spring fall&quot;
+      }
+    }
+  ]
+}
+</code></pre>
+<h4 id="mail">Mail</h4>
+<p>Farmer can get a quest via received letter in their mailbox on the farm.</p>
+<p><strong>Requires these offer details</strong>
+Field        | Description
+------------ | -----------
+Topic        | (string) Title or topic of the letter (optional)
+Text         | (string) Text of the quest source letter (required)</p>
+<p><strong>Example</strong></p>
+<pre><code class="lang-js">{
+  &quot;Format&quot;: &quot;1.0&quot;,
+  &quot;Quests&quot;: [
+    {
+      &quot;Name&quot;: &quot;bat_problem&quot;,
+      &quot;Type&quot;: &quot;Monster&quot;,
+      &quot;Title&quot;: &quot;The bat problem&quot;,
+      &quot;Description&quot;: &quot;Bats are attacking the town every night. Slay some bats and make town more safe.&quot;,
+      &quot;Objective&quot;: &quot;Slay 10 bats&quot;,
+      &quot;Reward&quot;: 500, // 500g
+      &quot;Cancelable&quot;: false,
+      &quot;Trigger&quot;: &quot;Bat 10 Lewis&quot;, // Slay 10 bats and then talk with Lewis
+      &quot;ReactionText&quot;: &quot;Good job, @. Our town is safe for this time.#$b#Bats are big problem after mines in mountains are open again. We must be carefull.&quot;
+    }
+  ],
+  &quot;Offers&quot;: [
+    {
+      &quot;QuestName&quot;: &quot;bat_problem&quot;,
+      &quot;OfferedBy&quot;: &quot;Mail&quot;,
+      &quot;OfferDetails&quot;: {
+        &quot;Topic&quot;: &quot;The bat problem&quot;,
+        &quot;Text&quot;: &quot;Hi, @,^Our town is not safe during nights, because agressive kind of bats attacking villagers and they are scared. Reduce the bat population and make this town safe again. Thanks ^   -Mayor Lewis&quot;
+      },
+      &quot;When&quot;: {
+        &quot;Weather&quot;: &quot;cloudy&quot;,
+        &quot;Seasons&quot;: &quot;spring summer&quot;,
+        &quot;Days&quot;: &quot;4 11 24&quot;
+      }
+    }
+  ]
+}
+</code></pre>
+<h2 id="outbound">Outbound</h2>
+<h3 id="add-quest-via-npc-dialogue-external">Add quest via NPC dialogue (external)</h3>
+<p>You can add known quest in Quest Framework via NPC dialogues. You can define it with content patcher (Patch <code>Dialogue/&lt;NPC_name&gt;</code>) and add your dialogue which adds a quest to the player's questlog or edit existing dialogue line.</p>
+<p>By place <code>![&lt;questname&gt;@&lt;modUID&gt;]</code> to the dialogue player get a quest when speak with NPC and this dialogue line is shown.</p>
+<h4 id="example-2">Example</h4>
+<pre><code class="lang-js">// Some dialogue definition file
+{
+    &quot;yourDialogueKey&quot;: &quot;Can you bring me an Amethyst? ![bringAmethyst@purrplingcat.myquestmod]&quot;
+    &quot;anotherDIalogue&quot;: &quot;What's up? $h#$b#Are you interested to small fighting adventure?#$b#Bless your sword! ![slayMonsters@purrplingcat.myquestmod]&quot;
+}
+</code></pre>
+</article>
+          </div>
+          
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                  <li>
+                    <a href="https://github.com/purrplingcat/PurrplingMod/blob/feature/quest-framework/QuestFramework/docs/content-pack-guide.md/#L1" class="contribution-link">Improve this Doc</a>
+                  </li>
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+              <!-- <p><a class="back-to-top" href="#top">Back to top</a><p> -->
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+            
+            <span>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+    
+    <script type="text/javascript" src="../styles/docfx.vendor.js"></script>
+    <script type="text/javascript" src="../styles/docfx.js"></script>
+    <script type="text/javascript" src="../styles/main.js"></script>
+  </body>
+</html>
