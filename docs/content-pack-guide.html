@@ -156,6 +156,11 @@
 <td>(string[]) One of more next quests which will be added to player's quest log when this quest is completed.</td>
 </tr>
 <tr>
+<td>DaysLeft</td>
+<td></td>
+<td>(int) If this field is filled or is greater than 0, this quest is marked as daily and limited for specified number of days here.</td>
+</tr>
+<tr>
 <td>Reward</td>
 <td></td>
 <td>(int) Reward in SDV currency &quot;golds&quot;. If this field is not defined or has value <code>0</code>, then player will receive no money reward.</td>
@@ -178,7 +183,7 @@
 <tr>
 <td>Trigger</td>
 <td></td>
-<td>(string) or (int) Completion trigger (see quest types for more info)</td>
+<td>(string) Completion trigger (see quest types for more info) Supports <a href="#json-assets-support">JSON Assets</a></td>
 </tr>
 <tr>
 <td>Hooks</td>
@@ -197,6 +202,7 @@
       &quot;Title&quot;: &quot;The purple lunch&quot;,
       &quot;Description&quot;: &quot;Abigail are very hungry. She wants to eat something special from mines.&quot;,
       &quot;Objective&quot;: &quot;Bring amethyst to Abigail&quot;,
+      &quot;DaysLeft&quot;: 5, // If player don't complete this quest until 5 days, this quest will be removed from quest log automatically without completion
       &quot;Reward&quot;: 300, // 300g
       &quot;Cancelable&quot;: true, // This quest can be cancelled by player
       &quot;Trigger&quot;: &quot;Abigail 66&quot;, // Bring amethyst to Abby
@@ -219,7 +225,7 @@
 See the <code>Data/ObjectInformation</code> game resource for available items.</p>
 <h4 id="itemdelivery">ItemDelivery</h4>
 <p>Deliver specified item to specified NPC.</p>
-<p><em>Trigger</em>: <code>&lt;string:NPC_name&gt; &lt;int:item_id&gt;</code> like <code>Abigail 66</code> for bring Amethyst for Abigail.
+<p><em>Trigger</em>: <code>&lt;string:NPC_name&gt; &lt;int:object_id&gt;</code> like <code>Abigail 66</code> for bring Amethyst for Abigail or <code>Willy {{ja:Fish Oil}}</code> if you want to use JsonAssets item (JsonAssets required for use JA token)
 See the <code>Data/ObjectInformation</code> game resource for available items.</p>
 <p>This quest type accepts <code>ReactionText</code>.</p>
 <h4 id="itemharvest">ItemHarvest</h4>
@@ -438,6 +444,26 @@ See the <code>Data/ObjectInformation</code> game resource for available items.</
 <td><code>3910674</code></td>
 <td>Same as <code>EventSeen</code> but trigs action when event was <strong>not seen yet</strong> by player.</td>
 </tr>
+<tr>
+<td>MinDaysPlayed</td>
+<td><code>34</code></td>
+<td>Minimum played days from start of new game (from 1 spring year 1)</td>
+</tr>
+<tr>
+<td>MaxDaysPlayed</td>
+<td><code>51</code></td>
+<td>Maximum played days from start of new game (from 1 spring year 1)</td>
+</tr>
+<tr>
+<td>DaysPlayed</td>
+<td><code>19</code></td>
+<td>Total played days from start of new game (from 1 spring year 1)</td>
+</tr>
+<tr>
+<td>IsPlayerMarried</td>
+<td><code>yes</code> or <code>no</code></td>
+<td>Is player married?</td>
+</tr>
 </tbody>
 </table>
 <h2 id="offers">Offers</h2>
@@ -584,11 +610,35 @@ Text         | (string) Text of the quest source letter (required)</p>
   ]
 }
 </code></pre>
+<h2 id="compatibility-with-other-mods">Compatibility with other mods</h2>
+<h3 id="json-assets-support">Json Assets support</h3>
+<p>Quest Framework is compatible with JsonAssets mod. The framework supports JsonAssets objects for the <code>Trigger</code> quest field via token named <code>ja</code> and supports two item types: <code>object</code> and <code>bigcraftable</code>.</p>
+<p>Token looks like: <code>{{ja: &lt;itemName&gt; [|bigcraftable]}}</code></p>
+<p>If you add suffix <code>|bigcraftable</code> after item name, then Quest Framework looks in the BigCraftable sheet. Otherwise looks in Object sheet.</p>
+<h4 id="example-2">Example</h4>
+<pre><code class="lang-js">{
+  &quot;Format&quot;: &quot;1.0&quot;,
+  &quot;Quests&quot;: [
+    {
+      &quot;Name&quot;: &quot;willy_fish_oil&quot;, // No id needed, will be automatically generated
+      &quot;Type&quot;: &quot;ItemDelivery&quot;, // Vanilla quest type
+      &quot;Title&quot;: &quot;Fish Oil needed&quot;,
+      &quot;Description&quot;: &quot;Hi. I need a fish oil. ASAP please.\n                                - Willy&quot;,
+      &quot;Objective&quot;: &quot;Bring Fish Oil to Willy&quot;,
+      &quot;Reward&quot;: 220, // 220g
+      &quot;Cancelable&quot;: true,
+      &quot;Trigger&quot;: &quot;Willy {{ja:Fish Oil}}&quot;, // Bring Fish Oil to Willy (this item is from JA items)
+      &quot;ReactionText&quot;: &quot;This one smells very intensive! Thank you so much, @!$h&quot;
+    }
+  ]
+}
+
+</code></pre>
 <h2 id="outbound">Outbound</h2>
 <h3 id="add-quest-via-npc-dialogue-external">Add quest via NPC dialogue (external)</h3>
 <p>You can add known quest in Quest Framework via NPC dialogues. You can define it with content patcher (Patch <code>Dialogue/&lt;NPC_name&gt;</code>) and add your dialogue which adds a quest to the player's questlog or edit existing dialogue line.</p>
 <p>By place <code>![&lt;questname&gt;@&lt;modUID&gt;]</code> to the dialogue player get a quest when speak with NPC and this dialogue line is shown.</p>
-<h4 id="example-2">Example</h4>
+<h4 id="example-3">Example</h4>
 <pre><code class="lang-js">// Some dialogue definition file
 {
     &quot;yourDialogueKey&quot;: &quot;Can you bring me an Amethyst? ![bringAmethyst@purrplingcat.myquestmod]&quot;

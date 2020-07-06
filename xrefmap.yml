@@ -982,6 +982,19 @@ references:
   isSpec: "True"
   fullName: QuestFramework.Quests.CustomQuest.CustomTypeId
   nameWithType: CustomQuest.CustomTypeId
+- uid: QuestFramework.Quests.CustomQuest.DaysLeft
+  name: DaysLeft
+  href: api/QuestFramework.Quests.CustomQuest.html#QuestFramework_Quests_CustomQuest_DaysLeft
+  commentId: P:QuestFramework.Quests.CustomQuest.DaysLeft
+  fullName: QuestFramework.Quests.CustomQuest.DaysLeft
+  nameWithType: CustomQuest.DaysLeft
+- uid: QuestFramework.Quests.CustomQuest.DaysLeft*
+  name: DaysLeft
+  href: api/QuestFramework.Quests.CustomQuest.html#QuestFramework_Quests_CustomQuest_DaysLeft_
+  commentId: Overload:QuestFramework.Quests.CustomQuest.DaysLeft
+  isSpec: "True"
+  fullName: QuestFramework.Quests.CustomQuest.DaysLeft
+  nameWithType: CustomQuest.DaysLeft
 - uid: QuestFramework.Quests.CustomQuest.Description
   name: Description
   href: api/QuestFramework.Quests.CustomQuest.html#QuestFramework_Quests_CustomQuest_Description
@@ -1034,6 +1047,19 @@ references:
   isSpec: "True"
   fullName: QuestFramework.Quests.CustomQuest.Hooks
   nameWithType: CustomQuest.Hooks
+- uid: QuestFramework.Quests.CustomQuest.IsDailyQuest
+  name: IsDailyQuest()
+  href: api/QuestFramework.Quests.CustomQuest.html#QuestFramework_Quests_CustomQuest_IsDailyQuest
+  commentId: M:QuestFramework.Quests.CustomQuest.IsDailyQuest
+  fullName: QuestFramework.Quests.CustomQuest.IsDailyQuest()
+  nameWithType: CustomQuest.IsDailyQuest()
+- uid: QuestFramework.Quests.CustomQuest.IsDailyQuest*
+  name: IsDailyQuest
+  href: api/QuestFramework.Quests.CustomQuest.html#QuestFramework_Quests_CustomQuest_IsDailyQuest_
+  commentId: Overload:QuestFramework.Quests.CustomQuest.IsDailyQuest
+  isSpec: "True"
+  fullName: QuestFramework.Quests.CustomQuest.IsDailyQuest
+  nameWithType: CustomQuest.IsDailyQuest
 - uid: QuestFramework.Quests.CustomQuest.Monitor
   name: Monitor
   href: api/QuestFramework.Quests.CustomQuest.html#QuestFramework_Quests_CustomQuest_Monitor
