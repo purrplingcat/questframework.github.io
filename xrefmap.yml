@@ -19,12 +19,12 @@ references:
   commentId: T:QuestFramework.Api.IManagedQuestApi
   fullName: QuestFramework.Api.IManagedQuestApi
   nameWithType: IManagedQuestApi
-- uid: QuestFramework.Api.IManagedQuestApi.AcceptQuest(System.String)
-  name: AcceptQuest(String)
-  href: api/QuestFramework.Api.IManagedQuestApi.html#QuestFramework_Api_IManagedQuestApi_AcceptQuest_System_String_
-  commentId: M:QuestFramework.Api.IManagedQuestApi.AcceptQuest(System.String)
-  fullName: QuestFramework.Api.IManagedQuestApi.AcceptQuest(System.String)
-  nameWithType: IManagedQuestApi.AcceptQuest(String)
+- uid: QuestFramework.Api.IManagedQuestApi.AcceptQuest(System.String,System.Boolean)
+  name: AcceptQuest(String, Boolean)
+  href: api/QuestFramework.Api.IManagedQuestApi.html#QuestFramework_Api_IManagedQuestApi_AcceptQuest_System_String_System_Boolean_
+  commentId: M:QuestFramework.Api.IManagedQuestApi.AcceptQuest(System.String,System.Boolean)
+  fullName: QuestFramework.Api.IManagedQuestApi.AcceptQuest(System.String, System.Boolean)
+  nameWithType: IManagedQuestApi.AcceptQuest(String, Boolean)
 - uid: QuestFramework.Api.IManagedQuestApi.AcceptQuest*
   name: AcceptQuest
   href: api/QuestFramework.Api.IManagedQuestApi.html#QuestFramework_Api_IManagedQuestApi_AcceptQuest_
@@ -45,6 +45,22 @@ references:
   isSpec: "True"
   fullName: QuestFramework.Api.IManagedQuestApi.CompleteQuest
   nameWithType: IManagedQuestApi.CompleteQuest
+- uid: QuestFramework.Api.IManagedQuestApi.ExposeGlobalCondition(System.String,System.Func{System.String,QuestFramework.Quests.CustomQuest,System.Boolean})
+  name: ExposeGlobalCondition(String, Func<String, CustomQuest, Boolean>)
+  href: api/QuestFramework.Api.IManagedQuestApi.html#QuestFramework_Api_IManagedQuestApi_ExposeGlobalCondition_System_String_System_Func_System_String_QuestFramework_Quests_CustomQuest_System_Boolean__
+  commentId: M:QuestFramework.Api.IManagedQuestApi.ExposeGlobalCondition(System.String,System.Func{System.String,QuestFramework.Quests.CustomQuest,System.Boolean})
+  name.vb: ExposeGlobalCondition(String, Func(Of String, CustomQuest, Boolean))
+  fullName: QuestFramework.Api.IManagedQuestApi.ExposeGlobalCondition(System.String, System.Func<System.String, QuestFramework.Quests.CustomQuest, System.Boolean>)
+  fullName.vb: QuestFramework.Api.IManagedQuestApi.ExposeGlobalCondition(System.String, System.Func(Of System.String, QuestFramework.Quests.CustomQuest, System.Boolean))
+  nameWithType: IManagedQuestApi.ExposeGlobalCondition(String, Func<String, CustomQuest, Boolean>)
+  nameWithType.vb: IManagedQuestApi.ExposeGlobalCondition(String, Func(Of String, CustomQuest, Boolean))
+- uid: QuestFramework.Api.IManagedQuestApi.ExposeGlobalCondition*
+  name: ExposeGlobalCondition
+  href: api/QuestFramework.Api.IManagedQuestApi.html#QuestFramework_Api_IManagedQuestApi_ExposeGlobalCondition_
+  commentId: Overload:QuestFramework.Api.IManagedQuestApi.ExposeGlobalCondition
+  isSpec: "True"
+  fullName: QuestFramework.Api.IManagedQuestApi.ExposeGlobalCondition
+  nameWithType: IManagedQuestApi.ExposeGlobalCondition
 - uid: QuestFramework.Api.IManagedQuestApi.GetById(System.Int32)
   name: GetById(Int32)
   href: api/QuestFramework.Api.IManagedQuestApi.html#QuestFramework_Api_IManagedQuestApi_GetById_System_Int32_
@@ -125,6 +141,19 @@ references:
   isSpec: "True"
   fullName: QuestFramework.Api.IQuestApi.Events
   nameWithType: IQuestApi.Events
+- uid: QuestFramework.Api.IQuestApi.ForceRefresh
+  name: ForceRefresh()
+  href: api/QuestFramework.Api.IQuestApi.html#QuestFramework_Api_IQuestApi_ForceRefresh
+  commentId: M:QuestFramework.Api.IQuestApi.ForceRefresh
+  fullName: QuestFramework.Api.IQuestApi.ForceRefresh()
+  nameWithType: IQuestApi.ForceRefresh()
+- uid: QuestFramework.Api.IQuestApi.ForceRefresh*
+  name: ForceRefresh
+  href: api/QuestFramework.Api.IQuestApi.html#QuestFramework_Api_IQuestApi_ForceRefresh_
+  commentId: Overload:QuestFramework.Api.IQuestApi.ForceRefresh
+  isSpec: "True"
+  fullName: QuestFramework.Api.IQuestApi.ForceRefresh
+  nameWithType: IQuestApi.ForceRefresh
 - uid: QuestFramework.Api.IQuestApi.GetManagedApi(StardewModdingAPI.IManifest)
   name: GetManagedApi(IManifest)
   href: api/QuestFramework.Api.IQuestApi.html#QuestFramework_Api_IQuestApi_GetManagedApi_StardewModdingAPI_IManifest_
@@ -170,6 +199,19 @@ references:
   isSpec: "True"
   fullName: QuestFramework.Api.QuestApi.Events
   nameWithType: QuestApi.Events
+- uid: QuestFramework.Api.QuestApi.ForceRefresh
+  name: ForceRefresh()
+  href: api/QuestFramework.Api.QuestApi.html#QuestFramework_Api_QuestApi_ForceRefresh
+  commentId: M:QuestFramework.Api.QuestApi.ForceRefresh
+  fullName: QuestFramework.Api.QuestApi.ForceRefresh()
+  nameWithType: QuestApi.ForceRefresh()
+- uid: QuestFramework.Api.QuestApi.ForceRefresh*
+  name: ForceRefresh
+  href: api/QuestFramework.Api.QuestApi.html#QuestFramework_Api_QuestApi_ForceRefresh_
+  commentId: Overload:QuestFramework.Api.QuestApi.ForceRefresh
+  isSpec: "True"
+  fullName: QuestFramework.Api.QuestApi.ForceRefresh
+  nameWithType: QuestApi.ForceRefresh
 - uid: QuestFramework.Api.QuestApi.GetManagedApi(StardewModdingAPI.IManifest)
   name: GetManagedApi(IManifest)
   href: api/QuestFramework.Api.QuestApi.html#QuestFramework_Api_QuestApi_GetManagedApi_StardewModdingAPI_IManifest_
@@ -258,12 +300,93 @@ references:
   commentId: E:QuestFramework.Events.IQuestFrameworkEvents.GettingReady
   fullName: QuestFramework.Events.IQuestFrameworkEvents.GettingReady
   nameWithType: IQuestFrameworkEvents.GettingReady
+- uid: QuestFramework.Events.IQuestFrameworkEvents.QuestAccepted
+  name: QuestAccepted
+  href: api/QuestFramework.Events.IQuestFrameworkEvents.html#QuestFramework_Events_IQuestFrameworkEvents_QuestAccepted
+  commentId: E:QuestFramework.Events.IQuestFrameworkEvents.QuestAccepted
+  fullName: QuestFramework.Events.IQuestFrameworkEvents.QuestAccepted
+  nameWithType: IQuestFrameworkEvents.QuestAccepted
+- uid: QuestFramework.Events.IQuestFrameworkEvents.QuestCompleted
+  name: QuestCompleted
+  href: api/QuestFramework.Events.IQuestFrameworkEvents.html#QuestFramework_Events_IQuestFrameworkEvents_QuestCompleted
+  commentId: E:QuestFramework.Events.IQuestFrameworkEvents.QuestCompleted
+  fullName: QuestFramework.Events.IQuestFrameworkEvents.QuestCompleted
+  nameWithType: IQuestFrameworkEvents.QuestCompleted
+- uid: QuestFramework.Events.IQuestFrameworkEvents.QuestLogMenuClosed
+  name: QuestLogMenuClosed
+  href: api/QuestFramework.Events.IQuestFrameworkEvents.html#QuestFramework_Events_IQuestFrameworkEvents_QuestLogMenuClosed
+  commentId: E:QuestFramework.Events.IQuestFrameworkEvents.QuestLogMenuClosed
+  fullName: QuestFramework.Events.IQuestFrameworkEvents.QuestLogMenuClosed
+  nameWithType: IQuestFrameworkEvents.QuestLogMenuClosed
+- uid: QuestFramework.Events.IQuestFrameworkEvents.QuestLogMenuOpen
+  name: QuestLogMenuOpen
+  href: api/QuestFramework.Events.IQuestFrameworkEvents.html#QuestFramework_Events_IQuestFrameworkEvents_QuestLogMenuOpen
+  commentId: E:QuestFramework.Events.IQuestFrameworkEvents.QuestLogMenuOpen
+  fullName: QuestFramework.Events.IQuestFrameworkEvents.QuestLogMenuOpen
+  nameWithType: IQuestFrameworkEvents.QuestLogMenuOpen
+- uid: QuestFramework.Events.IQuestFrameworkEvents.QuestRemoved
+  name: QuestRemoved
+  href: api/QuestFramework.Events.IQuestFrameworkEvents.html#QuestFramework_Events_IQuestFrameworkEvents_QuestRemoved
+  commentId: E:QuestFramework.Events.IQuestFrameworkEvents.QuestRemoved
+  fullName: QuestFramework.Events.IQuestFrameworkEvents.QuestRemoved
+  nameWithType: IQuestFrameworkEvents.QuestRemoved
 - uid: QuestFramework.Events.IQuestFrameworkEvents.Ready
   name: Ready
   href: api/QuestFramework.Events.IQuestFrameworkEvents.html#QuestFramework_Events_IQuestFrameworkEvents_Ready
   commentId: E:QuestFramework.Events.IQuestFrameworkEvents.Ready
   fullName: QuestFramework.Events.IQuestFrameworkEvents.Ready
   nameWithType: IQuestFrameworkEvents.Ready
+- uid: QuestFramework.Events.IQuestFrameworkEvents.Refreshed
+  name: Refreshed
+  href: api/QuestFramework.Events.IQuestFrameworkEvents.html#QuestFramework_Events_IQuestFrameworkEvents_Refreshed
+  commentId: E:QuestFramework.Events.IQuestFrameworkEvents.Refreshed
+  fullName: QuestFramework.Events.IQuestFrameworkEvents.Refreshed
+  nameWithType: IQuestFrameworkEvents.Refreshed
+- uid: QuestFramework.Events.QuestEventArgs
+  name: QuestEventArgs
+  href: api/QuestFramework.Events.QuestEventArgs.html
+  commentId: T:QuestFramework.Events.QuestEventArgs
+  fullName: QuestFramework.Events.QuestEventArgs
+  nameWithType: QuestEventArgs
+- uid: QuestFramework.Events.QuestEventArgs.GetManagedQuest
+  name: GetManagedQuest()
+  href: api/QuestFramework.Events.QuestEventArgs.html#QuestFramework_Events_QuestEventArgs_GetManagedQuest
+  commentId: M:QuestFramework.Events.QuestEventArgs.GetManagedQuest
+  fullName: QuestFramework.Events.QuestEventArgs.GetManagedQuest()
+  nameWithType: QuestEventArgs.GetManagedQuest()
+- uid: QuestFramework.Events.QuestEventArgs.GetManagedQuest*
+  name: GetManagedQuest
+  href: api/QuestFramework.Events.QuestEventArgs.html#QuestFramework_Events_QuestEventArgs_GetManagedQuest_
+  commentId: Overload:QuestFramework.Events.QuestEventArgs.GetManagedQuest
+  isSpec: "True"
+  fullName: QuestFramework.Events.QuestEventArgs.GetManagedQuest
+  nameWithType: QuestEventArgs.GetManagedQuest
+- uid: QuestFramework.Events.QuestEventArgs.IsManaged
+  name: IsManaged
+  href: api/QuestFramework.Events.QuestEventArgs.html#QuestFramework_Events_QuestEventArgs_IsManaged
+  commentId: P:QuestFramework.Events.QuestEventArgs.IsManaged
+  fullName: QuestFramework.Events.QuestEventArgs.IsManaged
+  nameWithType: QuestEventArgs.IsManaged
+- uid: QuestFramework.Events.QuestEventArgs.IsManaged*
+  name: IsManaged
+  href: api/QuestFramework.Events.QuestEventArgs.html#QuestFramework_Events_QuestEventArgs_IsManaged_
+  commentId: Overload:QuestFramework.Events.QuestEventArgs.IsManaged
+  isSpec: "True"
+  fullName: QuestFramework.Events.QuestEventArgs.IsManaged
+  nameWithType: QuestEventArgs.IsManaged
+- uid: QuestFramework.Events.QuestEventArgs.WhichQuest
+  name: WhichQuest
+  href: api/QuestFramework.Events.QuestEventArgs.html#QuestFramework_Events_QuestEventArgs_WhichQuest
+  commentId: P:QuestFramework.Events.QuestEventArgs.WhichQuest
+  fullName: QuestFramework.Events.QuestEventArgs.WhichQuest
+  nameWithType: QuestEventArgs.WhichQuest
+- uid: QuestFramework.Events.QuestEventArgs.WhichQuest*
+  name: WhichQuest
+  href: api/QuestFramework.Events.QuestEventArgs.html#QuestFramework_Events_QuestEventArgs_WhichQuest_
+  commentId: Overload:QuestFramework.Events.QuestEventArgs.WhichQuest
+  isSpec: "True"
+  fullName: QuestFramework.Events.QuestEventArgs.WhichQuest
+  nameWithType: QuestEventArgs.WhichQuest
 - uid: QuestFramework.Events.ReadyEventArgs
   name: ReadyEventArgs
   href: api/QuestFramework.Events.ReadyEventArgs.html
@@ -276,12 +399,96 @@ references:
   commentId: N:QuestFramework.Extensions
   fullName: QuestFramework.Extensions
   nameWithType: QuestFramework.Extensions
+- uid: QuestFramework.Extensions.CustomQuestExtensions
+  name: CustomQuestExtensions
+  href: api/QuestFramework.Extensions.CustomQuestExtensions.html
+  commentId: T:QuestFramework.Extensions.CustomQuestExtensions
+  fullName: QuestFramework.Extensions.CustomQuestExtensions
+  nameWithType: CustomQuestExtensions
+- uid: QuestFramework.Extensions.CustomQuestExtensions.Accept(QuestFramework.Quests.CustomQuest)
+  name: Accept(CustomQuest)
+  href: api/QuestFramework.Extensions.CustomQuestExtensions.html#QuestFramework_Extensions_CustomQuestExtensions_Accept_QuestFramework_Quests_CustomQuest_
+  commentId: M:QuestFramework.Extensions.CustomQuestExtensions.Accept(QuestFramework.Quests.CustomQuest)
+  fullName: QuestFramework.Extensions.CustomQuestExtensions.Accept(QuestFramework.Quests.CustomQuest)
+  nameWithType: CustomQuestExtensions.Accept(CustomQuest)
+- uid: QuestFramework.Extensions.CustomQuestExtensions.Accept*
+  name: Accept
+  href: api/QuestFramework.Extensions.CustomQuestExtensions.html#QuestFramework_Extensions_CustomQuestExtensions_Accept_
+  commentId: Overload:QuestFramework.Extensions.CustomQuestExtensions.Accept
+  isSpec: "True"
+  fullName: QuestFramework.Extensions.CustomQuestExtensions.Accept
+  nameWithType: CustomQuestExtensions.Accept
+- uid: QuestFramework.Extensions.CustomQuestExtensions.Complete(QuestFramework.Quests.CustomQuest)
+  name: Complete(CustomQuest)
+  href: api/QuestFramework.Extensions.CustomQuestExtensions.html#QuestFramework_Extensions_CustomQuestExtensions_Complete_QuestFramework_Quests_CustomQuest_
+  commentId: M:QuestFramework.Extensions.CustomQuestExtensions.Complete(QuestFramework.Quests.CustomQuest)
+  fullName: QuestFramework.Extensions.CustomQuestExtensions.Complete(QuestFramework.Quests.CustomQuest)
+  nameWithType: CustomQuestExtensions.Complete(CustomQuest)
+- uid: QuestFramework.Extensions.CustomQuestExtensions.Complete*
+  name: Complete
+  href: api/QuestFramework.Extensions.CustomQuestExtensions.html#QuestFramework_Extensions_CustomQuestExtensions_Complete_
+  commentId: Overload:QuestFramework.Extensions.CustomQuestExtensions.Complete
+  isSpec: "True"
+  fullName: QuestFramework.Extensions.CustomQuestExtensions.Complete
+  nameWithType: CustomQuestExtensions.Complete
+- uid: QuestFramework.Extensions.CustomQuestExtensions.GetInQuestLog(QuestFramework.Quests.CustomQuest)
+  name: GetInQuestLog(CustomQuest)
+  href: api/QuestFramework.Extensions.CustomQuestExtensions.html#QuestFramework_Extensions_CustomQuestExtensions_GetInQuestLog_QuestFramework_Quests_CustomQuest_
+  commentId: M:QuestFramework.Extensions.CustomQuestExtensions.GetInQuestLog(QuestFramework.Quests.CustomQuest)
+  fullName: QuestFramework.Extensions.CustomQuestExtensions.GetInQuestLog(QuestFramework.Quests.CustomQuest)
+  nameWithType: CustomQuestExtensions.GetInQuestLog(CustomQuest)
+- uid: QuestFramework.Extensions.CustomQuestExtensions.GetInQuestLog*
+  name: GetInQuestLog
+  href: api/QuestFramework.Extensions.CustomQuestExtensions.html#QuestFramework_Extensions_CustomQuestExtensions_GetInQuestLog_
+  commentId: Overload:QuestFramework.Extensions.CustomQuestExtensions.GetInQuestLog
+  isSpec: "True"
+  fullName: QuestFramework.Extensions.CustomQuestExtensions.GetInQuestLog
+  nameWithType: CustomQuestExtensions.GetInQuestLog
+- uid: QuestFramework.Extensions.CustomQuestExtensions.IsInQuestLog(QuestFramework.Quests.CustomQuest)
+  name: IsInQuestLog(CustomQuest)
+  href: api/QuestFramework.Extensions.CustomQuestExtensions.html#QuestFramework_Extensions_CustomQuestExtensions_IsInQuestLog_QuestFramework_Quests_CustomQuest_
+  commentId: M:QuestFramework.Extensions.CustomQuestExtensions.IsInQuestLog(QuestFramework.Quests.CustomQuest)
+  fullName: QuestFramework.Extensions.CustomQuestExtensions.IsInQuestLog(QuestFramework.Quests.CustomQuest)
+  nameWithType: CustomQuestExtensions.IsInQuestLog(CustomQuest)
+- uid: QuestFramework.Extensions.CustomQuestExtensions.IsInQuestLog*
+  name: IsInQuestLog
+  href: api/QuestFramework.Extensions.CustomQuestExtensions.html#QuestFramework_Extensions_CustomQuestExtensions_IsInQuestLog_
+  commentId: Overload:QuestFramework.Extensions.CustomQuestExtensions.IsInQuestLog
+  isSpec: "True"
+  fullName: QuestFramework.Extensions.CustomQuestExtensions.IsInQuestLog
+  nameWithType: CustomQuestExtensions.IsInQuestLog
+- uid: QuestFramework.Extensions.CustomQuestExtensions.RemoveFromQuestLog(QuestFramework.Quests.CustomQuest)
+  name: RemoveFromQuestLog(CustomQuest)
+  href: api/QuestFramework.Extensions.CustomQuestExtensions.html#QuestFramework_Extensions_CustomQuestExtensions_RemoveFromQuestLog_QuestFramework_Quests_CustomQuest_
+  commentId: M:QuestFramework.Extensions.CustomQuestExtensions.RemoveFromQuestLog(QuestFramework.Quests.CustomQuest)
+  fullName: QuestFramework.Extensions.CustomQuestExtensions.RemoveFromQuestLog(QuestFramework.Quests.CustomQuest)
+  nameWithType: CustomQuestExtensions.RemoveFromQuestLog(CustomQuest)
+- uid: QuestFramework.Extensions.CustomQuestExtensions.RemoveFromQuestLog*
+  name: RemoveFromQuestLog
+  href: api/QuestFramework.Extensions.CustomQuestExtensions.html#QuestFramework_Extensions_CustomQuestExtensions_RemoveFromQuestLog_
+  commentId: Overload:QuestFramework.Extensions.CustomQuestExtensions.RemoveFromQuestLog
+  isSpec: "True"
+  fullName: QuestFramework.Extensions.CustomQuestExtensions.RemoveFromQuestLog
+  nameWithType: CustomQuestExtensions.RemoveFromQuestLog
 - uid: QuestFramework.Extensions.FarmerExtensions
   name: FarmerExtensions
   href: api/QuestFramework.Extensions.FarmerExtensions.html
   commentId: T:QuestFramework.Extensions.FarmerExtensions
   fullName: QuestFramework.Extensions.FarmerExtensions
   nameWithType: FarmerExtensions
+- uid: QuestFramework.Extensions.FarmerExtensions.AddQuestQuiet(StardewValley.Farmer,System.Int32)
+  name: AddQuestQuiet(Farmer, Int32)
+  href: api/QuestFramework.Extensions.FarmerExtensions.html#QuestFramework_Extensions_FarmerExtensions_AddQuestQuiet_StardewValley_Farmer_System_Int32_
+  commentId: M:QuestFramework.Extensions.FarmerExtensions.AddQuestQuiet(StardewValley.Farmer,System.Int32)
+  fullName: QuestFramework.Extensions.FarmerExtensions.AddQuestQuiet(StardewValley.Farmer, System.Int32)
+  nameWithType: FarmerExtensions.AddQuestQuiet(Farmer, Int32)
+- uid: QuestFramework.Extensions.FarmerExtensions.AddQuestQuiet*
+  name: AddQuestQuiet
+  href: api/QuestFramework.Extensions.FarmerExtensions.html#QuestFramework_Extensions_FarmerExtensions_AddQuestQuiet_
+  commentId: Overload:QuestFramework.Extensions.FarmerExtensions.AddQuestQuiet
+  isSpec: "True"
+  fullName: QuestFramework.Extensions.FarmerExtensions.AddQuestQuiet
+  nameWithType: FarmerExtensions.AddQuestQuiet
 - uid: QuestFramework.Extensions.FarmerExtensions.AsManaged(System.Collections.Generic.IEnumerable{StardewValley.Quests.Quest})
   name: AsManaged(IEnumerable<Quest>)
   href: api/QuestFramework.Extensions.FarmerExtensions.html#QuestFramework_Extensions_FarmerExtensions_AsManaged_System_Collections_Generic_IEnumerable_StardewValley_Quests_Quest__
@@ -437,6 +644,19 @@ references:
   isSpec: "True"
   fullName: QuestFramework.Hooks.Hook.Has
   nameWithType: Hook.Has
+- uid: QuestFramework.Hooks.Hook.ManagedQuest
+  name: ManagedQuest
+  href: api/QuestFramework.Hooks.Hook.html#QuestFramework_Hooks_Hook_ManagedQuest
+  commentId: P:QuestFramework.Hooks.Hook.ManagedQuest
+  fullName: QuestFramework.Hooks.Hook.ManagedQuest
+  nameWithType: Hook.ManagedQuest
+- uid: QuestFramework.Hooks.Hook.ManagedQuest*
+  name: ManagedQuest
+  href: api/QuestFramework.Hooks.Hook.html#QuestFramework_Hooks_Hook_ManagedQuest_
+  commentId: Overload:QuestFramework.Hooks.Hook.ManagedQuest
+  isSpec: "True"
+  fullName: QuestFramework.Hooks.Hook.ManagedQuest
+  nameWithType: Hook.ManagedQuest
 - uid: QuestFramework.Hooks.Hook.When
   name: When
   href: api/QuestFramework.Hooks.Hook.html#QuestFramework_Hooks_Hook_When
@@ -969,6 +1189,12 @@ references:
   isSpec: "True"
   fullName: QuestFramework.Quests.CustomQuest.Cancelable
   nameWithType: CustomQuest.Cancelable
+- uid: QuestFramework.Quests.CustomQuest.Completed
+  name: Completed
+  href: api/QuestFramework.Quests.CustomQuest.html#QuestFramework_Quests_CustomQuest_Completed
+  commentId: E:QuestFramework.Quests.CustomQuest.Completed
+  fullName: QuestFramework.Quests.CustomQuest.Completed
+  nameWithType: CustomQuest.Completed
 - uid: QuestFramework.Quests.CustomQuest.CustomTypeId
   name: CustomTypeId
   href: api/QuestFramework.Quests.CustomQuest.html#QuestFramework_Quests_CustomQuest_CustomTypeId
@@ -1397,19 +1623,6 @@ references:
   isSpec: "True"
   fullName: QuestFramework.Quests.IQuestObserver.CheckIfComplete
   nameWithType: IQuestObserver.CheckIfComplete
-- uid: QuestFramework.Quests.IQuestObserver.Completed(QuestFramework.Quests.IQuestInfo)
-  name: Completed(IQuestInfo)
-  href: api/QuestFramework.Quests.IQuestObserver.html#QuestFramework_Quests_IQuestObserver_Completed_QuestFramework_Quests_IQuestInfo_
-  commentId: M:QuestFramework.Quests.IQuestObserver.Completed(QuestFramework.Quests.IQuestInfo)
-  fullName: QuestFramework.Quests.IQuestObserver.Completed(QuestFramework.Quests.IQuestInfo)
-  nameWithType: IQuestObserver.Completed(IQuestInfo)
-- uid: QuestFramework.Quests.IQuestObserver.Completed*
-  name: Completed
-  href: api/QuestFramework.Quests.IQuestObserver.html#QuestFramework_Quests_IQuestObserver_Completed_
-  commentId: Overload:QuestFramework.Quests.IQuestObserver.Completed
-  isSpec: "True"
-  fullName: QuestFramework.Quests.IQuestObserver.Completed
-  nameWithType: IQuestObserver.Completed
 - uid: QuestFramework.Quests.IQuestObserver.UpdateDescription(QuestFramework.Quests.IQuestInfo,System.String@)
   name: UpdateDescription(IQuestInfo, ref String)
   href: api/QuestFramework.Quests.IQuestObserver.html#QuestFramework_Quests_IQuestObserver_UpdateDescription_QuestFramework_Quests_IQuestInfo_System_String__

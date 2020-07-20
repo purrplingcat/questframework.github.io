@@ -69,8 +69,28 @@
             <article class="content wrap" id="_content" data-uid="">
 <h1 id="changelog">Changelog</h1>
 
-<h2 id="100-beta1">1.0.0-beta.1</h2>
+<h2 id="100-beta2">1.0.0-beta.2</h2>
 <h3 id="common-changes">Common changes</h3>
+<ul>
+<li>Improved Bulletinboard quest offer</li>
+<li>Added <code>not:</code> prefix for negate result of checked condition (can be used in hooks and offers and in both programatic and content pack usage)</li>
+<li>Added new conditions for check known recipes: <code>KnownCraftingRecipe</code> and <code>KnownCookingRecipe</code></li>
+<li>Added new condition <code>Random</code> with random chance in % to offer or execute hook</li>
+<li>Added new condition <code>QuestAcceptedDate</code> for check if quest was accepted in specified date</li>
+<li>Added new condition <code>QuestAcceptedInPeriod</code> for check if quest was accepted in current season, day, year and other time period(s).</li>
+<li>Added stats support</li>
+<li>Improved some minor refactors</li>
+</ul>
+<h3 id="for-smapi-modders">For SMAPI modders</h3>
+<ul>
+<li>Added API method <code>ForceRefresh()</code></li>
+<li>Improved accept quest API which allows add quest quietly (without popup alert message and without &quot;new&quot; flag in questlog)</li>
+<li>Added new global quest events: <code>QuestCompleted</code>, <code>QuestAccepted</code>, <code>QuestRemoved</code>, <code>QuestLogMenuOpen</code>, <code>QuestLogMenuClosed</code> and <code>Refreshed</code>.</li>
+<li>Added new managed API: <code>ExposeGlobalCondition</code> for expose global condition(s) for using in quest offers or hooks.</li>
+<li>Added extensions for <code>CustomQuest</code> class (use namespace <code>QuestFramework.Extensions</code> for apply)</li>
+</ul>
+<h2 id="100-beta1">1.0.0-beta.1</h2>
+<h3 id="common-changes-1">Common changes</h3>
 <ul>
 <li>Fixed saving game</li>
 <li>Added new global conditions: <em>MinDaysPlayed</em>, <em>MaxDaysPlayed</em>, <em>DaysPlayed</em> and <em>IsFarmerMarried</em></li>
@@ -82,7 +102,7 @@
 <li>Added token for use objects from JsonAssets in quest triggers.
 (example for ItemDelivery quest type: <code>Willy {{ja:Fish Oil}}</code>)</li>
 </ul>
-<h3 id="for-smapi-modders">For SMAPI modders</h3>
+<h3 id="for-smapi-modders-1">For SMAPI modders</h3>
 <ul>
 <li>You can define days left for quests (daily quests) via SMAPI mod-provided API</li>
 <li>Added trigger parser-loader in CustomQuest class</li>

@@ -5,11 +5,9 @@
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-    <title>Namespace QuestFramework.Extensions
-   </title>
+    <title>Console commands </title>
     <meta name="viewport" content="width=device-width">
-    <meta name="title" content="Namespace QuestFramework.Extensions
-   ">
+    <meta name="title" content="Console commands ">
     <meta name="generator" content="docfx 2.56.0.0">
     
     <link rel="shortcut icon" href="../favicon.ico">
@@ -68,23 +66,41 @@
         </div>
         <div class="article row grid-right">
           <div class="col-md-10">
-            <article class="content wrap" id="_content" data-uid="QuestFramework.Extensions">
-  
-  <h1 id="QuestFramework_Extensions" data-uid="QuestFramework.Extensions" class="text-break">Namespace QuestFramework.Extensions
-  </h1>
-  <div class="markdown level0 summary"></div>
-  <div class="markdown level0 conceptual"></div>
-  <div class="markdown level0 remarks"></div>
-    <h3 id="classes">Classes
-  </h3>
-      <h4><a class="xref" href="QuestFramework.Extensions.CustomQuestExtensions.html">CustomQuestExtensions</a></h4>
-      <section></section>
-      <h4><a class="xref" href="QuestFramework.Extensions.FarmerExtensions.html">FarmerExtensions</a></h4>
-      <section><p>Extensions API for <span class="xref">StardewValley.Farmer</span> class</p>
-</section>
-      <h4><a class="xref" href="QuestFramework.Extensions.QuestExtensions.html">QuestExtensions</a></h4>
-      <section><p>Extension API for <span class="xref">StardewValley.Quests.Quest</span> class.</p>
-</section>
+            <article class="content wrap" id="_content" data-uid="">
+<h1 id="console-commands">Console commands</h1>
+
+<p>There are list of available console commands in Quest Framework for debug your work.</p>
+<table>
+<thead>
+<tr>
+<th>Command name</th>
+<th>Description</th>
+<th>Usage</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>quests_list</td>
+<td>List all managed quests</td>
+<td><code>quests_list</code></td>
+</tr>
+<tr>
+<td>quests_log</td>
+<td>List all managed quests which are in player's quest log</td>
+<td><code>quests_log</code></td>
+</tr>
+<tr>
+<td>quests_stats</td>
+<td>Show quest statistics. Available stats: accepted, completed, removed, summary <code>&lt;fullQuestName&gt;</code></td>
+<td><code>quests_stats accepted</code> or <code>quests_stats abigail_amethyst@purrplingcat.testquests</code></td>
+</tr>
+<tr>
+<td>quests_invalidate</td>
+<td>Invalidate quest assets cache</td>
+<td><code>quests_invalidate</code></td>
+</tr>
+</tbody>
+</table>
 </article>
           </div>
           
@@ -92,6 +108,9 @@
             <div class="sideaffix">
               <div class="contribution">
                 <ul class="nav">
+                  <li>
+                    <a href="https://github.com/purrplingcat/QuestFramework/blob/master/docs/commands.md/#L1" class="contribution-link">Improve this Doc</a>
+                  </li>
                 </ul>
               </div>
               <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">

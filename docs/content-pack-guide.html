@@ -225,7 +225,7 @@
 See the <code>Data/ObjectInformation</code> game resource for available items.</p>
 <h4 id="itemdelivery">ItemDelivery</h4>
 <p>Deliver specified item to specified NPC.</p>
-<p><em>Trigger</em>: <code>&lt;string:NPC_name&gt; &lt;int:object_id&gt;</code> like <code>Abigail 66</code> for bring Amethyst for Abigail or <code>Willy {{ja:Fish Oil}}</code> if you want to use JsonAssets item (JsonAssets required for use JA token)
+<p><em>Trigger</em>: <code>&lt;string:NPC_name&gt; &lt;int:object_id&gt; [&lt;int:count&gt;]</code> like <code>Abigail 66</code> for bring Amethyst to Abigail, <code>Abigail 66 5</code> for bring 5 pieces of Amethyst to Abigail; or <code>Willy {{ja:Fish Oil}}</code> if you want to use JsonAssets item (JsonAssets required for use JA token)
 See the <code>Data/ObjectInformation</code> game resource for available items.</p>
 <p>This quest type accepts <code>ReactionText</code>.</p>
 <h4 id="itemharvest">ItemHarvest</h4>
@@ -269,7 +269,7 @@ See the <code>Data/ObjectInformation</code> game resource for available items.</
 </tr>
 <tr>
 <td>Has</td>
-<td>Conditions for execute the hook (see conditions)</td>
+<td>Conditions for execute the hook (see conditions and hook types).</td>
 </tr>
 </tbody>
 </table>
@@ -334,6 +334,8 @@ See the <code>Data/ObjectInformation</code> game resource for available items.</
 </tbody>
 </table>
 <h3 id="hook-types">Hook types</h3>
+<p>Some hook types has own specific conditions. See them bellow.
+<strong>NOTE:</strong> For specialized hook type's conditions you cant't use the negation <code>not:</code> prefix. This prefix is only for <a href="common-environment-conditions">common conditions</a> and for global custom conditions.</p>
 <h4 id="location-1">Location</h4>
 <p>This hook is triggered when player entered or leaved specific location and all other conditions are met.</p>
 <table>
@@ -385,6 +387,7 @@ See the <code>Data/ObjectInformation</code> game resource for available items.</
 </tbody>
 </table>
 <h3 id="common-environment-conditions">Common environment conditions</h3>
+<p>These global conditions can be used in hooks or in the quest offers.</p>
 <table>
 <thead>
 <tr>
@@ -435,16 +438,6 @@ See the <code>Data/ObjectInformation</code> game resource for available items.</
 <td>Trig action when event with this event id seen by player.</td>
 </tr>
 <tr>
-<td>MailNotReceived</td>
-<td><code>JunimoKart</code></td>
-<td>Same as <code>MailReceived</code>, but trigs action when specified mail <strong>was not received</strong> by farmer.</td>
-</tr>
-<tr>
-<td>EventNotSeen</td>
-<td><code>3910674</code></td>
-<td>Same as <code>EventSeen</code> but trigs action when event was <strong>not seen yet</strong> by player.</td>
-</tr>
-<tr>
 <td>MinDaysPlayed</td>
 <td><code>34</code></td>
 <td>Minimum played days from start of new game (from 1 spring year 1)</td>
@@ -464,8 +457,35 @@ See the <code>Data/ObjectInformation</code> game resource for available items.</
 <td><code>yes</code> or <code>no</code></td>
 <td>Is player married?</td>
 </tr>
+<tr>
+<td>QuestAcceptedInPeriod</td>
+<td><code>season</code> or <code>season year</code> or <code>today</code> or <code>season year weekday</code></td>
+<td>Checks if this quest was accepted in current specified time period. Consumes combinations of: <code>day</code>, <code>weekday</code>, <code>season</code>, <code>year</code>, <code>date</code>. Value <code>season year</code> means quest was accepted in this year in current season and in any day; <code>season</code> means quest was accepted in current season in any year and any day; <code>today</code> means quest was accepted just today.</td>
+</tr>
+<tr>
+<td>QuestAcceptedDate</td>
+<td><code>17 spring</code>, <code>5 summer Y2</code></td>
+<td>Checks if this quest was accepted in specified date. Game date in format <code>&lt;day&gt; &lt;season&gt;</code> or <code>&lt;day&gt; &lt;season&gt; Y&lt;year&gt;</code></td>
+</tr>
+<tr>
+<td>KnownCraftingRecipe</td>
+<td><code>Furance</code></td>
+<td>Player knows specified crafting recipe.</td>
+</tr>
+<tr>
+<td>KnownCookingRecipe</td>
+<td><code>Fried Egg</code></td>
+<td>Player knows specified cooking recipe.</td>
+</tr>
+<tr>
+<td>Random</td>
+<td><code>52</code> or <code>22.272</code></td>
+<td>A random chance in % (0 - 100). Number <code>52</code> means 52% of chance, number <code>22.272</code> means 22.272% of chance.</td>
+</tr>
 </tbody>
 </table>
+<p>Every condition enlisted in this common conditions list you can prefix with <code>not:</code> for negate condition result.
+For example: <code>not:EventSeen</code> means event with specified id was not seen by player.</p>
 <h2 id="offers">Offers</h2>
 <p>You can define offers. Offers are descriptions when and by which source your quest will be offered to player for accepting (add to quest log). You can define one ore more offers (for different or for the same quest).</p>
 <table>

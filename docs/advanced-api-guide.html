@@ -76,7 +76,7 @@
 <li>Download Quest Framework from <a href="todo">Nexusmods</a></li>
 <li>Copy contents of ZIP file to the mods folder in StardewValley folder</li>
 <li>Create new SMAPI mod with VisualStudio</li>
-<li>Reference QuestFramework dll in your project references</li>
+<li>Reference QuestFramework dll in your project references (from the SDV mods folder)</li>
 </ol>
 <h3 id="how-to-use">How to use</h3>
 <p>You can access Quest Framework API via <a href="https://stardewvalleywiki.com/Modding:Modder_Guide/APIs/Integrations#Using_an_API">SMAPI's mod API provider</a></p>
@@ -115,6 +115,11 @@ class ModEntry : Mod
     IManagedQuestApi GetManagedApi(IManifest manifest);
 
     /// &lt;summary&gt;
+    /// Force refresh cache, managed questlog and bulletinboard quest offer
+    /// &lt;/summary&gt;
+    void ForceRefresh();
+
+    /// &lt;summary&gt;
     /// Provide Quest Framework events
     /// &lt;/summary&gt;
     IQuestFrameworkEvents Events { get; }
@@ -127,12 +132,12 @@ class ModEntry : Mod
 </code></pre>
 <p><strong>IManagedQuestApi</strong> interface</p>
 <pre><code class="lang-csharp">public interface IManagedQuestApi
-    {
+{
     /// &lt;summary&gt;
     /// Add custom quest to player's questlog and mark then accepted and new.
-´   /// &lt;/summary&gt;
+    /// &lt;/summary&gt;
     /// &lt;param name=&quot;questName&quot;&gt;Name without @ has resolved in your mod scope&lt;/param&gt;
-    void AcceptQuest(string questName);
+    void AcceptQuest(string questName, bool silent = false);
 
     /// &lt;summary&gt;
     /// Resolve game quest id and returns custom quest
@@ -184,22 +189,75 @@ class ModEntry : Mod
     ///     Throws when this method is called outside of loaded game
     /// &lt;/exception&gt;
     IEnumerable&lt;QuestOffer&lt;TAttributes&gt;&gt; GetTodayQuestOffers&lt;TAttributes&gt;(string source);
+
+    /// &lt;summary&gt;
+    /// Exposes global condition for usage in offers or hooks.
+    /// &lt;/summary&gt;
+    /// &lt;param name=&quot;conditionName&quot;&gt;Name of condition&lt;/param&gt;
+    /// &lt;param name=&quot;conditionHandler&quot;&gt;Handler for this condition&lt;/param&gt;
+    void ExposeGlobalCondition(string conditionName, Func&lt;string, CustomQuest, bool&gt; conditionHandler);
 }
 </code></pre>
 <h3 id="events-api">Events API</h3>
 <pre><code class="lang-csharp">namespace QuestFramework.Events
 {
+    /// &lt;summary&gt;
+    /// Events of Quest Framework
+    /// &lt;/summary&gt;
     public interface IQuestFrameworkEvents
     {
+        /// &lt;summary&gt;
+        /// Quest Framework lifecycle state changed event.
+        /// &lt;/summary&gt;
         event EventHandler&lt;ChangeStateEventArgs&gt; ChangeState;
+
+        /// &lt;summary&gt;
+        /// Quest Framework getting ready.
+        /// Place for register quests, hooks and etc.
+        /// &lt;/summary&gt;
         event EventHandler&lt;GettingReadyEventArgs&gt; GettingReady;
+
+        /// &lt;summary&gt;
+        /// Quest Framework is ready.
+        /// Here you can't to do anything with quest registry, hooks and etc.
+        /// &lt;/summary&gt;
         event EventHandler&lt;ReadyEventArgs&gt; Ready;
+
+        /// &lt;summary&gt;
+        /// A quest was completed
+        /// &lt;/summary&gt;
+        event EventHandler&lt;QuestEventArgs&gt; QuestCompleted;
+
+        /// &lt;summary&gt;
+        /// A quest was accepted and added to quest log
+        /// &lt;/summary&gt;
+        event EventHandler&lt;QuestEventArgs&gt; QuestAccepted;
+
+        /// &lt;summary&gt;
+        /// A quest was removed from log
+        /// &lt;/summary&gt;
+        event EventHandler&lt;QuestEventArgs&gt; QuestRemoved;
+
+        /// &lt;summary&gt;
+        /// Quest log menu was open
+        /// &lt;/summary&gt;
+        event EventHandler&lt;EventArgs&gt; QuestLogMenuOpen;
+
+        /// &lt;summary&gt;
+        /// Quest log menu was closed
+        /// &lt;/summary&gt;
+        event EventHandler&lt;EventArgs&gt; QuestLogMenuClosed;
+        
+        /// &lt;summary&gt;
+        /// Managed questlog and/or offers was refreshed
+        /// &lt;/summary&gt;
+        event EventHandler&lt;EventArgs&gt; Refreshed;
     }
 }
 </code></pre>
 <h2 id="lifecycle">Lifecycle</h2>
 <ol>
-<li><code>DISABLED </code>
+<li><code>DISABLED</code>
 Before onGameLaunched and when QF's Entry() method called</li>
 <li><code>STANDBY</code>
 After onGameLaunched
@@ -216,10 +274,70 @@ Returning to title screen. Next state is <em>STANDBY</em>.
 <strong>Clean your specialized custom stuff with QF here</strong></li>
 </ol>
 <h2 id="events">Events</h2>
-<p>TODO</p>
+<table>
+<thead>
+<tr>
+<th>Event</th>
+<th>Summary</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>ChangeState</td>
+<td>Raised when Quest Framework's lifecycle state changed.</td>
+</tr>
+<tr>
+<td>GettingReady</td>
+<td>Raised when Quest Framework is in state <code>Launching</code> at least before QF is going to state <code>Launched</code>. <strong>Best place for register your custom quests.</strong></td>
+</tr>
+<tr>
+<td>Ready</td>
+<td>Raised when lifecycle state is <code>Launched</code> and all important Quest Framework systems are ready.</td>
+</tr>
+<tr>
+<td>QuestCompleted</td>
+<td>Raised when any quest (managed or unmanaged) completed.</td>
+</tr>
+<tr>
+<td>QuestAccepted</td>
+<td>Raised when any quest (managed or unmanaged) accepted and added to questlog.</td>
+</tr>
+<tr>
+<td>QuestRemoved</td>
+<td>Raised when any quest (managed or unmanaged) removed from questlog.</td>
+</tr>
+<tr>
+<td>QuestLogMenuOpen</td>
+<td>Raised when questlog menu was open.</td>
+</tr>
+<tr>
+<td>QuestLogMenuClosed</td>
+<td>Raised when questlog menu was closed.</td>
+</tr>
+<tr>
+<td>Refreshed</td>
+<td>Raised when new day started or <code>IApi.ForceRefresh()</code> was called.</td>
+</tr>
+</tbody>
+</table>
 <h2 id="work-with-quests">Work with quests</h2>
 <h3 id="add-custom-quest">Add custom quest</h3>
-<p>TODO</p>
+<pre><code class="lang-cs">var quest = new CustomQuest();
+
+quest.Name = &quot;meet_marlon&quot;; // This is important!
+quest.BaseType = QuestType.Location
+quest.Title = &quot;Meet with Marlon&quot;;
+quest.Description = &quot;Enter the Adventurer Guild east of mines and meet with Marlon.&quot;;
+quest.Objective = &quot;Go to Adventurer Guild&quot;;
+quest.Trigger = &quot;AdventureGuild&quot;;
+quest.Cancelable = true; // Set this if you want this quest cancelable
+quest.Reward = 500; // Set this if you want to set money reward (50g in this example quest)
+
+// If you want to set next quests which will be added after this quest was completed
+// These quests must be registered too in Quest Framework quest manager!
+quest.NextQuests.Add(&quot;slay_bats&quot;);
+quest.NextQuests.Add(&quot;bat_wing_trophy&quot;);
+</code></pre>
 <h3 id="use-quest-offers">Use quest offers</h3>
 <p>TODO</p>
 <h3 id="use-quest-hooks">Use quest hooks</h3>

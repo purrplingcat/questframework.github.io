@@ -85,19 +85,19 @@
   </h3>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/purrplingcat/QuestFramework/new/master/apiSpec/new?filename=QuestFramework_Api_IManagedQuestApi_AcceptQuest_System_String_.md&amp;value=---%0Auid%3A%20QuestFramework.Api.IManagedQuestApi.AcceptQuest(System.String)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+    <a href="https://github.com/purrplingcat/QuestFramework/new/master/apiSpec/new?filename=QuestFramework_Api_IManagedQuestApi_AcceptQuest_System_String_System_Boolean_.md&amp;value=---%0Auid%3A%20QuestFramework.Api.IManagedQuestApi.AcceptQuest(System.String%2CSystem.Boolean)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/purrplingcat/QuestFramework/blob/master/src/Api/IManagedQuestApi.cs/#L13">View Source</a>
+    <a href="https://github.com/purrplingcat/QuestFramework/blob/master/src/Api/IManagedQuestApi.cs/#L14">View Source</a>
   </span>
   <a id="QuestFramework_Api_IManagedQuestApi_AcceptQuest_" data-uid="QuestFramework.Api.IManagedQuestApi.AcceptQuest*"></a>
-  <h4 id="QuestFramework_Api_IManagedQuestApi_AcceptQuest_System_String_" data-uid="QuestFramework.Api.IManagedQuestApi.AcceptQuest(System.String)">AcceptQuest(String)</h4>
+  <h4 id="QuestFramework_Api_IManagedQuestApi_AcceptQuest_System_String_System_Boolean_" data-uid="QuestFramework.Api.IManagedQuestApi.AcceptQuest(System.String,System.Boolean)">AcceptQuest(String, Boolean)</h4>
   <div class="markdown level1 summary"><p>Add custom quest to player's questlog and mark then accepted and new.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">void AcceptQuest(string questName)</code></pre>
+    <pre><code class="lang-csharp hljs">void AcceptQuest(string questName, bool silent = false)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -115,6 +115,11 @@
         <td><p>Name without @ has resolved in your mod scope</p>
 </td>
       </tr>
+      <tr>
+        <td><span class="xref">System.Boolean</span></td>
+        <td><span class="parametername">silent</span></td>
+        <td></td>
+      </tr>
     </tbody>
   </table>
   <span class="small pull-right mobile-hide">
@@ -122,7 +127,7 @@
     <a href="https://github.com/purrplingcat/QuestFramework/new/master/apiSpec/new?filename=QuestFramework_Api_IManagedQuestApi_CompleteQuest_System_String_.md&amp;value=---%0Auid%3A%20QuestFramework.Api.IManagedQuestApi.CompleteQuest(System.String)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/purrplingcat/QuestFramework/blob/master/src/Api/IManagedQuestApi.cs/#L36">View Source</a>
+    <a href="https://github.com/purrplingcat/QuestFramework/blob/master/src/Api/IManagedQuestApi.cs/#L37">View Source</a>
   </span>
   <a id="QuestFramework_Api_IManagedQuestApi_CompleteQuest_" data-uid="QuestFramework.Api.IManagedQuestApi.CompleteQuest*"></a>
   <h4 id="QuestFramework_Api_IManagedQuestApi_CompleteQuest_System_String_" data-uid="QuestFramework.Api.IManagedQuestApi.CompleteQuest(System.String)">CompleteQuest(String)</h4>
@@ -153,10 +158,50 @@ if quest with this name exists and is managed.</p>
   </table>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
+    <a href="https://github.com/purrplingcat/QuestFramework/new/master/apiSpec/new?filename=QuestFramework_Api_IManagedQuestApi_ExposeGlobalCondition_System_String_System_Func_System_String_QuestFramework_Quests_CustomQuest_System_Boolean__.md&amp;value=---%0Auid%3A%20QuestFramework.Api.IManagedQuestApi.ExposeGlobalCondition(System.String%2CSystem.Func%7BSystem.String%2CQuestFramework.Quests.CustomQuest%2CSystem.Boolean%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/purrplingcat/QuestFramework/blob/master/src/Api/IManagedQuestApi.cs/#L72">View Source</a>
+  </span>
+  <a id="QuestFramework_Api_IManagedQuestApi_ExposeGlobalCondition_" data-uid="QuestFramework.Api.IManagedQuestApi.ExposeGlobalCondition*"></a>
+  <h4 id="QuestFramework_Api_IManagedQuestApi_ExposeGlobalCondition_System_String_System_Func_System_String_QuestFramework_Quests_CustomQuest_System_Boolean__" data-uid="QuestFramework.Api.IManagedQuestApi.ExposeGlobalCondition(System.String,System.Func{System.String,QuestFramework.Quests.CustomQuest,System.Boolean})">ExposeGlobalCondition(String, Func&lt;String, CustomQuest, Boolean&gt;)</h4>
+  <div class="markdown level1 summary"><p>Exposes global condition for usage in offers or hooks.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">void ExposeGlobalCondition(string conditionName, Func&lt;string, CustomQuest, bool&gt; conditionHandler)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><span class="parametername">conditionName</span></td>
+        <td><p>Name of condition</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Func</span>&lt;<span class="xref">System.String</span>, <a class="xref" href="QuestFramework.Quests.CustomQuest.html">CustomQuest</a>, <span class="xref">System.Boolean</span>&gt;</td>
+        <td><span class="parametername">conditionHandler</span></td>
+        <td><p>Handler for this condition</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
     <a href="https://github.com/purrplingcat/QuestFramework/new/master/apiSpec/new?filename=QuestFramework_Api_IManagedQuestApi_GetById_System_Int32_.md&amp;value=---%0Auid%3A%20QuestFramework.Api.IManagedQuestApi.GetById(System.Int32)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/purrplingcat/QuestFramework/blob/master/src/Api/IManagedQuestApi.cs/#L20">View Source</a>
+    <a href="https://github.com/purrplingcat/QuestFramework/blob/master/src/Api/IManagedQuestApi.cs/#L21">View Source</a>
   </span>
   <a id="QuestFramework_Api_IManagedQuestApi_GetById_" data-uid="QuestFramework.Api.IManagedQuestApi.GetById*"></a>
   <h4 id="QuestFramework_Api_IManagedQuestApi_GetById_System_Int32_" data-uid="QuestFramework.Api.IManagedQuestApi.GetById(System.Int32)">GetById(Int32)</h4>
@@ -204,7 +249,7 @@ if quest with this name exists and is managed.</p>
     <a href="https://github.com/purrplingcat/QuestFramework/new/master/apiSpec/new?filename=QuestFramework_Api_IManagedQuestApi_GetTodayQuestOffers_System_String_.md&amp;value=---%0Auid%3A%20QuestFramework.Api.IManagedQuestApi.GetTodayQuestOffers(System.String)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/purrplingcat/QuestFramework/blob/master/src/Api/IManagedQuestApi.cs/#L53">View Source</a>
+    <a href="https://github.com/purrplingcat/QuestFramework/blob/master/src/Api/IManagedQuestApi.cs/#L54">View Source</a>
   </span>
   <a id="QuestFramework_Api_IManagedQuestApi_GetTodayQuestOffers_" data-uid="QuestFramework.Api.IManagedQuestApi.GetTodayQuestOffers*"></a>
   <h4 id="QuestFramework_Api_IManagedQuestApi_GetTodayQuestOffers_System_String_" data-uid="QuestFramework.Api.IManagedQuestApi.GetTodayQuestOffers(System.String)">GetTodayQuestOffers(String)</h4>
@@ -247,12 +292,28 @@ if quest with this name exists and is managed.</p>
       </tr>
     </tbody>
   </table>
+  <h5 class="exceptions">Exceptions</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Condition</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.InvalidOperationException</span></td>
+        <td><p>Throws when this method is called outside of loaded game</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
     <a href="https://github.com/purrplingcat/QuestFramework/new/master/apiSpec/new?filename=QuestFramework_Api_IManagedQuestApi_GetTodayQuestOffers__1_System_String_.md&amp;value=---%0Auid%3A%20QuestFramework.Api.IManagedQuestApi.GetTodayQuestOffers%60%601(System.String)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/purrplingcat/QuestFramework/blob/master/src/Api/IManagedQuestApi.cs/#L64">View Source</a>
+    <a href="https://github.com/purrplingcat/QuestFramework/blob/master/src/Api/IManagedQuestApi.cs/#L65">View Source</a>
   </span>
   <a id="QuestFramework_Api_IManagedQuestApi_GetTodayQuestOffers_" data-uid="QuestFramework.Api.IManagedQuestApi.GetTodayQuestOffers*"></a>
   <h4 id="QuestFramework_Api_IManagedQuestApi_GetTodayQuestOffers__1_System_String_" data-uid="QuestFramework.Api.IManagedQuestApi.GetTodayQuestOffers``1(System.String)">GetTodayQuestOffers&lt;TAttributes&gt;(String)</h4>
@@ -311,12 +372,28 @@ for today by the source name.</p>
       </tr>
     </tbody>
   </table>
+  <h5 class="exceptions">Exceptions</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Condition</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.InvalidOperationException</span></td>
+        <td><p>Throws when this method is called outside of loaded game</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
     <a href="https://github.com/purrplingcat/QuestFramework/new/master/apiSpec/new?filename=QuestFramework_Api_IManagedQuestApi_OfferQuest_QuestFramework_Offers_QuestOffer_.md&amp;value=---%0Auid%3A%20QuestFramework.Api.IManagedQuestApi.OfferQuest(QuestFramework.Offers.QuestOffer)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/purrplingcat/QuestFramework/blob/master/src/Api/IManagedQuestApi.cs/#L44">View Source</a>
+    <a href="https://github.com/purrplingcat/QuestFramework/blob/master/src/Api/IManagedQuestApi.cs/#L45">View Source</a>
   </span>
   <a id="QuestFramework_Api_IManagedQuestApi_OfferQuest_" data-uid="QuestFramework.Api.IManagedQuestApi.OfferQuest*"></a>
   <h4 id="QuestFramework_Api_IManagedQuestApi_OfferQuest_QuestFramework_Offers_QuestOffer_" data-uid="QuestFramework.Api.IManagedQuestApi.OfferQuest(QuestFramework.Offers.QuestOffer)">OfferQuest(QuestOffer)</h4>
@@ -351,7 +428,7 @@ which will be available to accept by player.
     <a href="https://github.com/purrplingcat/QuestFramework/new/master/apiSpec/new?filename=QuestFramework_Api_IManagedQuestApi_RegisterQuest_QuestFramework_Quests_CustomQuest_.md&amp;value=---%0Auid%3A%20QuestFramework.Api.IManagedQuestApi.RegisterQuest(QuestFramework.Quests.CustomQuest)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/purrplingcat/QuestFramework/blob/master/src/Api/IManagedQuestApi.cs/#L29">View Source</a>
+    <a href="https://github.com/purrplingcat/QuestFramework/blob/master/src/Api/IManagedQuestApi.cs/#L30">View Source</a>
   </span>
   <a id="QuestFramework_Api_IManagedQuestApi_RegisterQuest_" data-uid="QuestFramework.Api.IManagedQuestApi.RegisterQuest*"></a>
   <h4 id="QuestFramework_Api_IManagedQuestApi_RegisterQuest_QuestFramework_Quests_CustomQuest_" data-uid="QuestFramework.Api.IManagedQuestApi.RegisterQuest(QuestFramework.Quests.CustomQuest)">RegisterQuest(CustomQuest)</h4>
@@ -394,7 +471,7 @@ Please register all your quests and quest types before game will be loaded.
                     <a href="https://github.com/purrplingcat/QuestFramework/new/master/apiSpec/new?filename=QuestFramework_Api_IManagedQuestApi.md&amp;value=---%0Auid%3A%20QuestFramework.Api.IManagedQuestApi%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" class="contribution-link">Improve this Doc</a>
                   </li>
                   <li>
-                    <a href="https://github.com/purrplingcat/QuestFramework/blob/master/src/Api/IManagedQuestApi.cs/#L7" class="contribution-link">View Source</a>
+                    <a href="https://github.com/purrplingcat/QuestFramework/blob/master/src/Api/IManagedQuestApi.cs/#L8" class="contribution-link">View Source</a>
                   </li>
                 </ul>
               </div>
