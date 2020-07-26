@@ -321,7 +321,7 @@ See the <code>Data/ObjectInformation</code> game resource for available items.</
 </tr>
 <tr>
 <td>Remove</td>
-<td>Remove the quest from player's questlog (without completion, just remove)</td>
+<td>Remove the quest from player's questlog (quest is not considered complete, just removed)</td>
 </tr>
 <tr>
 <td>CheckIfComplete</td>
@@ -329,7 +329,7 @@ See the <code>Data/ObjectInformation</code> game resource for available items.</
 </tr>
 <tr>
 <td>Accept</td>
-<td>Accept this quest and add it to player's quest log as new.</td>
+<td>Accept this quest and add it to player's quest log as new quest (has the sign new in quest log).</td>
 </tr>
 </tbody>
 </table>
@@ -348,15 +348,15 @@ See the <code>Data/ObjectInformation</code> game resource for available items.</
 <tbody>
 <tr>
 <td>Enter</td>
-<td>Location name of entered location by player</td>
+<td>Name of the location the player enter</td>
 </tr>
 <tr>
 <td>Leave</td>
-<td>Location name of leaved location</td>
+<td>Name of the location the player left</td>
 </tr>
 </tbody>
 </table>
-<p>If you specify both, then the hook action will be triggered when player leaved specified location and entered to another specified location. For example:</p>
+<p>If you specify both, then the hook action will be triggered when player left the Leave location and entered the Enter location. For example:</p>
 <p>Enter condition is <code>Town</code> and leave condition is <code>BusStop</code>. This hook trigs their action when player entered Town from the Bus Stop.</p>
 <h4 id="tile">Tile</h4>
 <p>This hook is triggered when player stands on specific tile position or in specific area of specific location.</p>
@@ -420,17 +420,22 @@ See the <code>Data/ObjectInformation</code> game resource for available items.</
 <tr>
 <td>DaysOfWeek</td>
 <td><code>monday wednesday</code></td>
-<td>Trig action when today's weekday is one of these weekdays. You can specify any count of weekdays</td>
+<td>Trig action when today's weekday is one of these weekdays. You can specify any count of weekdays.</td>
 </tr>
 <tr>
-<td>Friendship</td>
+<td>FriendshipLevel</td>
 <td><code>Abigail 8</code>, <code>Maru 5 Shane 4</code></td>
-<td>Trig action when friendship heart level is the same as specified value for specified NPC. You can specify more than one friendship conditions.</td>
+<td>Trig action when friendship heart level is the same as specified value for specified NPC. You can specify more than one friendship heart level conditions. Replacement for the previous Friendship.</td>
+</tr>
+<tr>
+<td>FriendshipStatus</td>
+<td><code>Abigail Dating</code>, <code>Maru Divorced Shane Married</code></td>
+<td>Trig action when friendship status is the same as specified value for specified NPC. You can specify more than one friendship status conditions. Allowed status values: <code>Friendly</code>, <code>Engaged</code>, <code>Married</code>, <code>Divorce</code></td>
 </tr>
 <tr>
 <td>MailReceived</td>
 <td><code>CF_Fish</code></td>
-<td>Trig action when this mail was received by farmer.</td>
+<td>Trig action when mail with the specified id was received by farmer.</td>
 </tr>
 <tr>
 <td>EventSeen</td>
@@ -460,16 +465,56 @@ See the <code>Data/ObjectInformation</code> game resource for available items.</
 <tr>
 <td>QuestAcceptedInPeriod</td>
 <td><code>season</code> or <code>season year</code> or <code>today</code> or <code>season year weekday</code></td>
-<td>Checks if this quest was accepted in current specified time period. Consumes combinations of: <code>day</code>, <code>weekday</code>, <code>season</code>, <code>year</code>, <code>date</code>. Value <code>season year</code> means quest was accepted in this year in current season and in any day; <code>season</code> means quest was accepted in current season in any year and any day; <code>today</code> means quest was accepted just today.</td>
+<td>Checks if this quest was accepted in current specified time period. The input could be combinations of: <code>day</code>, <code>weekday</code>, <code>season</code>, <code>year</code>, <code>date</code>. Value <code>season year</code> means quest was accepted in this year in current season and in any day; <code>season</code> means quest was accepted in current season in any year and any day; <code>today</code> means quest was accepted just today.</td>
 </tr>
 <tr>
 <td>QuestAcceptedDate</td>
 <td><code>17 spring</code>, <code>5 summer Y2</code></td>
-<td>Checks if this quest was accepted in specified date. Game date in format <code>&lt;day&gt; &lt;season&gt;</code> or <code>&lt;day&gt; &lt;season&gt; Y&lt;year&gt;</code></td>
+<td>Checks if this quest was <strong>accepted</strong> in specified date. Game date in format <code>&lt;day&gt; &lt;season&gt;</code> or <code>&lt;day&gt; &lt;season&gt; Y&lt;year&gt;</code></td>
+</tr>
+<tr>
+<td>QuestCompletedDate</td>
+<td><code>17 spring</code>, <code>5 summer Y2</code></td>
+<td>Check if this quest was <strong>completed</strong> in specified date. Game date in format <code>&lt;day&gt; &lt;season&gt;</code> or <code>&lt;day&gt;</code></td>
+</tr>
+<tr>
+<td>QuestAcceptedToday</td>
+<td><code>yes</code> or <code>no</code></td>
+<td>Check if this quest was (or wasn't) <strong>accepted today</strong></td>
+</tr>
+<tr>
+<td>QuestCompletedToday</td>
+<td><code>yes</code> or <code>no</code></td>
+<td>Check if this quest was (or wasn't) <strong>completed today</strong></td>
+</tr>
+<tr>
+<td>QuestNeverAccepted</td>
+<td><code>yes</code> or <code>no</code></td>
+<td>Check if this quest was (or wasn't) <strong>never accepted yet</strong></td>
+</tr>
+<tr>
+<td>QuestNeverCompleted</td>
+<td><code>yes</code> or <code>no</code></td>
+<td>Check if this quest was (or wasn't) <strong>never completed yet</strong></td>
+</tr>
+<tr>
+<td>SkillLevel</td>
+<td><code>Farming 1</code>, <code>Foraging 2 Fishing 3 Mining 2</code></td>
+<td>Check if player skill level equal or higher than what is defined. Allowed skill values: <code>Farming</code>, <code>Fishing</code>, <code>Foraging</code>, <code>Mining</code>, <code>Combat</code>, <code>Luck</code></td>
+</tr>
+<tr>
+<td>IsCommunityCenterCompleted</td>
+<td><code>yes</code> or <code>no</code></td>
+<td>Check if community center is already completed.</td>
+</tr>
+<tr>
+<td>BuildingConstructed</td>
+<td><code>Coop</code> or <code>Deluxe_Coop Well Coop</code></td>
+<td>Check if specified building is currently present in farm.</td>
 </tr>
 <tr>
 <td>KnownCraftingRecipe</td>
-<td><code>Furance</code></td>
+<td><code>Furnace</code></td>
 <td>Player knows specified crafting recipe.</td>
 </tr>
 <tr>
@@ -484,10 +529,18 @@ See the <code>Data/ObjectInformation</code> game resource for available items.</
 </tr>
 </tbody>
 </table>
-<p>Every condition enlisted in this common conditions list you can prefix with <code>not:</code> for negate condition result.
-For example: <code>not:EventSeen</code> means event with specified id was not seen by player.</p>
+<p>Every condition name enlisted in this common conditions list you can prefix with <code>not:</code> for negate condition result.
+For example: <code>not:EventSeen</code> means event with specified id was not seen by player;</p>
+<p>Also you can chain condition values with <code>OR</code> logic function with character separator <code>|</code>:</p>
+<pre><code class="lang-js">{
+  &quot;Weather&quot;: &quot;rainy | snowy&quot;, // Means current weather is 'rainy' OR 'snowy'
+  &quot;Date&quot;: &quot;6 summer Y1 | 19 fall Y1 | 24 spring Y3&quot;, // Means current date is '6th summer year 1' OR '19th fall year 1' OR '24th spring year 3'
+  &quot;EventSeen&quot;: &quot;335478 | 44125&quot;, // Means player seen event ID 335478 OR event ID 44125
+  &quot;not:MailReceived&quot;: &quot;ccComplete | jojaMember&quot; // Player NOT received mail 'ccComplete' OR 'jojaMember'
+}
+</code></pre>
 <h2 id="offers">Offers</h2>
-<p>You can define offers. Offers are descriptions when and by which source your quest will be offered to player for accepting (add to quest log). You can define one ore more offers (for different or for the same quest).</p>
+<p>You can define offers. Offers are descriptions of when and by which source your quest will be delivered to player to accept (add to quest log). You can define one or more offers (for different or for the same quest).</p>
 <table>
 <thead>
 <tr>
@@ -519,9 +572,9 @@ For example: <code>not:EventSeen</code> means event with specified id was not se
 </tbody>
 </table>
 <h3 id="quests-sources">Quests sources</h3>
-<p>There are available few quests sources provided by native Quest Framework. Some sources must have defined offer details. For some quest sources are different type of offer details.</p>
+<p>These are the available quests sources provided by native Quest Framework. Some sources require defined offer details. There are different offer details based on the source.</p>
 <h4 id="bulletinboard">Bulletinboard</h4>
-<p>Offers quest on bulletinboard on the seeds shop house.</p>
+<p>Offers quest on bulletinboard located in front of the seeds shop (Pierre).</p>
 <p><em>This source NOT requires or accepts any offer details</em></p>
 <p><strong>Example</strong></p>
 <pre><code class="lang-js">{
@@ -552,7 +605,7 @@ For example: <code>not:EventSeen</code> means event with specified id was not se
 }
 </code></pre>
 <h4 id="npc">NPC</h4>
-<p>NPC can offer your quest via dialogue (speek with them and get a quest)</p>
+<p>NPC can offer your quest via dialogue (speak with them and get a quest)</p>
 <p><strong>Requires these offer details</strong>
 Field        | Description
 ------------ | -----------
