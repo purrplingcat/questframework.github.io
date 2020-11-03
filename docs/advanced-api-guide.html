@@ -144,7 +144,15 @@ class ModEntry : Mod
     /// &lt;/summary&gt;
     /// &lt;param name=&quot;id&quot;&gt;&lt;/param&gt;
     /// &lt;returns&gt;&lt;/returns&gt;
-    CustomQuest GetById(int id);
+    CustomQuest GetQuestById(int id);
+
+    /// &lt;summary&gt;
+    /// Resolve game quest by name and return it's instance
+    /// You can request quest by fullname (with @) or localname (localname returns quest in this mod-managed scope).
+    /// &lt;/summary&gt;
+    /// &lt;param name=&quot;questName&quot;&gt;&lt;/param&gt;
+    /// &lt;returns&gt;&lt;/returns&gt;
+    CustomQuest GetQuestByName(string questName);
 
     /// &lt;summary&gt;
     /// Register custom quest (vanilla or custom type)

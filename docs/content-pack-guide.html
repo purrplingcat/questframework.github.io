@@ -92,7 +92,7 @@
   &quot;UpdateKeys&quot;: [],
   &quot;ContentPackFor&quot;: {
     &quot;UniqueID&quot;: &quot;PurrplingCat.QuestFramework&quot;, // Quest Framework unique id must be here
-    &quot;MinimumVersion&quot;: &quot;1.0.0-alpha&quot; // optional
+    &quot;MinimumVersion&quot;: &quot;1.1.0&quot; // optional
   }
 }
 </code></pre>
@@ -189,6 +189,11 @@
 <td>Hooks</td>
 <td></td>
 <td>(Hook) Quest hooks (see hooks for more info)</td>
+</tr>
+<tr>
+<td>ConversationTopic</td>
+<td></td>
+<td>(ConversationTopic) Add or remove conversation topic (see conversation topic for more info)</td>
 </tr>
 </tbody>
 </table>
@@ -386,7 +391,80 @@ See the <code>Data/ObjectInformation</code> game resource for available items.</
 </tr>
 </tbody>
 </table>
-<h3 id="common-environment-conditions">Common environment conditions</h3>
+<h2 id="conversation-topic">Conversation topic</h2>
+<p>[Conversation topic] (<a href="https://stardewvalleywiki.com/Modding:Dialogue#Conversation_topics">https://stardewvalleywiki.com/Modding:Dialogue#Conversation_topics</a>) can make the character speak of certain dialogue when the specific conversation topic is active. Please refer to the conversation topic explanation on the wiki before using this feature. With this field you can make NPCs give dialogue when a quest is accepted, cancelled, and or completed. The respective dialogue itself must be added using [Content patcher] (<a href="https://github.com/Pathoschild/StardewMods/blob/develop/ContentPatcher/docs/author-guide.md#editdata">https://github.com/Pathoschild/StardewMods/blob/develop/ContentPatcher/docs/author-guide.md#editdata</a>)</p>
+<h2 id="options">Options</h2>
+<table>
+<thead>
+<tr>
+<th>Valid field</th>
+<th>Example value</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>AddWhenQuestAccepted</td>
+<td><code>AbigailLookingForward 2 CarolineConcerned 5</code></td>
+<td>The keys of the conversation topic to be added and its duration after a quest is accepted. In the example after the quest is accepted it will activate two conversation topics: AbigailLookingForward for 2 days and CarolineConcerned for 5 days.</td>
+</tr>
+<tr>
+<td>AddWhenQuestRemoved</td>
+<td><code>AbigailDisappointed 3</code></td>
+<td>The keys of the conversation topic to be added and its duration after a quest is removed. In the example after the quest is removed it will activate a conversation topic: AbigailDisappointed for 3 days.</td>
+</tr>
+<tr>
+<td>AddWhenQuestCompleted</td>
+<td><code>AbigailSeenEatingRock 10 AbigailHappier 2</code></td>
+<td>The keys of the conversation topic to be added and its duration after a quest is completed. In the example after the quest is completed it will activate two conversation topics: AbigailDisappointed for 3 days and AbigailHappier 2.</td>
+</tr>
+<tr>
+<td>RemoveWhenQuestAccepted</td>
+<td><code>AbigailLookingForward </code></td>
+<td>The key of the conversation topic to be removed. The conversation topic will end before the set when the quest is accepted. In the example after the quest is acappted it will remove the conversation topics: AbigailLookingForward.</td>
+</tr>
+<tr>
+<td>RemoveWhenQuestRemoved</td>
+<td><code>AbigailLookingForward</code></td>
+<td>The key of the conversation topic to be removed. The conversation topic will end before the set when the quest is removed.</td>
+</tr>
+<tr>
+<td>RemoveWhenQuestCompleted</td>
+<td><code>AbigailLookingForward</code></td>
+<td>The key of the conversation topic to be removed. The conversation topic will end before the set when the quest is completed.</td>
+</tr>
+</tbody>
+</table>
+<h4 id="example-2">Example</h4>
+<pre><code class="lang-js">{
+  &quot;Format&quot;: &quot;1.0&quot;,
+  &quot;Quests&quot;: [
+    {
+      &quot;Name&quot;: &quot;abigail_amethyst&quot;, // No id needed, will be automatically generated
+      &quot;Type&quot;: &quot;ItemDelivery&quot;, // Vanilla quest type
+      &quot;Title&quot;: &quot;The purple lunch&quot;,
+      &quot;Description&quot;: &quot;Abigail are very hungry. She wants to eat something special from mines.&quot;,
+      &quot;Objective&quot;: &quot;Bring amethyst to Abigail&quot;,
+      &quot;DaysLeft&quot;: 5, // If player don't complete this quest until 5 days, this quest will be removed from quest log automatically without completion
+      &quot;Reward&quot;: 300, // 300g
+      &quot;Cancelable&quot;: true, // This quest can be cancelled by player
+      &quot;Trigger&quot;: &quot;Abigail 66&quot;, // Bring amethyst to Abby
+      &quot;ReactionText&quot;: &quot;Oh, it's looks delicious. I am really hungry.&quot;,
+      &quot;ConversationTopic&quot;: {
+        &quot;AddWhenQuestAccepted&quot;: &quot;add_abigail_amethyst_accepted 7&quot;, 
+		&quot;AddWhenQuestRemoved&quot;: &quot;add_abigail_amethyst_removed 7&quot;,
+        &quot;AddWhenQuestCompleted&quot;: &quot;add_abigail_amethyst_completed 7&quot;,
+        &quot;RemoveWhenQuestAccepted&quot;:&quot;remove_abigail_amethyst_accepted&quot;, 
+		&quot;RemoveWhenQuestRemoved&quot;: &quot;remove_abigail_amethyst_removed&quot;,
+        &quot;RemoveWhenQuestCompleted&quot;: &quot;remove_abigail_amethyst_completed&quot;,
+        // Use only what is needed. The field explain itself.
+        // Any string is fine as long as it is unique. You'll need to add the same key to respective character dialogue using content patcher.
+	  }
+    }
+  ]
+}
+</code></pre>
+<h2 id="common-global-conditions">Common global conditions</h2>
 <p>These global conditions can be used in hooks or in the quest offers.</p>
 <table>
 <thead>
@@ -523,9 +601,19 @@ See the <code>Data/ObjectInformation</code> game resource for available items.</
 <td>Player knows specified cooking recipe.</td>
 </tr>
 <tr>
+<td>HasMod</td>
+<td><code>PurrplingCat.NpcAdventure</code></td>
+<td>Checks if mod with specified mod UID(s) are loaded in SMAPI. You can put here one or more mod UIDs.</td>
+</tr>
+<tr>
 <td>Random</td>
 <td><code>52</code> or <code>22.272</code></td>
 <td>A random chance in % (0 - 100). Number <code>52</code> means 52% of chance, number <code>22.272</code> means 22.272% of chance.</td>
+</tr>
+<tr>
+<td>EPU</td>
+<td>EPU string like <code>!z spring/t 600 1000</code></td>
+<td>Condition processed by <a href="https://www.nexusmods.com/stardewvalley/mods/6529">Expanded Preconditions Utility</a>. For use this condition, EPU must be installed in SDV mods folder. See <a href="https://github.com/ChroniclerCherry/stardew-valley-mods/blob/master/ExpandedPreconditionsUtility/README.md">EPU docs</a> for more information.</td>
 </tr>
 </tbody>
 </table>
@@ -688,7 +776,7 @@ Text         | (string) Text of the quest source letter (required)</p>
 <p>Quest Framework is compatible with JsonAssets mod. The framework supports JsonAssets objects for the <code>Trigger</code> quest field via token named <code>ja</code> and supports two item types: <code>object</code> and <code>bigcraftable</code>.</p>
 <p>Token looks like: <code>{{ja: &lt;itemName&gt; [|bigcraftable]}}</code></p>
 <p>If you add suffix <code>|bigcraftable</code> after item name, then Quest Framework looks in the BigCraftable sheet. Otherwise looks in Object sheet.</p>
-<h4 id="example-2">Example</h4>
+<h4 id="example-3">Example</h4>
 <pre><code class="lang-js">{
   &quot;Format&quot;: &quot;1.0&quot;,
   &quot;Quests&quot;: [
@@ -710,12 +798,12 @@ Text         | (string) Text of the quest source letter (required)</p>
 <h2 id="outbound">Outbound</h2>
 <h3 id="add-quest-via-npc-dialogue-external">Add quest via NPC dialogue (external)</h3>
 <p>You can add known quest in Quest Framework via NPC dialogues. You can define it with content patcher (Patch <code>Dialogue/&lt;NPC_name&gt;</code>) and add your dialogue which adds a quest to the player's questlog or edit existing dialogue line.</p>
-<p>By place <code>![&lt;questname&gt;@&lt;modUID&gt;]</code> to the dialogue player get a quest when speak with NPC and this dialogue line is shown.</p>
-<h4 id="example-3">Example</h4>
+<p>By place <code>[quest:&lt;questname&gt; &lt;modUID&gt;]</code> to the dialogue player get a quest when speak with NPC and this dialogue line is shown.</p>
+<h4 id="example-4">Example</h4>
 <pre><code class="lang-js">// Some dialogue definition file
 {
-    &quot;yourDialogueKey&quot;: &quot;Can you bring me an Amethyst? ![bringAmethyst@purrplingcat.myquestmod]&quot;
-    &quot;anotherDIalogue&quot;: &quot;What's up? $h#$b#Are you interested to small fighting adventure?#$b#Bless your sword! ![slayMonsters@purrplingcat.myquestmod]&quot;
+    &quot;yourDialogueKey&quot;: &quot;Can you bring me an Amethyst? [´quest:bringAmethyst purrplingcat.myquestmod]&quot;
+    &quot;anotherDIalogue&quot;: &quot;What's up? $h#$b#Are you interested to small fighting adventure?#$b#Bless your sword! [quest:slayMonsters purrplingcat.myquestmod]&quot;
 }
 </code></pre>
 </article>
