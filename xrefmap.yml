@@ -2427,6 +2427,19 @@ references:
   isSpec: "True"
   fullName: QuestFramework.QuestTypeId.Social
   nameWithType: QuestTypeId.Social
+- uid: QuestFramework.QuestTypeId.ToVanillaTypeId(QuestFramework.QuestType)
+  name: ToVanillaTypeId(QuestType)
+  href: api/QuestFramework.QuestTypeId.html#QuestFramework_QuestTypeId_ToVanillaTypeId_QuestFramework_QuestType_
+  commentId: M:QuestFramework.QuestTypeId.ToVanillaTypeId(QuestFramework.QuestType)
+  fullName: QuestFramework.QuestTypeId.ToVanillaTypeId(QuestFramework.QuestType)
+  nameWithType: QuestTypeId.ToVanillaTypeId(QuestType)
+- uid: QuestFramework.QuestTypeId.ToVanillaTypeId*
+  name: ToVanillaTypeId
+  href: api/QuestFramework.QuestTypeId.html#QuestFramework_QuestTypeId_ToVanillaTypeId_
+  commentId: Overload:QuestFramework.QuestTypeId.ToVanillaTypeId
+  isSpec: "True"
+  fullName: QuestFramework.QuestTypeId.ToVanillaTypeId
+  nameWithType: QuestTypeId.ToVanillaTypeId
 - uid: QuestFramework.State
   name: State
   href: api/QuestFramework.State.html

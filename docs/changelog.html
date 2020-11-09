@@ -15,7 +15,7 @@
     <link rel="stylesheet" href="../styles/docfx.css">
     <link rel="stylesheet" href="../styles/main.css">
     <meta property="docfx:navrel" content="../toc.html">
-    <meta property="docfx:tocrel" content="toc.html">
+    <meta property="docfx:tocrel" content="../toc.html">
     
     
     
@@ -57,20 +57,21 @@
         </div>
       </header>
       <div role="main" class="container body-content hide-when-search">
-        
-        <div class="sidenav hide-when-search">
-          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
-          <div class="sidetoggle collapse" id="sidetoggle">
-            <div id="sidetoc"></div>
-          </div>
-        </div>
-        <div class="article row grid-right">
+        <div class="article row grid">
           <div class="col-md-10">
             <article class="content wrap" id="_content" data-uid="">
 <h1 id="changelog">Changelog</h1>
 
-<h2 id="110">1.1.0</h2>
+<h2 id="upcoming-version">Upcoming version</h2>
 <h3 id="common-changes">Common changes</h3>
+<ul>
+<li>Fixed vanilla SDV quest type id resolving (this fixes problem with item harvest quest completion)</li>
+<li>Fixed item harvest quest current objective</li>
+<li>Added command for list raw content from <code>Data\Quests</code> (command <code>quests_list raw</code>)</li>
+<li>Added korean translation (thx KAYA)</li>
+</ul>
+<h2 id="110">1.1.0</h2>
+<h3 id="common-changes-1">Common changes</h3>
 <ul>
 <li>Fixed red alert caused by wrong quest dialogue pattern (Thx @Jonquora for help, issue #16)</li>
 <li>Improved check condition logging.</li>
@@ -94,7 +95,7 @@
 <li>Added <code>GetQuestById</code> as replacement for <code>GetbyId</code> (old API method is deprecated and will be removed in one of next versions)</li>
 </ul>
 <h2 id="100">1.0.0</h2>
-<h3 id="common-changes-1">Common changes</h3>
+<h3 id="common-changes-2">Common changes</h3>
 <ul>
 <li>Added new debug commands: <code>quests_accept</code>, <code>quests_complete</code> and <code>quests_remove</code>.</li>
 <li>Fixed wrong quest type binding in asset editor for <code>Data/Quests</code></li>
@@ -119,13 +120,13 @@
 <li>Added new extensions for class <code>CustomQuest</code>: <code>IsNeverAccepted</code> and <code>IsNeverCompleted</code></li>
 </ul>
 <h2 id="100-beta3">1.0.0-beta.3</h2>
-<h3 id="common-changes-2">Common changes</h3>
+<h3 id="common-changes-3">Common changes</h3>
 <ul>
 <li>Fixed problematic issues with Android</li>
 <li>Added Portuguese translation (thx Randy)</li>
 </ul>
 <h2 id="100-beta2">1.0.0-beta.2</h2>
-<h3 id="common-changes-3">Common changes</h3>
+<h3 id="common-changes-4">Common changes</h3>
 <ul>
 <li>Improved Bulletinboard quest offer</li>
 <li>Added <code>not:</code> prefix for negate result of checked condition (can be used in hooks and offers and in both programatic and content pack usage)</li>
@@ -145,7 +146,7 @@
 <li>Added extensions for <code>CustomQuest</code> class (use namespace <code>QuestFramework.Extensions</code> for apply)</li>
 </ul>
 <h2 id="100-beta1">1.0.0-beta.1</h2>
-<h3 id="common-changes-4">Common changes</h3>
+<h3 id="common-changes-5">Common changes</h3>
 <ul>
 <li>Fixed saving game</li>
 <li>Added new global conditions: <em>MinDaysPlayed</em>, <em>MaxDaysPlayed</em>, <em>DaysPlayed</em> and <em>IsFarmerMarried</em></li>
