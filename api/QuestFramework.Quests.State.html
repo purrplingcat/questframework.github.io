@@ -5,9 +5,11 @@
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-    <title>Translations </title>
+    <title>Namespace QuestFramework.Quests.State
+   </title>
     <meta name="viewport" content="width=device-width">
-    <meta name="title" content="Translations ">
+    <meta name="title" content="Namespace QuestFramework.Quests.State
+   ">
     <meta name="generator" content="docfx 2.56.0.0">
     
     <link rel="shortcut icon" href="../favicon.ico">
@@ -66,53 +68,29 @@
         </div>
         <div class="article row grid-right">
           <div class="col-md-10">
-            <article class="content wrap" id="_content" data-uid="">
-<h1 id="translations">Translations</h1>
-
-<p>You can use i18n in your content packs for Quest Framework</p>
-<h2 id="translation-tokens">Translation tokens</h2>
-<p>Some text fields in content pack JSON file(s) support translation tokens <code>%i18n:&lt;key&gt;</code>. For this token you can use texts in <code>i18n</code> folder json files. For more info about translations see <a href="https://stardewvalleywiki.com/Modding:Modder_Guide/APIs/Translation">Stardew Modding wiki</a>.</p>
-<h2 id="supported-fields">Supported fields</h2>
-<p>I18n translation tokens are supported in all text fields (strings).</p>
-<h2 id="example">Example</h2>
-<pre><code class="lang-js">// File: quests.json
-{
-  &quot;Format&quot;: &quot;1.0&quot;,
-  &quot;Quests&quot;: [
-    {
-      &quot;Name&quot;: &quot;abigail_amethyst&quot;, // No id needed, will be automatically generated
-      &quot;Type&quot;: &quot;ItemDelivery&quot;, // Vanilla quest type
-      &quot;Title&quot;: &quot;%i18n:abigail_amethyst.title&quot;,
-      &quot;Description&quot;: &quot;Abigail is very hungry. She wants to eat something special from mines.&quot;,
-      &quot;Objective&quot;: &quot;Bring amethyst to Abigail&quot;,
-      &quot;Reward&quot;: 150, // 150g
-      &quot;Cancelable&quot;: true,
-      &quot;Trigger&quot;: &quot;Abigail 66&quot;, // Bring amethyst to Abby
-      &quot;ReactionText&quot;: &quot;Oh, this looks so delicious. I am really hungry, thank you, @!$h&quot;
-    }
-  ]
-  &quot;Offers:&quot; [
-    {
-      &quot;QuestName&quot;: &quot;abigail_amethyst&quot;,
-      &quot;OfferedBy&quot;: &quot;NPC&quot;,
-      &quot;OfferDetails&quot;: {
-        &quot;NpcName&quot;: &quot;Abigail&quot;, // Speak with Abigail to get this quest
-        &quot;DialogueText&quot;: &quot;%i18n:abigail_amethyst.offer.dialogueText&quot;
-      },
-      &quot;When&quot;: {
-        &quot;Seasons&quot;: &quot;summer fall&quot;,
-        &quot;not:QuestAcceptedInPeriod&quot;: &quot;season year&quot;
-      }
-    },
-  ]
-}
-</code></pre>
-<pre><code class="lang-js">// File: i18n/default.json
-{
-  &quot;abigail_amethyst.title&quot;: &quot;The purple lunch&quot;,
-  &quot;abigail_amethyst.offer.dialogueText&quot;: &quot;I have a craving for something special.#$b#@, can you bring me amethyst?&quot;
-}
-</code></pre>
+            <article class="content wrap" id="_content" data-uid="QuestFramework.Quests.State">
+  
+  <h1 id="QuestFramework_Quests_State" data-uid="QuestFramework.Quests.State" class="text-break">Namespace QuestFramework.Quests.State
+  </h1>
+  <div class="markdown level0 summary"></div>
+  <div class="markdown level0 conceptual"></div>
+  <div class="markdown level0 remarks"></div>
+    <h3 id="classes">Classes
+  </h3>
+      <h4><a class="xref" href="QuestFramework.Quests.State.ActiveState.html">ActiveState</a></h4>
+      <section></section>
+      <h4><a class="xref" href="QuestFramework.Quests.State.ActiveStateAttribute.html">ActiveStateAttribute</a></h4>
+      <section></section>
+      <h4><a class="xref" href="QuestFramework.Quests.State.ActiveStateException.html">ActiveStateException</a></h4>
+      <section></section>
+      <h4><a class="xref" href="QuestFramework.Quests.State.ActiveStateField.html">ActiveStateField</a></h4>
+      <section></section>
+      <h4><a class="xref" href="QuestFramework.Quests.State.ActiveStateField-1.html">ActiveStateField&lt;T&gt;</a></h4>
+      <section></section>
+    <h3 id="interfaces">Interfaces
+  </h3>
+      <h4><a class="xref" href="QuestFramework.Quests.State.IPersistentState.html">IPersistentState</a></h4>
+      <section></section>
 </article>
           </div>
           
@@ -120,9 +98,6 @@
             <div class="sideaffix">
               <div class="contribution">
                 <ul class="nav">
-                  <li>
-                    <a href="https://github.com/purrplingcat/QuestFramework/blob/master/docs/translations.md/#L1" class="contribution-link">Improve this Doc</a>
-                  </li>
                 </ul>
               </div>
               <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">

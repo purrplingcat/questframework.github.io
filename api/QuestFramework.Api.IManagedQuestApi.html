@@ -198,6 +198,114 @@ if quest with this name exists and is managed.</p>
   </table>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
+    <a href="https://github.com/purrplingcat/QuestFramework/new/master/apiSpec/new?filename=QuestFramework_Api_IManagedQuestApi_ExposeQuestType__1_System_String_.md&amp;value=---%0Auid%3A%20QuestFramework.Api.IManagedQuestApi.ExposeQuestType%60%601(System.String)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/purrplingcat/QuestFramework/blob/master/src/Api/IManagedQuestApi.cs/#L103">View Source</a>
+  </span>
+  <a id="QuestFramework_Api_IManagedQuestApi_ExposeQuestType_" data-uid="QuestFramework.Api.IManagedQuestApi.ExposeQuestType*"></a>
+  <h4 id="QuestFramework_Api_IManagedQuestApi_ExposeQuestType__1_System_String_" data-uid="QuestFramework.Api.IManagedQuestApi.ExposeQuestType``1(System.String)">ExposeQuestType&lt;TQuest&gt;(String)</h4>
+  <div class="markdown level1 summary"><p>Exposes a quest type for content packs and other mods based on QF.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">void ExposeQuestType&lt;TQuest&gt;(string type)
+    where TQuest : CustomQuest, new()</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><span class="parametername">type</span></td>
+        <td><p>Name of quest type in registry</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="typeParameters">Type Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="parametername">TQuest</span></td>
+        <td><p>Quest class type</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/purrplingcat/QuestFramework/new/master/apiSpec/new?filename=QuestFramework_Api_IManagedQuestApi_ExposeQuestType__1_System_String_System_Func___0__.md&amp;value=---%0Auid%3A%20QuestFramework.Api.IManagedQuestApi.ExposeQuestType%60%601(System.String%2CSystem.Func%7B%60%600%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/purrplingcat/QuestFramework/blob/master/src/Api/IManagedQuestApi.cs/#L96">View Source</a>
+  </span>
+  <a id="QuestFramework_Api_IManagedQuestApi_ExposeQuestType_" data-uid="QuestFramework.Api.IManagedQuestApi.ExposeQuestType*"></a>
+  <h4 id="QuestFramework_Api_IManagedQuestApi_ExposeQuestType__1_System_String_System_Func___0__" data-uid="QuestFramework.Api.IManagedQuestApi.ExposeQuestType``1(System.String,System.Func{``0})">ExposeQuestType&lt;TQuest&gt;(String, Func&lt;TQuest&gt;)</h4>
+  <div class="markdown level1 summary"><p>Exposes a quest type for content packs and other mods based on QF.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">void ExposeQuestType&lt;TQuest&gt;(string type, Func&lt;TQuest&gt; factory)
+    where TQuest : CustomQuest</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><span class="parametername">type</span></td>
+        <td><p>Name of quest type in registry</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Func</span>&lt;TQuest&gt;</td>
+        <td><span class="parametername">factory</span></td>
+        <td><p>Factory of quest of declared type</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="typeParameters">Type Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="parametername">TQuest</span></td>
+        <td><p>Quest class type</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
     <a href="https://github.com/purrplingcat/QuestFramework/new/master/apiSpec/new?filename=QuestFramework_Api_IManagedQuestApi_GetById_System_Int32_.md&amp;value=---%0Auid%3A%20QuestFramework.Api.IManagedQuestApi.GetById(System.Int32)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
@@ -210,7 +318,7 @@ if quest with this name exists and is managed.</p>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">[Obsolete(&quot;This API is deprecated! Use IManagedQuestApi.GetQuestById instead.&quot;)]
+    <pre><code class="lang-csharp hljs">[Obsolete(&quot;This API is deprecated! Use IManagedQuestApi.GetQuestById instead.&quot;, true)]
 CustomQuest GetById(int id)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
@@ -483,6 +591,53 @@ for today by the source name.</p>
         <td><span class="xref">System.InvalidOperationException</span></td>
         <td><p>Throws when this method is called outside of loaded game</p>
 </td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/purrplingcat/QuestFramework/new/master/apiSpec/new?filename=QuestFramework_Api_IManagedQuestApi_HasQuestType_System_String_.md&amp;value=---%0Auid%3A%20QuestFramework.Api.IManagedQuestApi.HasQuestType(System.String)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/purrplingcat/QuestFramework/blob/master/src/Api/IManagedQuestApi.cs/#L105">View Source</a>
+  </span>
+  <a id="QuestFramework_Api_IManagedQuestApi_HasQuestType_" data-uid="QuestFramework.Api.IManagedQuestApi.HasQuestType*"></a>
+  <h4 id="QuestFramework_Api_IManagedQuestApi_HasQuestType_System_String_" data-uid="QuestFramework.Api.IManagedQuestApi.HasQuestType(System.String)">HasQuestType(String)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">bool HasQuestType(string type)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><span class="parametername">type</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Boolean</span></td>
+        <td></td>
       </tr>
     </tbody>
   </table>

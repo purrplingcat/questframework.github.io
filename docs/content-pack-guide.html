@@ -92,7 +92,7 @@
   &quot;UpdateKeys&quot;: [],
   &quot;ContentPackFor&quot;: {
     &quot;UniqueID&quot;: &quot;PurrplingCat.QuestFramework&quot;, // Quest Framework unique id must be here
-    &quot;MinimumVersion&quot;: &quot;1.1.0&quot; // optional
+    &quot;MinimumVersion&quot;: &quot;1.2.0&quot; // optional
   }
 }
 </code></pre>
@@ -123,77 +123,102 @@
 <tr>
 <td>Name</td>
 <td>required</td>
-<td>(string) Name (UID) of your quest (this never shows to player)</td>
+<td><code>string</code> Name (UID) of your quest (this never shows to player)</td>
 </tr>
 <tr>
-<td>Type</td>
+<td><a href="#quest-types">Type</a></td>
 <td>required</td>
-<td>(string) Vanilla SDV quest type (see quest type)</td>
+<td><code>string</code> Vanilla SDV quest type (see quest type)</td>
 </tr>
 <tr>
 <td>CustomTypeId</td>
 <td></td>
-<td>(int) Custom Quest type id (see custom quest types in advanced API). Can be handled by any other mod.</td>
+<td><code>int</code> Custom Quest type id (see custom quest types in advanced API). Can be handled by any other mod.</td>
 </tr>
 <tr>
 <td>Title</td>
 <td>required</td>
-<td>(string) Quest title in the quest log</td>
+<td><code>string</code> Quest title in the quest log</td>
 </tr>
 <tr>
 <td>Description</td>
 <td></td>
-<td>(string) Quest description</td>
+<td><code>string</code> Quest description</td>
 </tr>
 <tr>
 <td>Objective</td>
 <td>required</td>
-<td>(string) Quest objective</td>
+<td><code>string</code> Quest objective</td>
 </tr>
 <tr>
 <td>NextQuests</td>
 <td></td>
-<td>(string[]) One of more next quests which will be added to player's quest log when this quest is completed.</td>
+<td><code>string[]</code> One of more next quests which will be added to player's quest log when this quest is completed.</td>
 </tr>
 <tr>
 <td>DaysLeft</td>
 <td></td>
-<td>(int) If this field is filled or is greater than 0, this quest is marked as daily and limited for specified number of days here.</td>
+<td><code>int</code> If this field is filled or is greater than 0, this quest is marked as daily and limited for specified number of days here.</td>
 </tr>
 <tr>
-<td>Reward</td>
+<td><a href="#rewards">Reward</a></td>
 <td></td>
-<td>(int) Reward in SDV currency &quot;golds&quot;. If this field is not defined or has value <code>0</code>, then player will receive no money reward.</td>
+<td><code>int|string</code> Reward in SDV currency &quot;golds&quot;. If this field is not defined or has value <code>0</code>, then player will receive no money reward.</td>
+</tr>
+<tr>
+<td>RewardType</td>
+<td></td>
+<td><code>RewardType</code> Type of <a href="#Rewards">reward for player</a>. (default: <em>Money</em>)</td>
+</tr>
+<tr>
+<td>RewardAmount</td>
+<td></td>
+<td><code>int</code> Amount of reward items. Only for <code>Object</code> reward type.</td>
 </tr>
 <tr>
 <td>RewardDescription</td>
 <td></td>
-<td>(string) Reward description</td>
+<td><code>string</code> Reward description</td>
 </tr>
 <tr>
 <td>Cancelable</td>
 <td></td>
-<td>(boolean) Can player cancel this quest?</td>
+<td><code>boolean</code> Can player cancel this quest?</td>
 </tr>
 <tr>
 <td>ReactionText</td>
 <td></td>
-<td>(string) NPC's reaction text when you complete this quest (only for quests which interacts with NPCs)</td>
+<td><code>string</code> NPC's reaction text when you complete this quest (only for quests which interacts with NPCs)</td>
 </tr>
 <tr>
 <td>Trigger</td>
 <td></td>
-<td>(string) Completion trigger (see quest types for more info) Supports <a href="#json-assets-support">JSON Assets</a></td>
+<td><code>string</code> Completion trigger (see quest types for more info) Supports <a href="#json-assets-support">JSON Assets</a></td>
 </tr>
 <tr>
-<td>Hooks</td>
+<td><a href="#colors--texture">Texture</a></td>
 <td></td>
-<td>(Hook) Quest hooks (see hooks for more info)</td>
+<td><code>string</code> Path to PNG file with custom background texture for this quest in quest log menu. Path is relative to your content pack root directory.</td>
 </tr>
 <tr>
-<td>ConversationTopic</td>
+<td><a href="#colors--texture">Colors</a></td>
 <td></td>
-<td>(ConversationTopic) Add or remove conversation topic (see conversation topic for more info)</td>
+<td><code>QuestLogColors</code> Settings of font colors for this quest in the quest log menu.</td>
+</tr>
+<tr>
+<td>FriendshipGain</td>
+<td></td>
+<td><code>{[string]: int}</code> Additional friendship points for enumarated NPCs which player gains after this quest was completed.</td>
+</tr>
+<tr>
+<td><a href="#hooks">Hooks</a></td>
+<td></td>
+<td><code>Hook[]</code> Quest hooks (see hooks for more info)</td>
+</tr>
+<tr>
+<td><a href="#conversation-topic">ConversationTopic</a></td>
+<td></td>
+<td><code>ConversationTopic</code> Add or remove conversation topic (see conversation topic for more info)</td>
 </tr>
 </tbody>
 </table>
@@ -209,9 +234,13 @@
       &quot;Objective&quot;: &quot;Bring amethyst to Abigail&quot;,
       &quot;DaysLeft&quot;: 5, // If player don't complete this quest until 5 days, this quest will be removed from quest log automatically without completion
       &quot;Reward&quot;: 300, // 300g
+      &quot;RewardType&quot;: &quot;Money&quot;,
       &quot;Cancelable&quot;: true, // This quest can be cancelled by player
       &quot;Trigger&quot;: &quot;Abigail 66&quot;, // Bring amethyst to Abby
-      &quot;ReactionText&quot;: &quot;Oh, it's looks delicious. I am really hungry.&quot;
+      &quot;ReactionText&quot;: &quot;Oh, it's looks delicious. I am really hungry.&quot;,
+      &quot;FriendshipGain&quot;: {
+        &quot;Abigail&quot;: 100 // Gain 100 additional friendship points when this quest was completed
+      }
     }
   ]
 }
@@ -252,7 +281,192 @@ See the <code>Data/ObjectInformation</code> game resource for available items.</
 <p>Same usage as <em>LostItem</em></p>
 <h4 id="custom">Custom</h4>
 <p>Custom quest type. You can specify field <code>CustomTypeId</code> for more explicit which custom quest type. In JSON api you can use hooks to create custom quest handling.</p>
+<p>You can define custom quest via setup value <code>Custom</code> into field <code>Type</code> or in format <code>&lt;modUID&gt;/&lt;QuestTypeName&gt;</code> for custom quests defined by other mods which exposes their quest types for content packs.</p>
 <p><em>Trigger</em>: Custom defined. In JSON api use hooks instead for handle your pure JSON custom quest. If you target a custom quest type defined by any other mod in your JSON content pack, follow instructions of the source mod of this quest type.</p>
+<h3 id="rewards">Rewards</h3>
+<p>There are supported some reward types for quests. You can specify reward type in field <code>RewardType</code> in your quest definition. Reward is paid to player after quest is completed by clicking the reward in questlog menu (in quest details for completed quest)</p>
+<table>
+<thead>
+<tr>
+<th>Reward type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Money</td>
+<td>Amount of money player earn by complete this quest</td>
+</tr>
+<tr>
+<td>Object</td>
+<td>Which item player gets by complete this quest. You can specify your item by name (JSON assets items supported) or via their id (integer). Also you can specify amount (stack) of this item in field <code>RewardAmount</code></td>
+</tr>
+<tr>
+<td>Weapon</td>
+<td>Which weapon player gets by complete this quest. You can specify your weapon by name (JSON assets items supported) or via their id (integer)</td>
+</tr>
+</tbody>
+</table>
+<h4 id="examples">Examples</h4>
+<pre><code class="lang-js">{
+  &quot;Format&quot;: &quot;1.0&quot;,
+  &quot;Quests&quot;: [
+    {
+      &quot;Name&quot;: &quot;abigail_amethyst1&quot;,
+      &quot;Type&quot;: &quot;ItemDelivery&quot;,
+      &quot;Title&quot;: &quot;The purple lunch&quot;,
+      &quot;Description&quot;: &quot;Abigail are very hungry. She wants to eat something special from mines.&quot;,
+      &quot;Objective&quot;: &quot;Bring amethyst to Abigail&quot;,
+      &quot;DaysLeft&quot;: 5,
+      &quot;Reward&quot;: &quot;Chocolate Cake&quot;,
+      &quot;RewardType&quot;: &quot;Object&quot;
+      &quot;RewardAmount&quot;: 2, // Player gets two chocolate cakes after complete this quest
+      &quot;Cancelable&quot;: true, // This quest can be cancelled by player
+      &quot;Trigger&quot;: &quot;Abigail 66&quot;, // Bring amethyst to Abby
+      &quot;ReactionText&quot;: &quot;Oh, it's looks delicious. I am really hungry.&quot;
+    },
+    {
+      &quot;Name&quot;: &quot;abigail_amethyst2&quot;,
+      &quot;Type&quot;: &quot;ItemDelivery&quot;,
+      &quot;Title&quot;: &quot;The purple lunch again&quot;,
+      &quot;Description&quot;: &quot;Abigail are very hungry. She wants to eat something special from mines.&quot;,
+      &quot;Objective&quot;: &quot;Bring amethyst to Abigail&quot;,
+      &quot;DaysLeft&quot;: 3,
+      &quot;Reward&quot;: &quot;Emerald&quot;, // Reward is 1x emerald for this quest
+      &quot;RewardType&quot;: &quot;Object&quot;
+      &quot;Cancelable&quot;: true, // This quest can be cancelled by player
+      &quot;Trigger&quot;: &quot;Abigail 66&quot;, // Bring amethyst to Abby
+      &quot;ReactionText&quot;: &quot;Oh, it's looks delicious. I am really hungry.&quot;
+    },
+    {
+      &quot;Name&quot;: &quot;clint_copperbar&quot;,
+      &quot;Type&quot;: &quot;ItemDelivery&quot;,
+      &quot;Title&quot;: &quot;Clint needs a copper bar&quot;,
+      &quot;Description&quot;: &quot;Clint asked you if you can bring him a copper bar.&quot;,
+      &quot;Objective&quot;: &quot;Bring a copperbar to Clint&quot;,
+      &quot;Reward&quot;: 320, // Reward is 320g
+      &quot;RewardType&quot;: &quot;Money&quot;
+      &quot;Cancelable&quot;: true,
+      &quot;Trigger&quot;: &quot;Clint 334&quot;, // Bring copper bar to Clint
+      &quot;ReactionText&quot;: &quot;Thanks.&quot;
+    },
+    {
+      &quot;Name&quot;: &quot;marlon_slay_bats&quot;,
+      &quot;Type&quot;: &quot;Monster&quot;,
+      &quot;Title&quot;: &quot;Dangerous mine bats&quot;,
+      &quot;Description&quot;: &quot;Marlon wants help with slay dangerous bats which threaten villagers in the mountains every night&quot;,
+      &quot;Objective&quot;: &quot;Slay 10 bats&quot;,
+      &quot;DaysLeft&quot;: 2,
+      &quot;Reward&quot;: &quot;Pirate's Sword&quot;, // Pirate's Sword is an reward for this quest
+      &quot;RewardType&quot;: &quot;Weapon&quot;
+      &quot;Cancelable&quot;: true,
+      &quot;Trigger&quot;: &quot;Bat 10&quot;, // Kill 10 bats
+    }
+  ]
+}
+</code></pre>
+<h3 id="colors--texture">Colors &amp; Texture</h3>
+<p>Be different! You can specify background texture of quest details window in quest log menu. Just specify an relative path to your content pack root in field <code>Texture</code> for your quest. Also you can customize text colors for this quest with field <code>Colors</code>.</p>
+<table>
+<thead>
+<tr>
+<th>Color property</th>
+<th>Type</th>
+<th>Desription</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>TitleColor</td>
+<td><code>int</code></td>
+<td>Color of quest title.</td>
+</tr>
+<tr>
+<td>TextColor</td>
+<td><code>int</code></td>
+<td>Standard quest color (for decription)</td>
+</tr>
+<tr>
+<td>ObjectiveColor</td>
+<td><code>int</code></td>
+<td>Color of quest objective</td>
+</tr>
+</tbody>
+</table>
+<h4 id="available-colors">Available colors</h4>
+<table>
+<thead>
+<tr>
+<th>Color id</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>0</td>
+<td>Black</td>
+</tr>
+<tr>
+<td>1</td>
+<td>Sky Blue</td>
+</tr>
+<tr>
+<td>2</td>
+<td>Red</td>
+</tr>
+<tr>
+<td>3</td>
+<td>Purple</td>
+</tr>
+<tr>
+<td>4</td>
+<td>White</td>
+</tr>
+<tr>
+<td>5</td>
+<td>Orange Red</td>
+</tr>
+<tr>
+<td>6</td>
+<td>Lime Green</td>
+</tr>
+<tr>
+<td>7</td>
+<td>Cyan</td>
+</tr>
+<tr>
+<td>8</td>
+<td>Grey</td>
+</tr>
+</tbody>
+</table>
+<h4 id="example-1">Example</h4>
+<pre><code class="lang-js">{
+  &quot;Format&quot;: &quot;1.0&quot;,
+  &quot;Quests&quot;: [
+    {
+      &quot;Name&quot;: &quot;abigail_amethyst&quot;, // No id needed, will be automatically generated
+      &quot;Type&quot;: &quot;ItemDelivery&quot;, // Vanilla quest type
+      &quot;Title&quot;: &quot;%i18n:abigail_amethyst.title&quot;,
+      &quot;Description&quot;: &quot;Abigail is very hungry. She wants to eat something special from mines.&quot;,
+      &quot;Objective&quot;: &quot;Bring amethyst to Abigail&quot;,
+      &quot;DaysLeft&quot;: 10,
+      &quot;Reward&quot;: 1000,
+      &quot;RewardType&quot;: &quot;Money&quot;,
+      &quot;Cancelable&quot;: true,
+      &quot;Trigger&quot;: &quot;Abigail 66&quot;, // Bring amethyst to Abby
+      &quot;ReactionText&quot;: &quot;Oh, this looks so delicious. I am really hungry, thank you, @!$h&quot;,
+      &quot;CustomField&quot;: &quot;%i18n:custom.field&quot;,
+      &quot;Texture&quot;: &quot;assets/wizardQuest.png&quot;,
+      &quot;Colors&quot;: {
+        &quot;TitleColor&quot;: 4,
+        &quot;TextColor&quot;: 4,
+        &quot;ObjectiveColor&quot;: 1
+      }
+    }
+  ]
+}
+</code></pre>
 <h2 id="hooks">Hooks</h2>
 <p>You can add some &quot;magic&quot; to your custom quests with hooks. Hooks do specified action with your quests when something was triggered in the game.</p>
 <p>Hooks has conditions for check if the action of hook will be triggered or not. There are two types of conditions: local and environment. You don't must specify all available conditions. You can specify conditions which you need.</p>
@@ -278,7 +492,7 @@ See the <code>Data/ObjectInformation</code> game resource for available items.</
 </tr>
 </tbody>
 </table>
-<h4 id="example-1">Example</h4>
+<h4 id="example-2">Example</h4>
 <pre><code class="lang-js">{
   &quot;Format&quot;: &quot;1.0&quot;,
   &quot;Quests&quot;: [
@@ -392,8 +606,8 @@ See the <code>Data/ObjectInformation</code> game resource for available items.</
 </tbody>
 </table>
 <h2 id="conversation-topic">Conversation topic</h2>
-<p>[Conversation topic] (<a href="https://stardewvalleywiki.com/Modding:Dialogue#Conversation_topics">https://stardewvalleywiki.com/Modding:Dialogue#Conversation_topics</a>) can make the character speak of certain dialogue when the specific conversation topic is active. Please refer to the conversation topic explanation on the wiki before using this feature. With this field you can make NPCs give dialogue when a quest is accepted, cancelled, and or completed. The respective dialogue itself must be added using [Content patcher] (<a href="https://github.com/Pathoschild/StardewMods/blob/develop/ContentPatcher/docs/author-guide.md#editdata">https://github.com/Pathoschild/StardewMods/blob/develop/ContentPatcher/docs/author-guide.md#editdata</a>)</p>
-<h2 id="options">Options</h2>
+<p><a href="https://stardewvalleywiki.com/Modding:Dialogue#Conversation_topics">Conversation topic</a> can make the character speak of certain dialogue when the specific conversation topic is active. Please refer to the conversation topic explanation on the wiki before using this feature. With this field you can make NPCs give dialogue when a quest is accepted, cancelled, and or completed. The respective dialogue itself must be added using <a href="https://github.com/Pathoschild/StardewMods/blob/develop/ContentPatcher/docs/author-guide.md#editdata">Content patcher</a></p>
+<h3 id="options">Options</h3>
 <table>
 <thead>
 <tr>
@@ -435,7 +649,7 @@ See the <code>Data/ObjectInformation</code> game resource for available items.</
 </tr>
 </tbody>
 </table>
-<h4 id="example-2">Example</h4>
+<h4 id="example-3">Example</h4>
 <pre><code class="lang-js">{
   &quot;Format&quot;: &quot;1.0&quot;,
   &quot;Quests&quot;: [
@@ -776,7 +990,7 @@ Text         | (string) Text of the quest source letter (required)</p>
 <p>Quest Framework is compatible with JsonAssets mod. The framework supports JsonAssets objects for the <code>Trigger</code> quest field via token named <code>ja</code> and supports two item types: <code>object</code> and <code>bigcraftable</code>.</p>
 <p>Token looks like: <code>{{ja: &lt;itemName&gt; [|bigcraftable]}}</code></p>
 <p>If you add suffix <code>|bigcraftable</code> after item name, then Quest Framework looks in the BigCraftable sheet. Otherwise looks in Object sheet.</p>
-<h4 id="example-3">Example</h4>
+<h4 id="example-4">Example</h4>
 <pre><code class="lang-js">{
   &quot;Format&quot;: &quot;1.0&quot;,
   &quot;Quests&quot;: [
@@ -799,7 +1013,7 @@ Text         | (string) Text of the quest source letter (required)</p>
 <h3 id="add-quest-via-npc-dialogue-external">Add quest via NPC dialogue (external)</h3>
 <p>You can add known quest in Quest Framework via NPC dialogues. You can define it with content patcher (Patch <code>Dialogue/&lt;NPC_name&gt;</code>) and add your dialogue which adds a quest to the player's questlog or edit existing dialogue line.</p>
 <p>By place <code>[quest:&lt;questname&gt; &lt;modUID&gt;]</code> to the dialogue player get a quest when speak with NPC and this dialogue line is shown.</p>
-<h4 id="example-4">Example</h4>
+<h4 id="example-5">Example</h4>
 <pre><code class="lang-js">// Some dialogue definition file
 {
     &quot;yourDialogueKey&quot;: &quot;Can you bring me an Amethyst? [´quest:bringAmethyst purrplingcat.myquestmod]&quot;

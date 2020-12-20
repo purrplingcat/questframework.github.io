@@ -61,6 +61,31 @@ references:
   isSpec: "True"
   fullName: QuestFramework.Api.IManagedQuestApi.ExposeGlobalCondition
   nameWithType: IManagedQuestApi.ExposeGlobalCondition
+- uid: QuestFramework.Api.IManagedQuestApi.ExposeQuestType*
+  name: ExposeQuestType
+  href: api/QuestFramework.Api.IManagedQuestApi.html#QuestFramework_Api_IManagedQuestApi_ExposeQuestType_
+  commentId: Overload:QuestFramework.Api.IManagedQuestApi.ExposeQuestType
+  isSpec: "True"
+  fullName: QuestFramework.Api.IManagedQuestApi.ExposeQuestType
+  nameWithType: IManagedQuestApi.ExposeQuestType
+- uid: QuestFramework.Api.IManagedQuestApi.ExposeQuestType``1(System.String)
+  name: ExposeQuestType<TQuest>(String)
+  href: api/QuestFramework.Api.IManagedQuestApi.html#QuestFramework_Api_IManagedQuestApi_ExposeQuestType__1_System_String_
+  commentId: M:QuestFramework.Api.IManagedQuestApi.ExposeQuestType``1(System.String)
+  name.vb: ExposeQuestType(Of TQuest)(String)
+  fullName: QuestFramework.Api.IManagedQuestApi.ExposeQuestType<TQuest>(System.String)
+  fullName.vb: QuestFramework.Api.IManagedQuestApi.ExposeQuestType(Of TQuest)(System.String)
+  nameWithType: IManagedQuestApi.ExposeQuestType<TQuest>(String)
+  nameWithType.vb: IManagedQuestApi.ExposeQuestType(Of TQuest)(String)
+- uid: QuestFramework.Api.IManagedQuestApi.ExposeQuestType``1(System.String,System.Func{``0})
+  name: ExposeQuestType<TQuest>(String, Func<TQuest>)
+  href: api/QuestFramework.Api.IManagedQuestApi.html#QuestFramework_Api_IManagedQuestApi_ExposeQuestType__1_System_String_System_Func___0__
+  commentId: M:QuestFramework.Api.IManagedQuestApi.ExposeQuestType``1(System.String,System.Func{``0})
+  name.vb: ExposeQuestType(Of TQuest)(String, Func(Of TQuest))
+  fullName: QuestFramework.Api.IManagedQuestApi.ExposeQuestType<TQuest>(System.String, System.Func<TQuest>)
+  fullName.vb: QuestFramework.Api.IManagedQuestApi.ExposeQuestType(Of TQuest)(System.String, System.Func(Of TQuest))
+  nameWithType: IManagedQuestApi.ExposeQuestType<TQuest>(String, Func<TQuest>)
+  nameWithType.vb: IManagedQuestApi.ExposeQuestType(Of TQuest)(String, Func(Of TQuest))
 - uid: QuestFramework.Api.IManagedQuestApi.GetById(System.Int32)
   name: GetById(Int32)
   href: api/QuestFramework.Api.IManagedQuestApi.html#QuestFramework_Api_IManagedQuestApi_GetById_System_Int32_
@@ -122,6 +147,19 @@ references:
   fullName.vb: QuestFramework.Api.IManagedQuestApi.GetTodayQuestOffers(Of TAttributes)(System.String)
   nameWithType: IManagedQuestApi.GetTodayQuestOffers<TAttributes>(String)
   nameWithType.vb: IManagedQuestApi.GetTodayQuestOffers(Of TAttributes)(String)
+- uid: QuestFramework.Api.IManagedQuestApi.HasQuestType(System.String)
+  name: HasQuestType(String)
+  href: api/QuestFramework.Api.IManagedQuestApi.html#QuestFramework_Api_IManagedQuestApi_HasQuestType_System_String_
+  commentId: M:QuestFramework.Api.IManagedQuestApi.HasQuestType(System.String)
+  fullName: QuestFramework.Api.IManagedQuestApi.HasQuestType(System.String)
+  nameWithType: IManagedQuestApi.HasQuestType(String)
+- uid: QuestFramework.Api.IManagedQuestApi.HasQuestType*
+  name: HasQuestType
+  href: api/QuestFramework.Api.IManagedQuestApi.html#QuestFramework_Api_IManagedQuestApi_HasQuestType_
+  commentId: Overload:QuestFramework.Api.IManagedQuestApi.HasQuestType
+  isSpec: "True"
+  fullName: QuestFramework.Api.IManagedQuestApi.HasQuestType
+  nameWithType: IManagedQuestApi.HasQuestType
 - uid: QuestFramework.Api.IManagedQuestApi.OfferQuest(QuestFramework.Offers.QuestOffer)
   name: OfferQuest(QuestOffer)
   href: api/QuestFramework.Api.IManagedQuestApi.html#QuestFramework_Api_IManagedQuestApi_OfferQuest_QuestFramework_Offers_QuestOffer_
@@ -193,6 +231,71 @@ references:
   isSpec: "True"
   fullName: QuestFramework.Api.IQuestApi.GetManagedApi
   nameWithType: IQuestApi.GetManagedApi
+- uid: QuestFramework.Api.IQuestApi.GetStatus
+  name: GetStatus()
+  href: api/QuestFramework.Api.IQuestApi.html#QuestFramework_Api_IQuestApi_GetStatus
+  commentId: M:QuestFramework.Api.IQuestApi.GetStatus
+  fullName: QuestFramework.Api.IQuestApi.GetStatus()
+  nameWithType: IQuestApi.GetStatus()
+- uid: QuestFramework.Api.IQuestApi.GetStatus*
+  name: GetStatus
+  href: api/QuestFramework.Api.IQuestApi.html#QuestFramework_Api_IQuestApi_GetStatus_
+  commentId: Overload:QuestFramework.Api.IQuestApi.GetStatus
+  isSpec: "True"
+  fullName: QuestFramework.Api.IQuestApi.GetStatus
+  nameWithType: IQuestApi.GetStatus
+- uid: QuestFramework.Api.IQuestApi.IsManagedQuest(System.Int32)
+  name: IsManagedQuest(Int32)
+  href: api/QuestFramework.Api.IQuestApi.html#QuestFramework_Api_IQuestApi_IsManagedQuest_System_Int32_
+  commentId: M:QuestFramework.Api.IQuestApi.IsManagedQuest(System.Int32)
+  fullName: QuestFramework.Api.IQuestApi.IsManagedQuest(System.Int32)
+  nameWithType: IQuestApi.IsManagedQuest(Int32)
+- uid: QuestFramework.Api.IQuestApi.IsManagedQuest*
+  name: IsManagedQuest
+  href: api/QuestFramework.Api.IQuestApi.html#QuestFramework_Api_IQuestApi_IsManagedQuest_
+  commentId: Overload:QuestFramework.Api.IQuestApi.IsManagedQuest
+  isSpec: "True"
+  fullName: QuestFramework.Api.IQuestApi.IsManagedQuest
+  nameWithType: IQuestApi.IsManagedQuest
+- uid: QuestFramework.Api.IQuestApi.LoadContentPack(StardewModdingAPI.Mod,StardewModdingAPI.IContentPack)
+  name: LoadContentPack(Mod, IContentPack)
+  href: api/QuestFramework.Api.IQuestApi.html#QuestFramework_Api_IQuestApi_LoadContentPack_StardewModdingAPI_Mod_StardewModdingAPI_IContentPack_
+  commentId: M:QuestFramework.Api.IQuestApi.LoadContentPack(StardewModdingAPI.Mod,StardewModdingAPI.IContentPack)
+  fullName: QuestFramework.Api.IQuestApi.LoadContentPack(StardewModdingAPI.Mod, StardewModdingAPI.IContentPack)
+  nameWithType: IQuestApi.LoadContentPack(Mod, IContentPack)
+- uid: QuestFramework.Api.IQuestApi.LoadContentPack*
+  name: LoadContentPack
+  href: api/QuestFramework.Api.IQuestApi.html#QuestFramework_Api_IQuestApi_LoadContentPack_
+  commentId: Overload:QuestFramework.Api.IQuestApi.LoadContentPack
+  isSpec: "True"
+  fullName: QuestFramework.Api.IQuestApi.LoadContentPack
+  nameWithType: IQuestApi.LoadContentPack
+- uid: QuestFramework.Api.IQuestApi.ResolveQuestId(System.String)
+  name: ResolveQuestId(String)
+  href: api/QuestFramework.Api.IQuestApi.html#QuestFramework_Api_IQuestApi_ResolveQuestId_System_String_
+  commentId: M:QuestFramework.Api.IQuestApi.ResolveQuestId(System.String)
+  fullName: QuestFramework.Api.IQuestApi.ResolveQuestId(System.String)
+  nameWithType: IQuestApi.ResolveQuestId(String)
+- uid: QuestFramework.Api.IQuestApi.ResolveQuestId*
+  name: ResolveQuestId
+  href: api/QuestFramework.Api.IQuestApi.html#QuestFramework_Api_IQuestApi_ResolveQuestId_
+  commentId: Overload:QuestFramework.Api.IQuestApi.ResolveQuestId
+  isSpec: "True"
+  fullName: QuestFramework.Api.IQuestApi.ResolveQuestId
+  nameWithType: IQuestApi.ResolveQuestId
+- uid: QuestFramework.Api.IQuestApi.ResolveQuestName(System.Int32)
+  name: ResolveQuestName(Int32)
+  href: api/QuestFramework.Api.IQuestApi.html#QuestFramework_Api_IQuestApi_ResolveQuestName_System_Int32_
+  commentId: M:QuestFramework.Api.IQuestApi.ResolveQuestName(System.Int32)
+  fullName: QuestFramework.Api.IQuestApi.ResolveQuestName(System.Int32)
+  nameWithType: IQuestApi.ResolveQuestName(Int32)
+- uid: QuestFramework.Api.IQuestApi.ResolveQuestName*
+  name: ResolveQuestName
+  href: api/QuestFramework.Api.IQuestApi.html#QuestFramework_Api_IQuestApi_ResolveQuestName_
+  commentId: Overload:QuestFramework.Api.IQuestApi.ResolveQuestName
+  isSpec: "True"
+  fullName: QuestFramework.Api.IQuestApi.ResolveQuestName
+  nameWithType: IQuestApi.ResolveQuestName
 - uid: QuestFramework.Api.IQuestApi.Status
   name: Status
   href: api/QuestFramework.Api.IQuestApi.html#QuestFramework_Api_IQuestApi_Status
@@ -251,6 +354,71 @@ references:
   isSpec: "True"
   fullName: QuestFramework.Api.QuestApi.GetManagedApi
   nameWithType: QuestApi.GetManagedApi
+- uid: QuestFramework.Api.QuestApi.GetStatus
+  name: GetStatus()
+  href: api/QuestFramework.Api.QuestApi.html#QuestFramework_Api_QuestApi_GetStatus
+  commentId: M:QuestFramework.Api.QuestApi.GetStatus
+  fullName: QuestFramework.Api.QuestApi.GetStatus()
+  nameWithType: QuestApi.GetStatus()
+- uid: QuestFramework.Api.QuestApi.GetStatus*
+  name: GetStatus
+  href: api/QuestFramework.Api.QuestApi.html#QuestFramework_Api_QuestApi_GetStatus_
+  commentId: Overload:QuestFramework.Api.QuestApi.GetStatus
+  isSpec: "True"
+  fullName: QuestFramework.Api.QuestApi.GetStatus
+  nameWithType: QuestApi.GetStatus
+- uid: QuestFramework.Api.QuestApi.IsManagedQuest(System.Int32)
+  name: IsManagedQuest(Int32)
+  href: api/QuestFramework.Api.QuestApi.html#QuestFramework_Api_QuestApi_IsManagedQuest_System_Int32_
+  commentId: M:QuestFramework.Api.QuestApi.IsManagedQuest(System.Int32)
+  fullName: QuestFramework.Api.QuestApi.IsManagedQuest(System.Int32)
+  nameWithType: QuestApi.IsManagedQuest(Int32)
+- uid: QuestFramework.Api.QuestApi.IsManagedQuest*
+  name: IsManagedQuest
+  href: api/QuestFramework.Api.QuestApi.html#QuestFramework_Api_QuestApi_IsManagedQuest_
+  commentId: Overload:QuestFramework.Api.QuestApi.IsManagedQuest
+  isSpec: "True"
+  fullName: QuestFramework.Api.QuestApi.IsManagedQuest
+  nameWithType: QuestApi.IsManagedQuest
+- uid: QuestFramework.Api.QuestApi.LoadContentPack(StardewModdingAPI.Mod,StardewModdingAPI.IContentPack)
+  name: LoadContentPack(Mod, IContentPack)
+  href: api/QuestFramework.Api.QuestApi.html#QuestFramework_Api_QuestApi_LoadContentPack_StardewModdingAPI_Mod_StardewModdingAPI_IContentPack_
+  commentId: M:QuestFramework.Api.QuestApi.LoadContentPack(StardewModdingAPI.Mod,StardewModdingAPI.IContentPack)
+  fullName: QuestFramework.Api.QuestApi.LoadContentPack(StardewModdingAPI.Mod, StardewModdingAPI.IContentPack)
+  nameWithType: QuestApi.LoadContentPack(Mod, IContentPack)
+- uid: QuestFramework.Api.QuestApi.LoadContentPack*
+  name: LoadContentPack
+  href: api/QuestFramework.Api.QuestApi.html#QuestFramework_Api_QuestApi_LoadContentPack_
+  commentId: Overload:QuestFramework.Api.QuestApi.LoadContentPack
+  isSpec: "True"
+  fullName: QuestFramework.Api.QuestApi.LoadContentPack
+  nameWithType: QuestApi.LoadContentPack
+- uid: QuestFramework.Api.QuestApi.ResolveQuestId(System.String)
+  name: ResolveQuestId(String)
+  href: api/QuestFramework.Api.QuestApi.html#QuestFramework_Api_QuestApi_ResolveQuestId_System_String_
+  commentId: M:QuestFramework.Api.QuestApi.ResolveQuestId(System.String)
+  fullName: QuestFramework.Api.QuestApi.ResolveQuestId(System.String)
+  nameWithType: QuestApi.ResolveQuestId(String)
+- uid: QuestFramework.Api.QuestApi.ResolveQuestId*
+  name: ResolveQuestId
+  href: api/QuestFramework.Api.QuestApi.html#QuestFramework_Api_QuestApi_ResolveQuestId_
+  commentId: Overload:QuestFramework.Api.QuestApi.ResolveQuestId
+  isSpec: "True"
+  fullName: QuestFramework.Api.QuestApi.ResolveQuestId
+  nameWithType: QuestApi.ResolveQuestId
+- uid: QuestFramework.Api.QuestApi.ResolveQuestName(System.Int32)
+  name: ResolveQuestName(Int32)
+  href: api/QuestFramework.Api.QuestApi.html#QuestFramework_Api_QuestApi_ResolveQuestName_System_Int32_
+  commentId: M:QuestFramework.Api.QuestApi.ResolveQuestName(System.Int32)
+  fullName: QuestFramework.Api.QuestApi.ResolveQuestName(System.Int32)
+  nameWithType: QuestApi.ResolveQuestName(Int32)
+- uid: QuestFramework.Api.QuestApi.ResolveQuestName*
+  name: ResolveQuestName
+  href: api/QuestFramework.Api.QuestApi.html#QuestFramework_Api_QuestApi_ResolveQuestName_
+  commentId: Overload:QuestFramework.Api.QuestApi.ResolveQuestName
+  isSpec: "True"
+  fullName: QuestFramework.Api.QuestApi.ResolveQuestName
+  nameWithType: QuestApi.ResolveQuestName
 - uid: QuestFramework.Api.QuestApi.Status
   name: Status
   href: api/QuestFramework.Api.QuestApi.html#QuestFramework_Api_QuestApi_Status
@@ -1392,6 +1560,19 @@ references:
   fullName.vb: QuestFramework.Offers.QuestOffer.AsOfferWithDetails(Of TAttributes)()
   nameWithType: QuestOffer.AsOfferWithDetails<TAttributes>()
   nameWithType.vb: QuestOffer.AsOfferWithDetails(Of TAttributes)()
+- uid: QuestFramework.Offers.QuestOffer.ConditionFunc
+  name: ConditionFunc
+  href: api/QuestFramework.Offers.QuestOffer.html#QuestFramework_Offers_QuestOffer_ConditionFunc
+  commentId: P:QuestFramework.Offers.QuestOffer.ConditionFunc
+  fullName: QuestFramework.Offers.QuestOffer.ConditionFunc
+  nameWithType: QuestOffer.ConditionFunc
+- uid: QuestFramework.Offers.QuestOffer.ConditionFunc*
+  name: ConditionFunc
+  href: api/QuestFramework.Offers.QuestOffer.html#QuestFramework_Offers_QuestOffer_ConditionFunc_
+  commentId: Overload:QuestFramework.Offers.QuestOffer.ConditionFunc
+  isSpec: "True"
+  fullName: QuestFramework.Offers.QuestOffer.ConditionFunc
+  nameWithType: QuestOffer.ConditionFunc
 - uid: QuestFramework.Offers.QuestOffer.OfferedBy
   name: OfferedBy
   href: api/QuestFramework.Offers.QuestOffer.html#QuestFramework_Offers_QuestOffer_OfferedBy
@@ -1684,6 +1865,19 @@ references:
   isSpec: "True"
   fullName: QuestFramework.Quests.CustomQuest.Cancelable
   nameWithType: CustomQuest.Cancelable
+- uid: QuestFramework.Quests.CustomQuest.Colors
+  name: Colors
+  href: api/QuestFramework.Quests.CustomQuest.html#QuestFramework_Quests_CustomQuest_Colors
+  commentId: P:QuestFramework.Quests.CustomQuest.Colors
+  fullName: QuestFramework.Quests.CustomQuest.Colors
+  nameWithType: CustomQuest.Colors
+- uid: QuestFramework.Quests.CustomQuest.Colors*
+  name: Colors
+  href: api/QuestFramework.Quests.CustomQuest.html#QuestFramework_Quests_CustomQuest_Colors_
+  commentId: Overload:QuestFramework.Quests.CustomQuest.Colors
+  isSpec: "True"
+  fullName: QuestFramework.Quests.CustomQuest.Colors
+  nameWithType: CustomQuest.Colors
 - uid: QuestFramework.Quests.CustomQuest.Completed
   name: Completed
   href: api/QuestFramework.Quests.CustomQuest.html#QuestFramework_Quests_CustomQuest_Completed
@@ -1729,6 +1923,19 @@ references:
   isSpec: "True"
   fullName: QuestFramework.Quests.CustomQuest.Description
   nameWithType: CustomQuest.Description
+- uid: QuestFramework.Quests.CustomQuest.FriendshipGain
+  name: FriendshipGain
+  href: api/QuestFramework.Quests.CustomQuest.html#QuestFramework_Quests_CustomQuest_FriendshipGain
+  commentId: P:QuestFramework.Quests.CustomQuest.FriendshipGain
+  fullName: QuestFramework.Quests.CustomQuest.FriendshipGain
+  nameWithType: CustomQuest.FriendshipGain
+- uid: QuestFramework.Quests.CustomQuest.FriendshipGain*
+  name: FriendshipGain
+  href: api/QuestFramework.Quests.CustomQuest.html#QuestFramework_Quests_CustomQuest_FriendshipGain_
+  commentId: Overload:QuestFramework.Quests.CustomQuest.FriendshipGain
+  isSpec: "True"
+  fullName: QuestFramework.Quests.CustomQuest.FriendshipGain
+  nameWithType: CustomQuest.FriendshipGain
 - uid: QuestFramework.Quests.CustomQuest.GetFullName
   name: GetFullName()
   href: api/QuestFramework.Quests.CustomQuest.html#QuestFramework_Quests_CustomQuest_GetFullName
@@ -1891,6 +2098,19 @@ references:
   isSpec: "True"
   fullName: QuestFramework.Quests.CustomQuest.Reward
   nameWithType: CustomQuest.Reward
+- uid: QuestFramework.Quests.CustomQuest.RewardAmount
+  name: RewardAmount
+  href: api/QuestFramework.Quests.CustomQuest.html#QuestFramework_Quests_CustomQuest_RewardAmount
+  commentId: P:QuestFramework.Quests.CustomQuest.RewardAmount
+  fullName: QuestFramework.Quests.CustomQuest.RewardAmount
+  nameWithType: CustomQuest.RewardAmount
+- uid: QuestFramework.Quests.CustomQuest.RewardAmount*
+  name: RewardAmount
+  href: api/QuestFramework.Quests.CustomQuest.html#QuestFramework_Quests_CustomQuest_RewardAmount_
+  commentId: Overload:QuestFramework.Quests.CustomQuest.RewardAmount
+  isSpec: "True"
+  fullName: QuestFramework.Quests.CustomQuest.RewardAmount
+  nameWithType: CustomQuest.RewardAmount
 - uid: QuestFramework.Quests.CustomQuest.RewardDescription
   name: RewardDescription
   href: api/QuestFramework.Quests.CustomQuest.html#QuestFramework_Quests_CustomQuest_RewardDescription
@@ -1904,6 +2124,45 @@ references:
   isSpec: "True"
   fullName: QuestFramework.Quests.CustomQuest.RewardDescription
   nameWithType: CustomQuest.RewardDescription
+- uid: QuestFramework.Quests.CustomQuest.RewardType
+  name: RewardType
+  href: api/QuestFramework.Quests.CustomQuest.html#QuestFramework_Quests_CustomQuest_RewardType
+  commentId: P:QuestFramework.Quests.CustomQuest.RewardType
+  fullName: QuestFramework.Quests.CustomQuest.RewardType
+  nameWithType: CustomQuest.RewardType
+- uid: QuestFramework.Quests.CustomQuest.RewardType*
+  name: RewardType
+  href: api/QuestFramework.Quests.CustomQuest.html#QuestFramework_Quests_CustomQuest_RewardType_
+  commentId: Overload:QuestFramework.Quests.CustomQuest.RewardType
+  isSpec: "True"
+  fullName: QuestFramework.Quests.CustomQuest.RewardType
+  nameWithType: CustomQuest.RewardType
+- uid: QuestFramework.Quests.CustomQuest.Tags
+  name: Tags
+  href: api/QuestFramework.Quests.CustomQuest.html#QuestFramework_Quests_CustomQuest_Tags
+  commentId: P:QuestFramework.Quests.CustomQuest.Tags
+  fullName: QuestFramework.Quests.CustomQuest.Tags
+  nameWithType: CustomQuest.Tags
+- uid: QuestFramework.Quests.CustomQuest.Tags*
+  name: Tags
+  href: api/QuestFramework.Quests.CustomQuest.html#QuestFramework_Quests_CustomQuest_Tags_
+  commentId: Overload:QuestFramework.Quests.CustomQuest.Tags
+  isSpec: "True"
+  fullName: QuestFramework.Quests.CustomQuest.Tags
+  nameWithType: CustomQuest.Tags
+- uid: QuestFramework.Quests.CustomQuest.Texture
+  name: Texture
+  href: api/QuestFramework.Quests.CustomQuest.html#QuestFramework_Quests_CustomQuest_Texture
+  commentId: P:QuestFramework.Quests.CustomQuest.Texture
+  fullName: QuestFramework.Quests.CustomQuest.Texture
+  nameWithType: CustomQuest.Texture
+- uid: QuestFramework.Quests.CustomQuest.Texture*
+  name: Texture
+  href: api/QuestFramework.Quests.CustomQuest.html#QuestFramework_Quests_CustomQuest_Texture_
+  commentId: Overload:QuestFramework.Quests.CustomQuest.Texture
+  isSpec: "True"
+  fullName: QuestFramework.Quests.CustomQuest.Texture
+  nameWithType: CustomQuest.Texture
 - uid: QuestFramework.Quests.CustomQuest.Title
   name: Title
   href: api/QuestFramework.Quests.CustomQuest.html#QuestFramework_Quests_CustomQuest_Title
@@ -2219,6 +2478,463 @@ references:
   isSpec: "True"
   fullName: QuestFramework.Quests.IQuestObserver.UpdateTitle
   nameWithType: IQuestObserver.UpdateTitle
+- uid: QuestFramework.Quests.ITriggerLoader
+  name: ITriggerLoader
+  href: api/QuestFramework.Quests.ITriggerLoader.html
+  commentId: T:QuestFramework.Quests.ITriggerLoader
+  fullName: QuestFramework.Quests.ITriggerLoader
+  nameWithType: ITriggerLoader
+- uid: QuestFramework.Quests.ITriggerLoader.LoadTrigger(System.String)
+  name: LoadTrigger(String)
+  href: api/QuestFramework.Quests.ITriggerLoader.html#QuestFramework_Quests_ITriggerLoader_LoadTrigger_System_String_
+  commentId: M:QuestFramework.Quests.ITriggerLoader.LoadTrigger(System.String)
+  fullName: QuestFramework.Quests.ITriggerLoader.LoadTrigger(System.String)
+  nameWithType: ITriggerLoader.LoadTrigger(String)
+- uid: QuestFramework.Quests.ITriggerLoader.LoadTrigger*
+  name: LoadTrigger
+  href: api/QuestFramework.Quests.ITriggerLoader.html#QuestFramework_Quests_ITriggerLoader_LoadTrigger_
+  commentId: Overload:QuestFramework.Quests.ITriggerLoader.LoadTrigger
+  isSpec: "True"
+  fullName: QuestFramework.Quests.ITriggerLoader.LoadTrigger
+  nameWithType: ITriggerLoader.LoadTrigger
+- uid: QuestFramework.Quests.RewardType
+  name: RewardType
+  href: api/QuestFramework.Quests.RewardType.html
+  commentId: T:QuestFramework.Quests.RewardType
+  fullName: QuestFramework.Quests.RewardType
+  nameWithType: RewardType
+- uid: QuestFramework.Quests.RewardType.Money
+  name: Money
+  href: api/QuestFramework.Quests.RewardType.html#QuestFramework_Quests_RewardType_Money
+  commentId: F:QuestFramework.Quests.RewardType.Money
+  fullName: QuestFramework.Quests.RewardType.Money
+  nameWithType: RewardType.Money
+- uid: QuestFramework.Quests.RewardType.Object
+  name: Object
+  href: api/QuestFramework.Quests.RewardType.html#QuestFramework_Quests_RewardType_Object
+  commentId: F:QuestFramework.Quests.RewardType.Object
+  fullName: QuestFramework.Quests.RewardType.Object
+  nameWithType: RewardType.Object
+- uid: QuestFramework.Quests.RewardType.Weapon
+  name: Weapon
+  href: api/QuestFramework.Quests.RewardType.html#QuestFramework_Quests_RewardType_Weapon
+  commentId: F:QuestFramework.Quests.RewardType.Weapon
+  fullName: QuestFramework.Quests.RewardType.Weapon
+  nameWithType: RewardType.Weapon
+- uid: QuestFramework.Quests.State
+  name: QuestFramework.Quests.State
+  href: api/QuestFramework.Quests.State.html
+  commentId: N:QuestFramework.Quests.State
+  fullName: QuestFramework.Quests.State
+  nameWithType: QuestFramework.Quests.State
+- uid: QuestFramework.Quests.State.ActiveState
+  name: ActiveState
+  href: api/QuestFramework.Quests.State.ActiveState.html
+  commentId: T:QuestFramework.Quests.State.ActiveState
+  fullName: QuestFramework.Quests.State.ActiveState
+  nameWithType: ActiveState
+- uid: QuestFramework.Quests.State.ActiveState.#ctor
+  name: ActiveState()
+  href: api/QuestFramework.Quests.State.ActiveState.html#QuestFramework_Quests_State_ActiveState__ctor
+  commentId: M:QuestFramework.Quests.State.ActiveState.#ctor
+  fullName: QuestFramework.Quests.State.ActiveState.ActiveState()
+  nameWithType: ActiveState.ActiveState()
+- uid: QuestFramework.Quests.State.ActiveState.#ctor*
+  name: ActiveState
+  href: api/QuestFramework.Quests.State.ActiveState.html#QuestFramework_Quests_State_ActiveState__ctor_
+  commentId: Overload:QuestFramework.Quests.State.ActiveState.#ctor
+  isSpec: "True"
+  fullName: QuestFramework.Quests.State.ActiveState.ActiveState
+  nameWithType: ActiveState.ActiveState
+- uid: QuestFramework.Quests.State.ActiveState.Dispose
+  name: Dispose()
+  href: api/QuestFramework.Quests.State.ActiveState.html#QuestFramework_Quests_State_ActiveState_Dispose
+  commentId: M:QuestFramework.Quests.State.ActiveState.Dispose
+  fullName: QuestFramework.Quests.State.ActiveState.Dispose()
+  nameWithType: ActiveState.Dispose()
+- uid: QuestFramework.Quests.State.ActiveState.Dispose*
+  name: Dispose
+  href: api/QuestFramework.Quests.State.ActiveState.html#QuestFramework_Quests_State_ActiveState_Dispose_
+  commentId: Overload:QuestFramework.Quests.State.ActiveState.Dispose
+  isSpec: "True"
+  fullName: QuestFramework.Quests.State.ActiveState.Dispose
+  nameWithType: ActiveState.Dispose
+- uid: QuestFramework.Quests.State.ActiveState.GetState
+  name: GetState()
+  href: api/QuestFramework.Quests.State.ActiveState.html#QuestFramework_Quests_State_ActiveState_GetState
+  commentId: M:QuestFramework.Quests.State.ActiveState.GetState
+  fullName: QuestFramework.Quests.State.ActiveState.GetState()
+  nameWithType: ActiveState.GetState()
+- uid: QuestFramework.Quests.State.ActiveState.GetState*
+  name: GetState
+  href: api/QuestFramework.Quests.State.ActiveState.html#QuestFramework_Quests_State_ActiveState_GetState_
+  commentId: Overload:QuestFramework.Quests.State.ActiveState.GetState
+  isSpec: "True"
+  fullName: QuestFramework.Quests.State.ActiveState.GetState
+  nameWithType: ActiveState.GetState
+- uid: QuestFramework.Quests.State.ActiveState.Initialize(QuestFramework.Quests.CustomQuest)
+  name: Initialize(CustomQuest)
+  href: api/QuestFramework.Quests.State.ActiveState.html#QuestFramework_Quests_State_ActiveState_Initialize_QuestFramework_Quests_CustomQuest_
+  commentId: M:QuestFramework.Quests.State.ActiveState.Initialize(QuestFramework.Quests.CustomQuest)
+  fullName: QuestFramework.Quests.State.ActiveState.Initialize(QuestFramework.Quests.CustomQuest)
+  nameWithType: ActiveState.Initialize(CustomQuest)
+- uid: QuestFramework.Quests.State.ActiveState.Initialize*
+  name: Initialize
+  href: api/QuestFramework.Quests.State.ActiveState.html#QuestFramework_Quests_State_ActiveState_Initialize_
+  commentId: Overload:QuestFramework.Quests.State.ActiveState.Initialize
+  isSpec: "True"
+  fullName: QuestFramework.Quests.State.ActiveState.Initialize
+  nameWithType: ActiveState.Initialize
+- uid: QuestFramework.Quests.State.ActiveState.OnChange
+  name: OnChange
+  href: api/QuestFramework.Quests.State.ActiveState.html#QuestFramework_Quests_State_ActiveState_OnChange
+  commentId: E:QuestFramework.Quests.State.ActiveState.OnChange
+  fullName: QuestFramework.Quests.State.ActiveState.OnChange
+  nameWithType: ActiveState.OnChange
+- uid: QuestFramework.Quests.State.ActiveState.OnUpdateFields
+  name: OnUpdateFields
+  href: api/QuestFramework.Quests.State.ActiveState.html#QuestFramework_Quests_State_ActiveState_OnUpdateFields
+  commentId: E:QuestFramework.Quests.State.ActiveState.OnUpdateFields
+  fullName: QuestFramework.Quests.State.ActiveState.OnUpdateFields
+  nameWithType: ActiveState.OnUpdateFields
+- uid: QuestFramework.Quests.State.ActiveState.Reset
+  name: Reset()
+  href: api/QuestFramework.Quests.State.ActiveState.html#QuestFramework_Quests_State_ActiveState_Reset
+  commentId: M:QuestFramework.Quests.State.ActiveState.Reset
+  fullName: QuestFramework.Quests.State.ActiveState.Reset()
+  nameWithType: ActiveState.Reset()
+- uid: QuestFramework.Quests.State.ActiveState.Reset*
+  name: Reset
+  href: api/QuestFramework.Quests.State.ActiveState.html#QuestFramework_Quests_State_ActiveState_Reset_
+  commentId: Overload:QuestFramework.Quests.State.ActiveState.Reset
+  isSpec: "True"
+  fullName: QuestFramework.Quests.State.ActiveState.Reset
+  nameWithType: ActiveState.Reset
+- uid: QuestFramework.Quests.State.ActiveState.SetState(Newtonsoft.Json.Linq.JObject)
+  name: SetState(JObject)
+  href: api/QuestFramework.Quests.State.ActiveState.html#QuestFramework_Quests_State_ActiveState_SetState_Newtonsoft_Json_Linq_JObject_
+  commentId: M:QuestFramework.Quests.State.ActiveState.SetState(Newtonsoft.Json.Linq.JObject)
+  fullName: QuestFramework.Quests.State.ActiveState.SetState(Newtonsoft.Json.Linq.JObject)
+  nameWithType: ActiveState.SetState(JObject)
+- uid: QuestFramework.Quests.State.ActiveState.SetState*
+  name: SetState
+  href: api/QuestFramework.Quests.State.ActiveState.html#QuestFramework_Quests_State_ActiveState_SetState_
+  commentId: Overload:QuestFramework.Quests.State.ActiveState.SetState
+  isSpec: "True"
+  fullName: QuestFramework.Quests.State.ActiveState.SetState
+  nameWithType: ActiveState.SetState
+- uid: QuestFramework.Quests.State.ActiveState.StateSynced
+  name: StateSynced()
+  href: api/QuestFramework.Quests.State.ActiveState.html#QuestFramework_Quests_State_ActiveState_StateSynced
+  commentId: M:QuestFramework.Quests.State.ActiveState.StateSynced
+  fullName: QuestFramework.Quests.State.ActiveState.StateSynced()
+  nameWithType: ActiveState.StateSynced()
+- uid: QuestFramework.Quests.State.ActiveState.StateSynced*
+  name: StateSynced
+  href: api/QuestFramework.Quests.State.ActiveState.html#QuestFramework_Quests_State_ActiveState_StateSynced_
+  commentId: Overload:QuestFramework.Quests.State.ActiveState.StateSynced
+  isSpec: "True"
+  fullName: QuestFramework.Quests.State.ActiveState.StateSynced
+  nameWithType: ActiveState.StateSynced
+- uid: QuestFramework.Quests.State.ActiveState.WasChanged
+  name: WasChanged
+  href: api/QuestFramework.Quests.State.ActiveState.html#QuestFramework_Quests_State_ActiveState_WasChanged
+  commentId: P:QuestFramework.Quests.State.ActiveState.WasChanged
+  fullName: QuestFramework.Quests.State.ActiveState.WasChanged
+  nameWithType: ActiveState.WasChanged
+- uid: QuestFramework.Quests.State.ActiveState.WasChanged*
+  name: WasChanged
+  href: api/QuestFramework.Quests.State.ActiveState.html#QuestFramework_Quests_State_ActiveState_WasChanged_
+  commentId: Overload:QuestFramework.Quests.State.ActiveState.WasChanged
+  isSpec: "True"
+  fullName: QuestFramework.Quests.State.ActiveState.WasChanged
+  nameWithType: ActiveState.WasChanged
+- uid: QuestFramework.Quests.State.ActiveState.WatchFields(QuestFramework.Quests.State.ActiveStateField[])
+  name: WatchFields(ActiveStateField[])
+  href: api/QuestFramework.Quests.State.ActiveState.html#QuestFramework_Quests_State_ActiveState_WatchFields_QuestFramework_Quests_State_ActiveStateField___
+  commentId: M:QuestFramework.Quests.State.ActiveState.WatchFields(QuestFramework.Quests.State.ActiveStateField[])
+  name.vb: WatchFields(ActiveStateField())
+  fullName: QuestFramework.Quests.State.ActiveState.WatchFields(QuestFramework.Quests.State.ActiveStateField[])
+  fullName.vb: QuestFramework.Quests.State.ActiveState.WatchFields(QuestFramework.Quests.State.ActiveStateField())
+  nameWithType: ActiveState.WatchFields(ActiveStateField[])
+  nameWithType.vb: ActiveState.WatchFields(ActiveStateField())
+- uid: QuestFramework.Quests.State.ActiveState.WatchFields*
+  name: WatchFields
+  href: api/QuestFramework.Quests.State.ActiveState.html#QuestFramework_Quests_State_ActiveState_WatchFields_
+  commentId: Overload:QuestFramework.Quests.State.ActiveState.WatchFields
+  isSpec: "True"
+  fullName: QuestFramework.Quests.State.ActiveState.WatchFields
+  nameWithType: ActiveState.WatchFields
+- uid: QuestFramework.Quests.State.ActiveStateAttribute
+  name: ActiveStateAttribute
+  href: api/QuestFramework.Quests.State.ActiveStateAttribute.html
+  commentId: T:QuestFramework.Quests.State.ActiveStateAttribute
+  fullName: QuestFramework.Quests.State.ActiveStateAttribute
+  nameWithType: ActiveStateAttribute
+- uid: QuestFramework.Quests.State.ActiveStateAttribute.#ctor
+  name: ActiveStateAttribute()
+  href: api/QuestFramework.Quests.State.ActiveStateAttribute.html#QuestFramework_Quests_State_ActiveStateAttribute__ctor
+  commentId: M:QuestFramework.Quests.State.ActiveStateAttribute.#ctor
+  fullName: QuestFramework.Quests.State.ActiveStateAttribute.ActiveStateAttribute()
+  nameWithType: ActiveStateAttribute.ActiveStateAttribute()
+- uid: QuestFramework.Quests.State.ActiveStateAttribute.#ctor(System.String)
+  name: ActiveStateAttribute(String)
+  href: api/QuestFramework.Quests.State.ActiveStateAttribute.html#QuestFramework_Quests_State_ActiveStateAttribute__ctor_System_String_
+  commentId: M:QuestFramework.Quests.State.ActiveStateAttribute.#ctor(System.String)
+  fullName: QuestFramework.Quests.State.ActiveStateAttribute.ActiveStateAttribute(System.String)
+  nameWithType: ActiveStateAttribute.ActiveStateAttribute(String)
+- uid: QuestFramework.Quests.State.ActiveStateAttribute.#ctor*
+  name: ActiveStateAttribute
+  href: api/QuestFramework.Quests.State.ActiveStateAttribute.html#QuestFramework_Quests_State_ActiveStateAttribute__ctor_
+  commentId: Overload:QuestFramework.Quests.State.ActiveStateAttribute.#ctor
+  isSpec: "True"
+  fullName: QuestFramework.Quests.State.ActiveStateAttribute.ActiveStateAttribute
+  nameWithType: ActiveStateAttribute.ActiveStateAttribute
+- uid: QuestFramework.Quests.State.ActiveStateAttribute.Name
+  name: Name
+  href: api/QuestFramework.Quests.State.ActiveStateAttribute.html#QuestFramework_Quests_State_ActiveStateAttribute_Name
+  commentId: P:QuestFramework.Quests.State.ActiveStateAttribute.Name
+  fullName: QuestFramework.Quests.State.ActiveStateAttribute.Name
+  nameWithType: ActiveStateAttribute.Name
+- uid: QuestFramework.Quests.State.ActiveStateAttribute.Name*
+  name: Name
+  href: api/QuestFramework.Quests.State.ActiveStateAttribute.html#QuestFramework_Quests_State_ActiveStateAttribute_Name_
+  commentId: Overload:QuestFramework.Quests.State.ActiveStateAttribute.Name
+  isSpec: "True"
+  fullName: QuestFramework.Quests.State.ActiveStateAttribute.Name
+  nameWithType: ActiveStateAttribute.Name
+- uid: QuestFramework.Quests.State.ActiveStateException
+  name: ActiveStateException
+  href: api/QuestFramework.Quests.State.ActiveStateException.html
+  commentId: T:QuestFramework.Quests.State.ActiveStateException
+  fullName: QuestFramework.Quests.State.ActiveStateException
+  nameWithType: ActiveStateException
+- uid: QuestFramework.Quests.State.ActiveStateField
+  name: ActiveStateField
+  href: api/QuestFramework.Quests.State.ActiveStateField.html
+  commentId: T:QuestFramework.Quests.State.ActiveStateField
+  fullName: QuestFramework.Quests.State.ActiveStateField
+  nameWithType: ActiveStateField
+- uid: QuestFramework.Quests.State.ActiveStateField.FromJToken(Newtonsoft.Json.Linq.JToken)
+  name: FromJToken(JToken)
+  href: api/QuestFramework.Quests.State.ActiveStateField.html#QuestFramework_Quests_State_ActiveStateField_FromJToken_Newtonsoft_Json_Linq_JToken_
+  commentId: M:QuestFramework.Quests.State.ActiveStateField.FromJToken(Newtonsoft.Json.Linq.JToken)
+  fullName: QuestFramework.Quests.State.ActiveStateField.FromJToken(Newtonsoft.Json.Linq.JToken)
+  nameWithType: ActiveStateField.FromJToken(JToken)
+- uid: QuestFramework.Quests.State.ActiveStateField.FromJToken*
+  name: FromJToken
+  href: api/QuestFramework.Quests.State.ActiveStateField.html#QuestFramework_Quests_State_ActiveStateField_FromJToken_
+  commentId: Overload:QuestFramework.Quests.State.ActiveStateField.FromJToken
+  isSpec: "True"
+  fullName: QuestFramework.Quests.State.ActiveStateField.FromJToken
+  nameWithType: ActiveStateField.FromJToken
+- uid: QuestFramework.Quests.State.ActiveStateField.Name
+  name: Name
+  href: api/QuestFramework.Quests.State.ActiveStateField.html#QuestFramework_Quests_State_ActiveStateField_Name
+  commentId: P:QuestFramework.Quests.State.ActiveStateField.Name
+  fullName: QuestFramework.Quests.State.ActiveStateField.Name
+  nameWithType: ActiveStateField.Name
+- uid: QuestFramework.Quests.State.ActiveStateField.Name*
+  name: Name
+  href: api/QuestFramework.Quests.State.ActiveStateField.html#QuestFramework_Quests_State_ActiveStateField_Name_
+  commentId: Overload:QuestFramework.Quests.State.ActiveStateField.Name
+  isSpec: "True"
+  fullName: QuestFramework.Quests.State.ActiveStateField.Name
+  nameWithType: ActiveStateField.Name
+- uid: QuestFramework.Quests.State.ActiveStateField.OnChange
+  name: OnChange
+  href: api/QuestFramework.Quests.State.ActiveStateField.html#QuestFramework_Quests_State_ActiveStateField_OnChange
+  commentId: P:QuestFramework.Quests.State.ActiveStateField.OnChange
+  fullName: QuestFramework.Quests.State.ActiveStateField.OnChange
+  nameWithType: ActiveStateField.OnChange
+- uid: QuestFramework.Quests.State.ActiveStateField.OnChange*
+  name: OnChange
+  href: api/QuestFramework.Quests.State.ActiveStateField.html#QuestFramework_Quests_State_ActiveStateField_OnChange_
+  commentId: Overload:QuestFramework.Quests.State.ActiveStateField.OnChange
+  isSpec: "True"
+  fullName: QuestFramework.Quests.State.ActiveStateField.OnChange
+  nameWithType: ActiveStateField.OnChange
+- uid: QuestFramework.Quests.State.ActiveStateField.Reset
+  name: Reset()
+  href: api/QuestFramework.Quests.State.ActiveStateField.html#QuestFramework_Quests_State_ActiveStateField_Reset
+  commentId: M:QuestFramework.Quests.State.ActiveStateField.Reset
+  fullName: QuestFramework.Quests.State.ActiveStateField.Reset()
+  nameWithType: ActiveStateField.Reset()
+- uid: QuestFramework.Quests.State.ActiveStateField.Reset*
+  name: Reset
+  href: api/QuestFramework.Quests.State.ActiveStateField.html#QuestFramework_Quests_State_ActiveStateField_Reset_
+  commentId: Overload:QuestFramework.Quests.State.ActiveStateField.Reset
+  isSpec: "True"
+  fullName: QuestFramework.Quests.State.ActiveStateField.Reset
+  nameWithType: ActiveStateField.Reset
+- uid: QuestFramework.Quests.State.ActiveStateField.ToJToken
+  name: ToJToken()
+  href: api/QuestFramework.Quests.State.ActiveStateField.html#QuestFramework_Quests_State_ActiveStateField_ToJToken
+  commentId: M:QuestFramework.Quests.State.ActiveStateField.ToJToken
+  fullName: QuestFramework.Quests.State.ActiveStateField.ToJToken()
+  nameWithType: ActiveStateField.ToJToken()
+- uid: QuestFramework.Quests.State.ActiveStateField.ToJToken*
+  name: ToJToken
+  href: api/QuestFramework.Quests.State.ActiveStateField.html#QuestFramework_Quests_State_ActiveStateField_ToJToken_
+  commentId: Overload:QuestFramework.Quests.State.ActiveStateField.ToJToken
+  isSpec: "True"
+  fullName: QuestFramework.Quests.State.ActiveStateField.ToJToken
+  nameWithType: ActiveStateField.ToJToken
+- uid: QuestFramework.Quests.State.ActiveStateField`1
+  name: ActiveStateField<T>
+  href: api/QuestFramework.Quests.State.ActiveStateField-1.html
+  commentId: T:QuestFramework.Quests.State.ActiveStateField`1
+  name.vb: ActiveStateField(Of T)
+  fullName: QuestFramework.Quests.State.ActiveStateField<T>
+  fullName.vb: QuestFramework.Quests.State.ActiveStateField(Of T)
+  nameWithType: ActiveStateField<T>
+  nameWithType.vb: ActiveStateField(Of T)
+- uid: QuestFramework.Quests.State.ActiveStateField`1.#ctor
+  name: ActiveStateField()
+  href: api/QuestFramework.Quests.State.ActiveStateField-1.html#QuestFramework_Quests_State_ActiveStateField_1__ctor
+  commentId: M:QuestFramework.Quests.State.ActiveStateField`1.#ctor
+  fullName: QuestFramework.Quests.State.ActiveStateField<T>.ActiveStateField()
+  fullName.vb: QuestFramework.Quests.State.ActiveStateField(Of T).ActiveStateField()
+  nameWithType: ActiveStateField<T>.ActiveStateField()
+  nameWithType.vb: ActiveStateField(Of T).ActiveStateField()
+- uid: QuestFramework.Quests.State.ActiveStateField`1.#ctor(`0)
+  name: ActiveStateField(T)
+  href: api/QuestFramework.Quests.State.ActiveStateField-1.html#QuestFramework_Quests_State_ActiveStateField_1__ctor__0_
+  commentId: M:QuestFramework.Quests.State.ActiveStateField`1.#ctor(`0)
+  fullName: QuestFramework.Quests.State.ActiveStateField<T>.ActiveStateField(T)
+  fullName.vb: QuestFramework.Quests.State.ActiveStateField(Of T).ActiveStateField(T)
+  nameWithType: ActiveStateField<T>.ActiveStateField(T)
+  nameWithType.vb: ActiveStateField(Of T).ActiveStateField(T)
+- uid: QuestFramework.Quests.State.ActiveStateField`1.#ctor(`0,System.String)
+  name: ActiveStateField(T, String)
+  href: api/QuestFramework.Quests.State.ActiveStateField-1.html#QuestFramework_Quests_State_ActiveStateField_1__ctor__0_System_String_
+  commentId: M:QuestFramework.Quests.State.ActiveStateField`1.#ctor(`0,System.String)
+  fullName: QuestFramework.Quests.State.ActiveStateField<T>.ActiveStateField(T, System.String)
+  fullName.vb: QuestFramework.Quests.State.ActiveStateField(Of T).ActiveStateField(T, System.String)
+  nameWithType: ActiveStateField<T>.ActiveStateField(T, String)
+  nameWithType.vb: ActiveStateField(Of T).ActiveStateField(T, String)
+- uid: QuestFramework.Quests.State.ActiveStateField`1.#ctor*
+  name: ActiveStateField
+  href: api/QuestFramework.Quests.State.ActiveStateField-1.html#QuestFramework_Quests_State_ActiveStateField_1__ctor_
+  commentId: Overload:QuestFramework.Quests.State.ActiveStateField`1.#ctor
+  isSpec: "True"
+  fullName: QuestFramework.Quests.State.ActiveStateField<T>.ActiveStateField
+  fullName.vb: QuestFramework.Quests.State.ActiveStateField(Of T).ActiveStateField
+  nameWithType: ActiveStateField<T>.ActiveStateField
+  nameWithType.vb: ActiveStateField(Of T).ActiveStateField
+- uid: QuestFramework.Quests.State.ActiveStateField`1.FromJToken(Newtonsoft.Json.Linq.JToken)
+  name: FromJToken(JToken)
+  href: api/QuestFramework.Quests.State.ActiveStateField-1.html#QuestFramework_Quests_State_ActiveStateField_1_FromJToken_Newtonsoft_Json_Linq_JToken_
+  commentId: M:QuestFramework.Quests.State.ActiveStateField`1.FromJToken(Newtonsoft.Json.Linq.JToken)
+  fullName: QuestFramework.Quests.State.ActiveStateField<T>.FromJToken(Newtonsoft.Json.Linq.JToken)
+  fullName.vb: QuestFramework.Quests.State.ActiveStateField(Of T).FromJToken(Newtonsoft.Json.Linq.JToken)
+  nameWithType: ActiveStateField<T>.FromJToken(JToken)
+  nameWithType.vb: ActiveStateField(Of T).FromJToken(JToken)
+- uid: QuestFramework.Quests.State.ActiveStateField`1.FromJToken*
+  name: FromJToken
+  href: api/QuestFramework.Quests.State.ActiveStateField-1.html#QuestFramework_Quests_State_ActiveStateField_1_FromJToken_
+  commentId: Overload:QuestFramework.Quests.State.ActiveStateField`1.FromJToken
+  isSpec: "True"
+  fullName: QuestFramework.Quests.State.ActiveStateField<T>.FromJToken
+  fullName.vb: QuestFramework.Quests.State.ActiveStateField(Of T).FromJToken
+  nameWithType: ActiveStateField<T>.FromJToken
+  nameWithType.vb: ActiveStateField(Of T).FromJToken
+- uid: QuestFramework.Quests.State.ActiveStateField`1.Reset
+  name: Reset()
+  href: api/QuestFramework.Quests.State.ActiveStateField-1.html#QuestFramework_Quests_State_ActiveStateField_1_Reset
+  commentId: M:QuestFramework.Quests.State.ActiveStateField`1.Reset
+  fullName: QuestFramework.Quests.State.ActiveStateField<T>.Reset()
+  fullName.vb: QuestFramework.Quests.State.ActiveStateField(Of T).Reset()
+  nameWithType: ActiveStateField<T>.Reset()
+  nameWithType.vb: ActiveStateField(Of T).Reset()
+- uid: QuestFramework.Quests.State.ActiveStateField`1.Reset*
+  name: Reset
+  href: api/QuestFramework.Quests.State.ActiveStateField-1.html#QuestFramework_Quests_State_ActiveStateField_1_Reset_
+  commentId: Overload:QuestFramework.Quests.State.ActiveStateField`1.Reset
+  isSpec: "True"
+  fullName: QuestFramework.Quests.State.ActiveStateField<T>.Reset
+  fullName.vb: QuestFramework.Quests.State.ActiveStateField(Of T).Reset
+  nameWithType: ActiveStateField<T>.Reset
+  nameWithType.vb: ActiveStateField(Of T).Reset
+- uid: QuestFramework.Quests.State.ActiveStateField`1.ToJToken
+  name: ToJToken()
+  href: api/QuestFramework.Quests.State.ActiveStateField-1.html#QuestFramework_Quests_State_ActiveStateField_1_ToJToken
+  commentId: M:QuestFramework.Quests.State.ActiveStateField`1.ToJToken
+  fullName: QuestFramework.Quests.State.ActiveStateField<T>.ToJToken()
+  fullName.vb: QuestFramework.Quests.State.ActiveStateField(Of T).ToJToken()
+  nameWithType: ActiveStateField<T>.ToJToken()
+  nameWithType.vb: ActiveStateField(Of T).ToJToken()
+- uid: QuestFramework.Quests.State.ActiveStateField`1.ToJToken*
+  name: ToJToken
+  href: api/QuestFramework.Quests.State.ActiveStateField-1.html#QuestFramework_Quests_State_ActiveStateField_1_ToJToken_
+  commentId: Overload:QuestFramework.Quests.State.ActiveStateField`1.ToJToken
+  isSpec: "True"
+  fullName: QuestFramework.Quests.State.ActiveStateField<T>.ToJToken
+  fullName.vb: QuestFramework.Quests.State.ActiveStateField(Of T).ToJToken
+  nameWithType: ActiveStateField<T>.ToJToken
+  nameWithType.vb: ActiveStateField(Of T).ToJToken
+- uid: QuestFramework.Quests.State.ActiveStateField`1.Value
+  name: Value
+  href: api/QuestFramework.Quests.State.ActiveStateField-1.html#QuestFramework_Quests_State_ActiveStateField_1_Value
+  commentId: P:QuestFramework.Quests.State.ActiveStateField`1.Value
+  fullName: QuestFramework.Quests.State.ActiveStateField<T>.Value
+  fullName.vb: QuestFramework.Quests.State.ActiveStateField(Of T).Value
+  nameWithType: ActiveStateField<T>.Value
+  nameWithType.vb: ActiveStateField(Of T).Value
+- uid: QuestFramework.Quests.State.ActiveStateField`1.Value*
+  name: Value
+  href: api/QuestFramework.Quests.State.ActiveStateField-1.html#QuestFramework_Quests_State_ActiveStateField_1_Value_
+  commentId: Overload:QuestFramework.Quests.State.ActiveStateField`1.Value
+  isSpec: "True"
+  fullName: QuestFramework.Quests.State.ActiveStateField<T>.Value
+  fullName.vb: QuestFramework.Quests.State.ActiveStateField(Of T).Value
+  nameWithType: ActiveStateField<T>.Value
+  nameWithType.vb: ActiveStateField(Of T).Value
+- uid: QuestFramework.Quests.State.IPersistentState
+  name: IPersistentState
+  href: api/QuestFramework.Quests.State.IPersistentState.html
+  commentId: T:QuestFramework.Quests.State.IPersistentState
+  fullName: QuestFramework.Quests.State.IPersistentState
+  nameWithType: IPersistentState
+- uid: QuestFramework.Quests.State.IPersistentState.GetState
+  name: GetState()
+  href: api/QuestFramework.Quests.State.IPersistentState.html#QuestFramework_Quests_State_IPersistentState_GetState
+  commentId: M:QuestFramework.Quests.State.IPersistentState.GetState
+  fullName: QuestFramework.Quests.State.IPersistentState.GetState()
+  nameWithType: IPersistentState.GetState()
+- uid: QuestFramework.Quests.State.IPersistentState.GetState*
+  name: GetState
+  href: api/QuestFramework.Quests.State.IPersistentState.html#QuestFramework_Quests_State_IPersistentState_GetState_
+  commentId: Overload:QuestFramework.Quests.State.IPersistentState.GetState
+  isSpec: "True"
+  fullName: QuestFramework.Quests.State.IPersistentState.GetState
+  nameWithType: IPersistentState.GetState
+- uid: QuestFramework.Quests.State.IPersistentState.Reset
+  name: Reset()
+  href: api/QuestFramework.Quests.State.IPersistentState.html#QuestFramework_Quests_State_IPersistentState_Reset
+  commentId: M:QuestFramework.Quests.State.IPersistentState.Reset
+  fullName: QuestFramework.Quests.State.IPersistentState.Reset()
+  nameWithType: IPersistentState.Reset()
+- uid: QuestFramework.Quests.State.IPersistentState.Reset*
+  name: Reset
+  href: api/QuestFramework.Quests.State.IPersistentState.html#QuestFramework_Quests_State_IPersistentState_Reset_
+  commentId: Overload:QuestFramework.Quests.State.IPersistentState.Reset
+  isSpec: "True"
+  fullName: QuestFramework.Quests.State.IPersistentState.Reset
+  nameWithType: IPersistentState.Reset
+- uid: QuestFramework.Quests.State.IPersistentState.SetState(Newtonsoft.Json.Linq.JObject)
+  name: SetState(JObject)
+  href: api/QuestFramework.Quests.State.IPersistentState.html#QuestFramework_Quests_State_IPersistentState_SetState_Newtonsoft_Json_Linq_JObject_
+  commentId: M:QuestFramework.Quests.State.IPersistentState.SetState(Newtonsoft.Json.Linq.JObject)
+  fullName: QuestFramework.Quests.State.IPersistentState.SetState(Newtonsoft.Json.Linq.JObject)
+  nameWithType: IPersistentState.SetState(JObject)
+- uid: QuestFramework.Quests.State.IPersistentState.SetState*
+  name: SetState
+  href: api/QuestFramework.Quests.State.IPersistentState.html#QuestFramework_Quests_State_IPersistentState_SetState_
+  commentId: Overload:QuestFramework.Quests.State.IPersistentState.SetState
+  isSpec: "True"
+  fullName: QuestFramework.Quests.State.IPersistentState.SetState
+  nameWithType: IPersistentState.SetState
 - uid: QuestFramework.QuestType
   name: QuestType
   href: api/QuestFramework.QuestType.html
@@ -2482,3 +3198,54 @@ references:
   commentId: F:QuestFramework.State.STANDBY
   fullName: QuestFramework.State.STANDBY
   nameWithType: State.STANDBY
+- uid: QuestFramework.Structures
+  name: QuestFramework.Structures
+  href: api/QuestFramework.Structures.html
+  commentId: N:QuestFramework.Structures
+  fullName: QuestFramework.Structures
+  nameWithType: QuestFramework.Structures
+- uid: QuestFramework.Structures.QuestLogColors
+  name: QuestLogColors
+  href: api/QuestFramework.Structures.QuestLogColors.html
+  commentId: T:QuestFramework.Structures.QuestLogColors
+  fullName: QuestFramework.Structures.QuestLogColors
+  nameWithType: QuestLogColors
+- uid: QuestFramework.Structures.QuestLogColors.ObjectiveColor
+  name: ObjectiveColor
+  href: api/QuestFramework.Structures.QuestLogColors.html#QuestFramework_Structures_QuestLogColors_ObjectiveColor
+  commentId: P:QuestFramework.Structures.QuestLogColors.ObjectiveColor
+  fullName: QuestFramework.Structures.QuestLogColors.ObjectiveColor
+  nameWithType: QuestLogColors.ObjectiveColor
+- uid: QuestFramework.Structures.QuestLogColors.ObjectiveColor*
+  name: ObjectiveColor
+  href: api/QuestFramework.Structures.QuestLogColors.html#QuestFramework_Structures_QuestLogColors_ObjectiveColor_
+  commentId: Overload:QuestFramework.Structures.QuestLogColors.ObjectiveColor
+  isSpec: "True"
+  fullName: QuestFramework.Structures.QuestLogColors.ObjectiveColor
+  nameWithType: QuestLogColors.ObjectiveColor
+- uid: QuestFramework.Structures.QuestLogColors.TextColor
+  name: TextColor
+  href: api/QuestFramework.Structures.QuestLogColors.html#QuestFramework_Structures_QuestLogColors_TextColor
+  commentId: P:QuestFramework.Structures.QuestLogColors.TextColor
+  fullName: QuestFramework.Structures.QuestLogColors.TextColor
+  nameWithType: QuestLogColors.TextColor
+- uid: QuestFramework.Structures.QuestLogColors.TextColor*
+  name: TextColor
+  href: api/QuestFramework.Structures.QuestLogColors.html#QuestFramework_Structures_QuestLogColors_TextColor_
+  commentId: Overload:QuestFramework.Structures.QuestLogColors.TextColor
+  isSpec: "True"
+  fullName: QuestFramework.Structures.QuestLogColors.TextColor
+  nameWithType: QuestLogColors.TextColor
+- uid: QuestFramework.Structures.QuestLogColors.TitleColor
+  name: TitleColor
+  href: api/QuestFramework.Structures.QuestLogColors.html#QuestFramework_Structures_QuestLogColors_TitleColor
+  commentId: P:QuestFramework.Structures.QuestLogColors.TitleColor
+  fullName: QuestFramework.Structures.QuestLogColors.TitleColor
+  nameWithType: QuestLogColors.TitleColor
+- uid: QuestFramework.Structures.QuestLogColors.TitleColor*
+  name: TitleColor
+  href: api/QuestFramework.Structures.QuestLogColors.html#QuestFramework_Structures_QuestLogColors_TitleColor_
+  commentId: Overload:QuestFramework.Structures.QuestLogColors.TitleColor
+  isSpec: "True"
+  fullName: QuestFramework.Structures.QuestLogColors.TitleColor
+  nameWithType: QuestLogColors.TitleColor

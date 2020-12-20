@@ -120,6 +120,39 @@ class ModEntry : Mod
     void ForceRefresh();
 
     /// &lt;summary&gt;
+    /// Returns an quest id of managed quest
+    /// &lt;/summary&gt;
+    /// &lt;param name=&quot;fullQuestName&quot;&gt;A fullqualified name of quest (questName@youdid)&lt;/param&gt;
+    /// &lt;returns&gt;
+    /// Quest id if the quest with &lt;param&gt;fullQuestName&lt;/param&gt; exists and it's managed, otherwise returns -1
+    /// &lt;/returns&gt;
+    int ResolveQuestId(string fullQuestName);
+
+    /// &lt;summary&gt;
+    /// Resolves a fullqualified name (questName@youdid) of managed quest with this id
+    /// &lt;/summary&gt;
+    /// &lt;param name=&quot;questId&quot;&gt;&lt;/param&gt;
+    /// &lt;returns&gt;
+    /// Fullname of managed quest if this quest is managed by QF, otherwise returns null
+    /// &lt;/returns&gt;
+    string ResolveQuestName(int questId);
+
+    /// &lt;summary&gt;
+    /// Is the quest with this id managed by QF?
+    /// &lt;/summary&gt;
+    /// &lt;param name=&quot;questId&quot;&gt;A number representing quest id&lt;/param&gt;
+    /// &lt;returns&gt;True if this quest is managed, otherwise False&lt;/returns&gt;
+    bool IsManagedQuest(int questId);
+
+    void LoadContentPack(Mod provider, IContentPack pack);
+
+    /// &lt;summary&gt;
+    /// Get QF lifecycle status as string
+    /// &lt;/summary&gt;
+    /// &lt;returns&gt;&lt;/returns&gt;
+    string GetStatus();
+
+    /// &lt;summary&gt;
     /// Provide Quest Framework events
     /// &lt;/summary&gt;
     IQuestFrameworkEvents Events { get; }
@@ -138,6 +171,14 @@ class ModEntry : Mod
     /// &lt;/summary&gt;
     /// &lt;param name=&quot;questName&quot;&gt;Name without @ has resolved in your mod scope&lt;/param&gt;
     void AcceptQuest(string questName, bool silent = false);
+
+    /// &lt;summary&gt;
+    /// DEPRECATED! Resolve game quest id and returns custom quest
+    /// &lt;/summary&gt;
+    /// &lt;param name=&quot;id&quot;&gt;&lt;/param&gt;
+    /// &lt;returns&gt;&lt;/returns&gt;
+    [Obsolete(&quot;This API is deprecated! Use IManagedQuestApi.GetQuestById instead.&quot;, true)]
+    CustomQuest GetById(int id);
 
     /// &lt;summary&gt;
     /// Resolve game quest id and returns custom quest
@@ -204,6 +245,23 @@ class ModEntry : Mod
     /// &lt;param name=&quot;conditionName&quot;&gt;Name of condition&lt;/param&gt;
     /// &lt;param name=&quot;conditionHandler&quot;&gt;Handler for this condition&lt;/param&gt;
     void ExposeGlobalCondition(string conditionName, Func&lt;string, CustomQuest, bool&gt; conditionHandler);
+
+    /// &lt;summary&gt;
+    /// Exposes a quest type for content packs and other mods based on QF.
+    /// &lt;/summary&gt;
+    /// &lt;typeparam name=&quot;TQuest&quot;&gt;Quest class type&lt;/typeparam&gt;
+    /// &lt;param name=&quot;type&quot;&gt;Name of quest type in registry&lt;/param&gt;
+    /// &lt;param name=&quot;factory&quot;&gt;Factory of quest of declared type&lt;/param&gt;
+    void ExposeQuestType&lt;TQuest&gt;(string type, Func&lt;TQuest&gt; factory) where TQuest : CustomQuest;
+
+    /// &lt;summary&gt;
+    /// Exposes a quest type for content packs and other mods based on QF.
+    /// &lt;/summary&gt;
+    /// &lt;typeparam name=&quot;TQuest&quot;&gt;Quest class type&lt;/typeparam&gt;
+    /// &lt;param name=&quot;type&quot;&gt;Name of quest type in registry&lt;/param&gt;
+    void ExposeQuestType&lt;TQuest&gt;(string type) where TQuest : CustomQuest, new();
+
+    bool HasQuestType(string type);
 }
 </code></pre>
 <h3 id="events-api">Events API</h3>
@@ -352,6 +410,93 @@ quest.NextQuests.Add(&quot;bat_wing_trophy&quot;);
 <p>TODO</p>
 <h3 id="create-custom-quest-type">Create custom quest type</h3>
 <p>TODO</p>
+<h3 id="using-activestate-on-custom-quest">Using ActiveState on custom quest</h3>
+<p>ActiveState allows you define quest state in simple way and also doesn't need call <code>this.Sync()</code> instead of work with dummy quest state. (Sync method is called automatically at end of update cycle)</p>
+<p>For use active state fields on your custom quest type use class <code>ActiveState</code> as state type and then define properties on your class (property type must derive class <code>ActiveStateField</code>) with attribute <code>ActiveState</code>. QF automatically detects these properties as active state fields and initializes them. These properties is synchronized with state in store (state ready for write to savefile or ready to sync via network in multiplayer).</p>
+<p><strong>Automatic active state field(s) initialization</strong></p>
+<pre><code class="lang-cs">using QuestFramework.Quests;
+using QuestFramework.Quests.State;
+
+namespace QuestEssentials
+{
+    class EarnMoneyQuest : CustomQuest&lt;ActiveState&gt;, IQuestObserver
+    {
+        public int Goal { get; set; }
+
+        [ActiveState]
+        public ActiveStateField&lt;int&gt; Earned { get; } = new ActiveStateField&lt;int&gt;(0);
+
+        public bool CheckIfComplete(IQuestInfo questData, ICompletionArgs completion)
+        {
+            if (questData.VanillaQuest.completed.Value || completion.String != &quot;money&quot; || completion.Number1 &lt;= 0)
+            {
+                return false;
+            }
+
+            // Update the state. No call `this.Sync()` needed
+            this.Earned.Value += completion.Number1;
+        
+            return this.Earned.Value &gt;= this.Goal;
+        }
+        /* ... */
+    }
+}
+</code></pre>
+<p>You can define more active fields than one in this way.</p>
+<p><strong>Manual active state field(s) initialization</strong></p>
+<pre><code class="lang-cs">using QuestFramework.Quests;
+using QuestFramework.Quests.State;
+
+namespace QuestEssentials
+{
+    class EarnMoneyQuest : CustomQuest&lt;ActiveState&gt;, IQuestObserver
+    {
+        public int Goal { get; set; }
+
+        /* 
+         * Give name for your active state field via constructor is needed, 
+         * because name can't be fetched from property name by reflection 
+         * (manual way doesn't use reflection)
+         */
+        public ActiveStateField&lt;int&gt; Earned { get; } = new ActiveStateField&lt;int&gt;(0, &quot;Earned&quot;);
+        
+        protected override ActiveState PrepareState()
+        {
+            // Watch your active state field in overriden `PrepareState` method
+            return base.PrepareState().WatchFields(this.Earned);
+        }
+
+        public bool CheckIfComplete(IQuestInfo questData, ICompletionArgs completion)
+        {
+            if (questData.VanillaQuest.completed.Value || completion.String != &quot;money&quot; || completion.Number1 &lt;= 0)
+            {
+                return false;
+            }
+
+            // Update the state. No call `this.Sync()` needed
+            this.Earned.Value += completion.Number1;
+        
+            return this.Earned.Value &gt;= this.Goal;
+        }
+        /* ... */
+    }
+}
+</code></pre>
+<p>You can define more active fields than one in this way. (Method <code>WatchFields</code> on <code>ActiveState</code> class instance supports propagate more active state fields via <code>params</code>.)</p>
+<h3 id="use-custom-texturecolors">Use custom texture&amp;colors</h3>
+<pre><code class="lang-csharp">// In this context we work with QF managed api on SMAPI Mod class instance
+CustomQuest quest = new CustomQuest(&quot;myQuest&quot;);
+
+quest.Texture = this.Helper.Content.Load&lt;Texture2D&gt;(&quot;assets/my-quest-texture.png&quot;);
+quest.Colors = new QuestLogColors() 
+{
+    TitleColor = 4,
+    TextColor = 4,
+    ObjectiveColor = 1,
+}
+
+managedApi.RegisterQuest(quest);
+</code></pre>
 <h3 id="manual-quest-handling">Manual quest handling</h3>
 <p>TODO</p>
 <h2 id="extensions-api">Extensions API</h2>

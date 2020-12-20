@@ -88,7 +88,7 @@
     <a href="https://github.com/purrplingcat/QuestFramework/new/master/apiSpec/new?filename=QuestFramework_Api_IQuestApi_Events.md&amp;value=---%0Auid%3A%20QuestFramework.Api.IQuestApi.Events%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/purrplingcat/QuestFramework/blob/master/src/Api/QuestApi.cs/#L25">View Source</a>
+    <a href="https://github.com/purrplingcat/QuestFramework/blob/master/src/Api/QuestApi.cs/#L58">View Source</a>
   </span>
   <a id="QuestFramework_Api_IQuestApi_Events_" data-uid="QuestFramework.Api.IQuestApi.Events*"></a>
   <h4 id="QuestFramework_Api_IQuestApi_Events" data-uid="QuestFramework.Api.IQuestApi.Events">Events</h4>
@@ -119,7 +119,7 @@
     <a href="https://github.com/purrplingcat/QuestFramework/new/master/apiSpec/new?filename=QuestFramework_Api_IQuestApi_Status.md&amp;value=---%0Auid%3A%20QuestFramework.Api.IQuestApi.Status%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/purrplingcat/QuestFramework/blob/master/src/Api/QuestApi.cs/#L30">View Source</a>
+    <a href="https://github.com/purrplingcat/QuestFramework/blob/master/src/Api/QuestApi.cs/#L63">View Source</a>
   </span>
   <a id="QuestFramework_Api_IQuestApi_Status_" data-uid="QuestFramework.Api.IQuestApi.Status*"></a>
   <h4 id="QuestFramework_Api_IQuestApi_Status" data-uid="QuestFramework.Api.IQuestApi.Status">Status</h4>
@@ -209,6 +209,223 @@
       <tr>
         <td><a class="xref" href="QuestFramework.Api.IManagedQuestApi.html">IManagedQuestApi</a></td>
         <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/purrplingcat/QuestFramework/new/master/apiSpec/new?filename=QuestFramework_Api_IQuestApi_GetStatus.md&amp;value=---%0Auid%3A%20QuestFramework.Api.IQuestApi.GetStatus%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/purrplingcat/QuestFramework/blob/master/src/Api/QuestApi.cs/#L53">View Source</a>
+  </span>
+  <a id="QuestFramework_Api_IQuestApi_GetStatus_" data-uid="QuestFramework.Api.IQuestApi.GetStatus*"></a>
+  <h4 id="QuestFramework_Api_IQuestApi_GetStatus" data-uid="QuestFramework.Api.IQuestApi.GetStatus">GetStatus()</h4>
+  <div class="markdown level1 summary"><p>Get QF lifecycle status as string</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">string GetStatus()</code></pre>
+  </div>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/purrplingcat/QuestFramework/new/master/apiSpec/new?filename=QuestFramework_Api_IQuestApi_IsManagedQuest_System_Int32_.md&amp;value=---%0Auid%3A%20QuestFramework.Api.IQuestApi.IsManagedQuest(System.Int32)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/purrplingcat/QuestFramework/blob/master/src/Api/QuestApi.cs/#L45">View Source</a>
+  </span>
+  <a id="QuestFramework_Api_IQuestApi_IsManagedQuest_" data-uid="QuestFramework.Api.IQuestApi.IsManagedQuest*"></a>
+  <h4 id="QuestFramework_Api_IQuestApi_IsManagedQuest_System_Int32_" data-uid="QuestFramework.Api.IQuestApi.IsManagedQuest(System.Int32)">IsManagedQuest(Int32)</h4>
+  <div class="markdown level1 summary"><p>Is the quest with this id managed by QF?</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">bool IsManagedQuest(int questId)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td><span class="parametername">questId</span></td>
+        <td><p>A number representing quest id</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Boolean</span></td>
+        <td><p>True if this quest is managed, otherwise False</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/purrplingcat/QuestFramework/new/master/apiSpec/new?filename=QuestFramework_Api_IQuestApi_LoadContentPack_StardewModdingAPI_Mod_StardewModdingAPI_IContentPack_.md&amp;value=---%0Auid%3A%20QuestFramework.Api.IQuestApi.LoadContentPack(StardewModdingAPI.Mod%2CStardewModdingAPI.IContentPack)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/purrplingcat/QuestFramework/blob/master/src/Api/QuestApi.cs/#L47">View Source</a>
+  </span>
+  <a id="QuestFramework_Api_IQuestApi_LoadContentPack_" data-uid="QuestFramework.Api.IQuestApi.LoadContentPack*"></a>
+  <h4 id="QuestFramework_Api_IQuestApi_LoadContentPack_StardewModdingAPI_Mod_StardewModdingAPI_IContentPack_" data-uid="QuestFramework.Api.IQuestApi.LoadContentPack(StardewModdingAPI.Mod,StardewModdingAPI.IContentPack)">LoadContentPack(Mod, IContentPack)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">void LoadContentPack(Mod provider, IContentPack pack)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">StardewModdingAPI.Mod</span></td>
+        <td><span class="parametername">provider</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><span class="xref">StardewModdingAPI.IContentPack</span></td>
+        <td><span class="parametername">pack</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/purrplingcat/QuestFramework/new/master/apiSpec/new?filename=QuestFramework_Api_IQuestApi_ResolveQuestId_System_String_.md&amp;value=---%0Auid%3A%20QuestFramework.Api.IQuestApi.ResolveQuestId(System.String)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/purrplingcat/QuestFramework/blob/master/src/Api/QuestApi.cs/#L29">View Source</a>
+  </span>
+  <a id="QuestFramework_Api_IQuestApi_ResolveQuestId_" data-uid="QuestFramework.Api.IQuestApi.ResolveQuestId*"></a>
+  <h4 id="QuestFramework_Api_IQuestApi_ResolveQuestId_System_String_" data-uid="QuestFramework.Api.IQuestApi.ResolveQuestId(System.String)">ResolveQuestId(String)</h4>
+  <div class="markdown level1 summary"><p>Returns an quest id of managed quest</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">int ResolveQuestId(string fullQuestName)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><span class="parametername">fullQuestName</span></td>
+        <td><p>A fullqualified name of quest (questName@youdid)</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td><p>Quest id if the quest with <param>fullQuestName exists and it's managed, otherwise returns -1</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/purrplingcat/QuestFramework/new/master/apiSpec/new?filename=QuestFramework_Api_IQuestApi_ResolveQuestName_System_Int32_.md&amp;value=---%0Auid%3A%20QuestFramework.Api.IQuestApi.ResolveQuestName(System.Int32)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/purrplingcat/QuestFramework/blob/master/src/Api/QuestApi.cs/#L38">View Source</a>
+  </span>
+  <a id="QuestFramework_Api_IQuestApi_ResolveQuestName_" data-uid="QuestFramework.Api.IQuestApi.ResolveQuestName*"></a>
+  <h4 id="QuestFramework_Api_IQuestApi_ResolveQuestName_System_Int32_" data-uid="QuestFramework.Api.IQuestApi.ResolveQuestName(System.Int32)">ResolveQuestName(Int32)</h4>
+  <div class="markdown level1 summary"><p>Resolves a fullqualified name (questName@youdid) of managed quest with this id</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">string ResolveQuestName(int questId)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td><span class="parametername">questId</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><p>Fullname of managed quest if this quest is managed by QF, otherwise returns null</p>
+</td>
       </tr>
     </tbody>
   </table>
