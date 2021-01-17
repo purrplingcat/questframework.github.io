@@ -9,7 +9,7 @@
       "output": {
         ".html": {
           "relative_path": "README.html",
-          "hash": "jt6E/H0zujs/em7auimXwA=="
+          "hash": "Dj08Pww9COYc6tgkIMBkWQ=="
         }
       },
       "is_incremental": false,
@@ -24,7 +24,7 @@
       "output": {
         ".html": {
           "relative_path": "docs/advanced-api-guide.html",
-          "hash": "a1RjU0BVQ4vrm8GCseyUhQ=="
+          "hash": "hUSh+qYOhXVK20TSHPGCWQ=="
         }
       },
       "is_incremental": false,
@@ -36,7 +36,7 @@
       "output": {
         ".html": {
           "relative_path": "docs/changelog.html",
-          "hash": "yJvbLnPvuAecCWDnSV9UmQ=="
+          "hash": "3b1iKPIBbcEmYgwYH8cTuA=="
         }
       },
       "is_incremental": false,
@@ -63,7 +63,7 @@
       "output": {
         ".html": {
           "relative_path": "docs/content-pack-guide.html",
-          "hash": "qQqPZ4MZuogiGnn3pGzM3g=="
+          "hash": "bFUvnrWeoE1oEUpqcxXXJw=="
         }
       },
       "is_incremental": false,
@@ -135,7 +135,7 @@
       "output": {
         ".html": {
           "relative_path": "api/QuestFramework.Api.IManagedQuestApi.html",
-          "hash": "uFWtjLgMpq9HeGtnBukZ+Q=="
+          "hash": "CKOFyA0iIxganTd5BFqa3w=="
         }
       },
       "is_incremental": false,
@@ -159,7 +159,7 @@
       "output": {
         ".html": {
           "relative_path": "api/QuestFramework.Api.QuestApi.html",
-          "hash": "B7a7sHBrUvKW/3i+KUxu7Q=="
+          "hash": "t1HHLai2Ve4lS9v3DVxFOw=="
         }
       },
       "is_incremental": false,
@@ -207,7 +207,7 @@
       "output": {
         ".html": {
           "relative_path": "api/QuestFramework.Events.IQuestFrameworkEvents.html",
-          "hash": "WL/XYyOSeOkGquJU09BnEw=="
+          "hash": "ZoITMFIXQKGtyn43I24ecw=="
         }
       },
       "is_incremental": false,
@@ -335,6 +335,90 @@
     },
     {
       "type": "ManagedReference",
+      "source_relative_path": "obj/temp/qfapi/QuestFramework.Framework.ContentPacks.Model.CustomDropBoxData.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/QuestFramework.Framework.ContentPacks.Model.CustomDropBoxData.html",
+          "hash": "WDqtBmIR8E+wDwloslBIpw=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/temp/qfapi/QuestFramework.Framework.ContentPacks.Model.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/QuestFramework.Framework.ContentPacks.Model.html",
+          "hash": "0nxCsnTMoh93gK5Dvs6wXQ=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/temp/qfapi/QuestFramework.Framework.Menus.CustomOrderBoard.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/QuestFramework.Framework.Menus.CustomOrderBoard.html",
+          "hash": "XeucxsOG466LGp/9gasf9w=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/temp/qfapi/QuestFramework.Framework.Menus.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/QuestFramework.Framework.Menus.html",
+          "hash": "+h8ZFL5oKhoMIHA2gXCsNA=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/temp/qfapi/QuestFramework.Framework.Structures.BoardType.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/QuestFramework.Framework.Structures.BoardType.html",
+          "hash": "QAAAbSYt3VsPCS1lxDQ17A=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/temp/qfapi/QuestFramework.Framework.Structures.CustomBoardTrigger.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/QuestFramework.Framework.Structures.CustomBoardTrigger.html",
+          "hash": "18bhRfz2kyAwBkiKYpnucA=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/temp/qfapi/QuestFramework.Framework.Structures.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/QuestFramework.Framework.Structures.html",
+          "hash": "YsQ9dLDwMrwKp7CHxsRpmw=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
       "source_relative_path": "obj/temp/qfapi/QuestFramework.Hooks.Actions.yml",
       "output": {
         ".html": {
@@ -423,7 +507,7 @@
       "output": {
         ".html": {
           "relative_path": "api/QuestFramework.Offers.NpcOfferAttributes.html",
-          "hash": "tp984ujbAfT5qwIMmfmHOQ=="
+          "hash": "1Ml58l10VAPoSgbai4Z2BA=="
         }
       },
       "is_incremental": false,
@@ -471,7 +555,7 @@
       "output": {
         ".html": {
           "relative_path": "api/QuestFramework.QuestFrameworkMod.html",
-          "hash": "9aa1hy24P9tfdngcvpKndg=="
+          "hash": "0aMlK42GRfJuQqbJFIwRoQ=="
         }
       },
       "is_incremental": false,
@@ -519,7 +603,7 @@
       "output": {
         ".html": {
           "relative_path": "api/QuestFramework.Quests.CustomQuest-1.html",
-          "hash": "klxaIdrvT/G16CgsYcSmKw=="
+          "hash": "dcIdrHOhUE/XqGG5bsTJNw=="
         }
       },
       "is_incremental": false,
@@ -531,7 +615,19 @@
       "output": {
         ".html": {
           "relative_path": "api/QuestFramework.Quests.CustomQuest.html",
-          "hash": "HSH+QPMcBrwTRnYtBVj0mA=="
+          "hash": "obnm6L7UAFVzkRC8bY2ZSQ=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/temp/qfapi/QuestFramework.Quests.CustomQuestObjective.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/QuestFramework.Quests.CustomQuestObjective.html",
+          "hash": "rBoqj3QPiXqjRCYTV//yXA=="
         }
       },
       "is_incremental": false,
@@ -687,7 +783,7 @@
       "output": {
         ".html": {
           "relative_path": "api/QuestFramework.Quests.html",
-          "hash": "+Qwxeo5TAiJu5E3jmt8N4Q=="
+          "hash": "8raeKm8e62xxuq4QigM+CQ=="
         }
       },
       "is_incremental": false,
@@ -711,7 +807,7 @@
       "output": {
         ".html": {
           "relative_path": "api/QuestFramework.Structures.QuestLogColors.html",
-          "hash": "Q2cglb4QV2YJ77d8CxtrAg=="
+          "hash": "XygjVlg6dpRaVYyX1DTNKg=="
         }
       },
       "is_incremental": false,
@@ -747,7 +843,7 @@
       "output": {
         ".html": {
           "relative_path": "api/toc.html",
-          "hash": "HelZon7qIWlPBGs1xzZmjg=="
+          "hash": "9M9EOz9lUWX8+fpaT1NQpA=="
         }
       },
       "is_incremental": false,
@@ -786,7 +882,7 @@
         "ManagedReferenceDocumentProcessor": {
           "can_incremental": false,
           "incrementalPhase": "build",
-          "total_file_count": 51,
+          "total_file_count": 59,
           "skipped_file_count": 0
         },
         "TocDocumentProcessor": {

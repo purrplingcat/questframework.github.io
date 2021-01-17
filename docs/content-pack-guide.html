@@ -102,11 +102,17 @@
 <pre><code class="lang-js">{
   &quot;Format&quot;: &quot;1.0&quot;, // this is required
   &quot;Quests&quot;: [
-    // quests are defined here
+    // (optional) quests are defined here
   ],
   &quot;Offers&quot;: [
-    // quest offers are defined here (optional)
-  ]
+    // (optional) quest offers are defined here
+  ],
+  &quot;CustomBoards&quot;: [
+    // (optional) define your custom quest or special order boards here
+  ],
+  &quot;CustomDropBoxes&quot;: [
+    // (optional) define your custom drop boxes for your special orders here
+  ],
 }
 </code></pre>
 <h3 id="quest-basics">Quest basics</h3>
@@ -876,9 +882,9 @@ For example: <code>not:EventSeen</code> means event with specified id was not se
 <h3 id="quests-sources">Quests sources</h3>
 <p>These are the available quests sources provided by native Quest Framework. Some sources require defined offer details. There are different offer details based on the source.</p>
 <h4 id="bulletinboard">Bulletinboard</h4>
-<p>Offers quest on bulletinboard located in front of the seeds shop (Pierre).</p>
+<p>Offers quest on bulletinboard located in front of the seeds shop (Pierre).
+Quest is offered on the board every day (morning).</p>
 <p><em>This source NOT requires or accepts any offer details</em></p>
-<p><strong>Example</strong></p>
 <pre><code class="lang-js">{
   &quot;Format&quot;: &quot;1.0&quot;,
   &quot;Quests&quot;: [
@@ -906,14 +912,53 @@ For example: <code>not:EventSeen</code> means event with specified id was not se
   ]
 }
 </code></pre>
+<h4 id="custom-board">Custom board</h4>
+<p>You can offer your quest on your custom quest board. Just use <code>Board:&lt;boardName&gt;</code> in quest offer field <code>OfferedBy</code>.
+Quest is offered on the board every day (morning).</p>
+<p><em>This source NOT requires or accepts any offer details</em></p>
+<pre><code class="lang-js">{
+  &quot;Format&quot;: &quot;1.0&quot;,
+  &quot;Quests&quot;: [
+    {
+      &quot;Name&quot;: &quot;bat_problem&quot;,
+      &quot;Type&quot;: &quot;Monster&quot;,
+      &quot;Title&quot;: &quot;The bat problem&quot;,
+      &quot;Description&quot;: &quot;Bats are attacking the town every night. Slay some bats and make town more safe.&quot;,
+      &quot;Objective&quot;: &quot;Slay 10 bats&quot;,
+      &quot;Reward&quot;: 500, // 500g
+      &quot;DaysLeft&quot;: 10,
+      &quot;Cancelable&quot;: false,
+      &quot;Trigger&quot;: &quot;Bat 10&quot;
+    }
+  ],
+  &quot;Offers&quot;: [
+    {
+      &quot;QuestName&quot;: &quot;bat_problem&quot;,
+      &quot;OfferedBy&quot;: &quot;Board:TestBoard&quot;,
+    },
+      &quot;When&quot;: {
+        &quot;Weather&quot;: &quot;sunny&quot;
+      }
+    }
+  ],
+  &quot;CustomBoards&quot;: [
+    {
+      &quot;BoardName&quot;: &quot;TestBoard&quot;,
+      &quot;Location&quot;: &quot;Farm&quot;,
+      &quot;Tile&quot;: &quot;70,8&quot;
+    }
+  ]
+}
+</code></pre>
 <h4 id="npc">NPC</h4>
 <p>NPC can offer your quest via dialogue (speak with them and get a quest)</p>
 <p><strong>Requires these offer details</strong>
 Field        | Description
 ------------ | -----------
 NpcName      | (string) Which NPC offers this quest.
-DialogueText | (string) What to NPC say to offer this quest.</p>
-<p><strong>Example</strong></p>
+DialogueText | (string) What to NPC say to offer this quest.
+Secret       | (bool) If this is <code>true</code>, then the quest exclamation mark indicator about NPC head is hidden. (default is <code>false</code>)</p>
+<p><em>NOTE: If you are using a <code>Random</code> condition in offer conditions, it's highly recommended set <code>Secret</code> in the offer details to <code>true</code>. Otherwise the quest exclamaiton mark indicator may blink!</em></p>
 <pre><code class="lang-js">{
   &quot;Format&quot;: &quot;1.0&quot;,
   &quot;Quests&quot;: [
@@ -946,13 +991,13 @@ DialogueText | (string) What to NPC say to offer this quest.</p>
 }
 </code></pre>
 <h4 id="mail">Mail</h4>
-<p>Farmer can get a quest via received letter in their mailbox on the farm.</p>
+<p>Farmer can get a quest via received letter in their mailbox on the farm.
+Letter with offered quest is delivered to player's mailbox in the morning.</p>
 <p><strong>Requires these offer details</strong>
 Field        | Description
 ------------ | -----------
 Topic        | (string) Title or topic of the letter (optional)
 Text         | (string) Text of the quest source letter (required)</p>
-<p><strong>Example</strong></p>
 <pre><code class="lang-js">{
   &quot;Format&quot;: &quot;1.0&quot;,
   &quot;Quests&quot;: [
@@ -985,6 +1030,214 @@ Text         | (string) Text of the quest source letter (required)</p>
   ]
 }
 </code></pre>
+<h2 id="custom-boards-for-quests-and-special-orders">Custom boards (for quests and special orders)</h2>
+<p>With the Quest Framework you can define your custom board for offer your custom quests or special orders. You can do it with field <code>CustomBoards</code> in root element of <code>quests.json</code> definition. This field provides an array with custom board definitions. Quest board definition contains these fields:</p>
+<table>
+<thead>
+<tr>
+<th>Field name</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>BoardName</td>
+<td><code>string</code></td>
+<td>Name of your custom board</td>
+</tr>
+<tr>
+<td>BoardType</td>
+<td><code>enum</code></td>
+<td>Type of your board. Allowed values is <code>Quests</code>, <code>SpecialOrders</code>. Default value: <code>Quests</code></td>
+</tr>
+<tr>
+<td>Location</td>
+<td><code>string</code></td>
+<td>Name of the location where is the board placed</td>
+</tr>
+<tr>
+<td>Tile</td>
+<td><code>Point</code></td>
+<td>Tile where is the board placed. Format is <code>&lt;x&gt;,&lt;y&gt;</code>.</td>
+</tr>
+<tr>
+<td>UnlockWhen</td>
+<td><code>Dict&lt;string, string&gt;</code></td>
+<td>(optional) Required conditions to unlock this board. When this field is not defined, no conditions are required - The board is always unlocked.</td>
+</tr>
+<tr>
+<td>ShowIndicator</td>
+<td><code>bool</code></td>
+<td>(optional) Show the <code>!</code> indicator on the board tile when the board has an active quest which can be accepted? (default is <code>true</code>)</td>
+</tr>
+<tr>
+<td>IndicatorOffset</td>
+<td><code>Vector2</code></td>
+<td>(optional) Position offset of exclamation mark indicator on the board tile (offset is in px)</td>
+</tr>
+<tr>
+<td>Texture</td>
+<td><code>string</code></td>
+<td>(optional) Path to a custom background texture. Path can locate local PNG asset inside content pack folder or game asset. For locate background in game assets load this texture with <strong>Content Patcher</strong> first (or by another mod, which can inject custom game assets). If this field is not defined, then board menu uses default texture.</td>
+</tr>
+</tbody>
+</table>
+<p>Custom board is placed as actionable tile to specified position in defined location. If the board is unlocked and player clicks to the board tile a board menu is shown. This board menu offers quests which refers this board. How to refer custom board in quest or special order see bellow.</p>
+<h3 id="custom-quest-board">Custom quest board</h3>
+<ol>
+<li>Define custom board in <code>quests.json</code> in field <code>CustomBoards</code>, give them a valid **name ** and specify the type as <strong>Quests</strong>. Also you can specify custom texture, unlock condition or disable the available quest indicator.</li>
+<li>Create a <strong>quest offer</strong> in <code>quests.json</code> and in their field <code>OfferedBy</code> set <code>Board:&lt;yourCustomBoardName</code> like <em>Board:MyQuestBoard</em> if your board is named as <em>MyQuestBoard</em> in the custom board definition.</li>
+</ol>
+<pre><code class="lang-js">// quests.json in your content pack folder
+{
+  /* ... */
+  &quot;Offers&quot;: [
+    {
+      &quot;QuestName&quot;: &quot;bat_problem&quot;,
+      &quot;OfferedBy&quot;: &quot;Board:MyQuestBoard&quot;,
+    },
+      &quot;When&quot;: {
+        &quot;Weather&quot;: &quot;sunny&quot;
+      }
+    }
+  ],
+  &quot;CustomBoards&quot;: [
+    {
+      &quot;BoardName&quot;: &quot;MyQuestBoard&quot;,
+      &quot;Location&quot;: &quot;Farm&quot;,
+      &quot;Tile&quot;: &quot;70,8&quot;,
+      &quot;Texture&quot;: &quot;LooseSprites/MyQuestBoard&quot;, // This texture is added with Content Patcher
+      &quot;UnlockWhen&quot;: {
+        &quot;DaysPlayed&quot;: 28 // This board can be open by player after 28 days from first game day.
+      }
+    }
+  ]
+}
+</code></pre>
+<p><em>NOTE: Texture size for <code>Quests</code> board type must be <code>338x198 px</code>.</em></p>
+<h3 id="custom-special-orders-board">Custom special orders board</h3>
+<p>Custom special orders are defined with Quest Framework in <code>quests.json</code> in your QF content pack folder. Then you can refer your board in your special order in the content pack, which adds your special orders. Special Orders can't be defined directly with Quest Framework, you must define them with <strong>Content Patcher</strong> by editing content target <code>Data/SpecialOrders</code>. In your order definition set <code>QF:&lt;boardName&gt;</code> to field <code>OrderType</code>. This special order will be offered only in your custom special orders board.</p>
+<ol>
+<li>Define custom board in <code>quests.json</code> in field <code>CustomBoards</code>, give them a valid **name ** and specify the type as <strong>SpecialOrders</strong>. Also you can specify custom texture, unlock condition or disable the available quest indicator.</li>
+<li>In your order definition (in Content Patcher <code>content.json</code> in <code>EditData</code> change for <code>Data/SpecialOrders</code>) set <code>QF:&lt;boardName&gt;</code> to field <code>OrderType</code>. This special order will be offered only in your custom special orders board.</li>
+</ol>
+<pre><code class="lang-js">// quests.json in your QF content pack
+{
+  /* ... */
+  &quot;CustomBoards&quot;: [
+    {
+      &quot;BoardName&quot;: &quot;MySpecialOrdersBoard&quot;,
+      &quot;Location&quot;: &quot;Farm&quot;,
+      &quot;Tile&quot;: &quot;70,8&quot;,
+      &quot;Texture&quot;: &quot;LooseSprites/MySpecialOrdersBoard&quot;, // This texture is added with Content Patcher
+      &quot;UnlockWhen&quot;: {
+        &quot;DaysPlayed&quot;: 28 // This board can be open by player after 28 days from first game day.
+      }
+    }
+  ]
+}
+</code></pre>
+<pre><code class="lang-js">// content.json in your Content Patcher content pack which adds your special orders
+{
+  /* ... */
+  &quot;Changes&quot;: [
+    {
+      &quot;Action&quot;: &quot;EditData&quot;,
+      &quot;Target&quot;: &quot;Data/SpecialOrders&quot;,
+      &quot;Entries&quot;: {
+        &quot;PurrplingCat.PurrplingOrders.AbbyRockLunch&quot;: {
+          &quot;Name&quot;: &quot;[PurrplingCat.PurrplingOrders.AbbyRockLunch_Name]&quot;,
+          &quot;Requester&quot;: &quot;Abigail&quot;,
+          &quot;Duration&quot;: &quot;Week&quot;,
+          &quot;Repeatable&quot;: &quot;True&quot;,
+          &quot;RequiredTags&quot;: &quot;&quot;,
+          &quot;OrderType&quot;: &quot;QF:MySpecialOrdersBoard&quot;, // Offer this order on MySpecialOrdersBoard custom special orders board
+          /* ... */
+        },
+        /* ... */
+      }
+    }
+  ]
+}
+</code></pre>
+<p><em>NOTE: Special orders board custom background texture must be <code>338x198 px</code></em></p>
+<h2 id="custom-drop-boxes-for-special-orders">Custom drop boxes (for special orders)</h2>
+<p>If you need define special orders with objective type donation and do you want define your custom donation drop box for your special orders, we have good news for you. With Quest Framework you can do it! Just define your drop boxes in field <code>CustomDropBoxes</code> in root element of your <code>quests.json</code> file in your QF content pack folder. Then you can refer your drop boxes in your special orders defined with <em>Content Patcher</em> what you want.</p>
+<table>
+<thead>
+<tr>
+<th>Field name</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Name</td>
+<td><code>string</code></td>
+<td>Name of your custom drop box.</td>
+</tr>
+<tr>
+<td>Location</td>
+<td><code>string</code></td>
+<td>Name of location where your drop box is placed.</td>
+</tr>
+<tr>
+<td>Tile</td>
+<td><code>Point</code></td>
+<td>Tile where is your drop box placed. Format is <code>&lt;x&gt;,&lt;y&gt;</code>.</td>
+</tr>
+</tbody>
+</table>
+<pre><code class="lang-js">// quests.json in QF content pack folder
+{
+  /* ... */
+  &quot;CustomDropBoxes&quot;: [
+    {
+      &quot;Name&quot;: &quot;MyDropBox&quot;,
+      &quot;Location&quot;: &quot;Farm&quot;,
+      &quot;Tile&quot;: &quot;69,8&quot;
+    }
+  ]
+}
+</code></pre>
+<pre><code class="lang-js">// content.json in your Content Patcher content pack
+{
+  /* ... */
+  &quot;Changes&quot;: [
+    {
+      &quot;Action&quot;: &quot;EditData&quot;,
+      &quot;Target&quot;: &quot;Data/SpecialOrders&quot;,
+      &quot;Entries&quot;: {
+        &quot;PurrplingCat.PurrplingOrders.AbbyRockLunch&quot;: {
+          &quot;Name&quot;: &quot;[PurrplingCat.PurrplingOrders.AbbyRockLunch_Name]&quot;,
+          &quot;Requester&quot;: &quot;Abigail&quot;,
+          &quot;Duration&quot;: &quot;Week&quot;,
+          &quot;Repeatable&quot;: &quot;True&quot;,
+          &quot;RequiredTags&quot;: &quot;&quot;,
+          &quot;OrderType&quot;: &quot;&quot;, // Or put `QF:&lt;boardName&gt;` you can specify which custom board offer this order (must be defined in `CustomBoards` in QF content pack field first)
+          &quot;Objectives&quot;: [
+            {
+              &quot;Type&quot;: &quot;Donate&quot;,
+              &quot;Text&quot;: &quot;[Lumisteria.SpecialOrders.DemetriusCrabPotStudy_Objective_1_Text]&quot;,
+		      &quot;RequiredCount&quot;: &quot;25&quot;,
+              &quot;Data&quot;: {
+                &quot;DropBox&quot;: &quot;MyDropBox&quot;, // Your drop box name here
+                &quot;DropBoxGameLocation&quot;: &quot;Farm&quot;,
+                &quot;DropBoxIndicatorLocation&quot;: &quot;69 7&quot;,
+                &quot;AcceptedContextTags&quot;: &quot;mineral_amethyst&quot;
+              }
+            }
+          ],
+          /* ... */
+        },
+        /* ... */
+      }
+    }
+  ]
+}
+</code></pre>
 <h2 id="compatibility-with-other-mods">Compatibility with other mods</h2>
 <h3 id="json-assets-support">Json Assets support</h3>
 <p>Quest Framework is compatible with JsonAssets mod. The framework supports JsonAssets objects for the <code>Trigger</code> quest field via token named <code>ja</code> and supports two item types: <code>object</code> and <code>bigcraftable</code>.</p>
@@ -1007,19 +1260,18 @@ Text         | (string) Text of the quest source letter (required)</p>
     }
   ]
 }
-
 </code></pre>
 <h2 id="outbound">Outbound</h2>
 <h3 id="add-quest-via-npc-dialogue-external">Add quest via NPC dialogue (external)</h3>
 <p>You can add known quest in Quest Framework via NPC dialogues. You can define it with content patcher (Patch <code>Dialogue/&lt;NPC_name&gt;</code>) and add your dialogue which adds a quest to the player's questlog or edit existing dialogue line.</p>
 <p>By place <code>[quest:&lt;questname&gt; &lt;modUID&gt;]</code> to the dialogue player get a quest when speak with NPC and this dialogue line is shown.</p>
-<h4 id="example-5">Example</h4>
 <pre><code class="lang-js">// Some dialogue definition file
 {
     &quot;yourDialogueKey&quot;: &quot;Can you bring me an Amethyst? [´quest:bringAmethyst purrplingcat.myquestmod]&quot;
     &quot;anotherDIalogue&quot;: &quot;What's up? $h#$b#Are you interested to small fighting adventure?#$b#Bless your sword! [quest:slayMonsters purrplingcat.myquestmod]&quot;
 }
 </code></pre>
+<p><strong>NOTE:</strong> By add quest via dialogue in this outbound way, you can't check the QF conditions and no exclamation mark will be shown above NPC head. But in this way you can offer a quest via question dialogue.</p>
 </article>
           </div>
           

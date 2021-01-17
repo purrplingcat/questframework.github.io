@@ -62,8 +62,36 @@
             <article class="content wrap" id="_content" data-uid="">
 <h1 id="changelog">Changelog</h1>
 
-<h2 id="120">1.2.0</h2>
+<h2 id="130">1.3.0</h2>
 <h3 id="common-changes">Common changes</h3>
+<ul>
+<li>Quest bulletin board in town now chooses random quest when is offered more quests of the day in the same day</li>
+<li>Added custom drop box support for special orders</li>
+<li>Added texture loader for content packs (allows load texture added by Content Patcher)</li>
+<li>When NPC offers you a quest via dialogue, an indicator is shown above their head. (You can disable it in config.json)</li>
+<li>Added support for custom quest and special order boards (in any location what you want)</li>
+<li>Managed quests are scrollable in questlog if content needs scroll (like special orders)</li>
+<li>Added support for multiple objectives (for future features)</li>
+<li>Fixed some multiplayer problems</li>
+</ul>
+<h3 id="for-content-pack-modders">For Content Pack modders</h3>
+<ul>
+<li>Added extra optional field <code>Secret</code> for <code>OfferDetails</code> of <code>NPC</code> quest offer.</li>
+<li>Added field <code>CustomDropBoxes</code> for define custom drop boxes for special orders (see docs)</li>
+<li>Added field <code>CustomBoards</code> for define custom quest or special order boards (see docs)</li>
+</ul>
+<h3 id="for-smapi-modders">For SMAPI modders</h3>
+<ul>
+<li>New managed API method <code>RegisterCustomBoard</code></li>
+<li>New CustomQuest apis: <code>GetCurrentObjectives</code>, <code>UpdateUpdateCurrentObjectives</code> methods for define multiple objectives for a quest. (You must handle objectives manually in your quest code)</li>
+</ul>
+<h2 id="121">1.2.1</h2>
+<h3 id="common-changes-1">Common changes</h3>
+<ul>
+<li>Update to work with Stardew Valley 1.5 (SMAPI 3.8)</li>
+</ul>
+<h2 id="120">1.2.0</h2>
+<h3 id="common-changes-2">Common changes</h3>
 <ul>
 <li>Internal hook API is deprecated</li>
 <li>Added support for gain additional friendship by complete a quest</li>
@@ -73,14 +101,14 @@
 <li>Write quest type classes in console for <code>quests_list</code>, <code>quests_log</code> and <code>quests_customtypes</code></li>
 <li>Added new command <code>quests_customtypes</code></li>
 </ul>
-<h3 id="for-content-pack-modders">For Content Pack modders</h3>
+<h3 id="for-content-pack-modders-1">For Content Pack modders</h3>
 <ul>
 <li>Added field <code>FriendshipGain</code> for define how much friendship points for which NPCs player gains after quest completion</li>
 <li>Added new fields for quest: <code>RewardType</code>, <code>RewardAmount</code>, <code>Texture</code> and <code>Colors</code></li>
 <li>Added support for custom quest types in content packs (via <code>&lt;modUid&gt;/&lt;questTypeName&gt;</code> in <code>Type</code> field)</li>
 <li>Better error messages</li>
 </ul>
-<h3 id="for-smapi-modders">For SMAPI modders</h3>
+<h3 id="for-smapi-modders-1">For SMAPI modders</h3>
 <ul>
 <li>Added simple API for mods which wants work with QF and do basic stuff (like resolve quest id from name; check if quest is managed; ...) without referencing dll.</li>
 <li>Added property <code>ConditionFunc</code> on <code>QuestOffer</code> class for support additional programatic condition</li>
@@ -94,7 +122,7 @@
 <li>Exposed <code>ITriggerLoader</code> interface</li>
 </ul>
 <h2 id="111">1.1.1</h2>
-<h3 id="common-changes-1">Common changes</h3>
+<h3 id="common-changes-3">Common changes</h3>
 <ul>
 <li>Fixed vanilla SDV quest type id resolving (this fixes problem with item harvest quest completion)</li>
 <li>Fixed item harvest quest current objective</li>
@@ -102,7 +130,7 @@
 <li>Added korean translation (thx KAYA)</li>
 </ul>
 <h2 id="110">1.1.0</h2>
-<h3 id="common-changes-2">Common changes</h3>
+<h3 id="common-changes-4">Common changes</h3>
 <ul>
 <li>Fixed red alert caused by wrong quest dialogue pattern (Thx @Jonquora for help, issue #16)</li>
 <li>Improved check condition logging.</li>
@@ -113,20 +141,20 @@
 <li>Added state verifier (disabled by default)</li>
 <li>Added configuration model for config.json</li>
 </ul>
-<h2 id="for-content-pack-modders-1">For Content Pack modders</h2>
+<h2 id="for-content-pack-modders-2">For Content Pack modders</h2>
 <ul>
 <li>Added support for custom properties for <code>CustomQuest</code> from content packs</li>
 <li>Added option of ConversationTopic to add or remove conversation topic when quest accepted, removed, or completed. (thx itsbenter)</li>
 <li>Added support for i18n translations (provided by SMAPI)</li>
 </ul>
-<h2 id="for-smapi-modders-1">For SMAPI modders</h2>
+<h2 id="for-smapi-modders-2">For SMAPI modders</h2>
 <ul>
 <li>Added new APIs for <code>CustomQuest</code> and statefull <code>CustomQuest&lt;TState&gt;</code></li>
 <li>Added <code>GetQuestByName</code> to Managed mod API.</li>
 <li>Added <code>GetQuestById</code> as replacement for <code>GetbyId</code> (old API method is deprecated and will be removed in one of next versions)</li>
 </ul>
 <h2 id="100">1.0.0</h2>
-<h3 id="common-changes-3">Common changes</h3>
+<h3 id="common-changes-5">Common changes</h3>
 <ul>
 <li>Added new debug commands: <code>quests_accept</code>, <code>quests_complete</code> and <code>quests_remove</code>.</li>
 <li>Fixed wrong quest type binding in asset editor for <code>Data/Quests</code></li>
@@ -138,26 +166,26 @@
 <li>Added new condition <code>FriendshipStatus</code> to check friendship status of specified character (Married, Engaged, Dating, Friendly)</li>
 <li>Rename conditions: <code>Friendship</code> to <code>FriendshipLevel</code> to distinguish from <code>FriendshipStatus</code></li>
 </ul>
-<h3 id="for-content-pack-modders-2">For Content Pack modders</h3>
-<ul>
-<li>Added support for <code>OR</code> logical function between values in conditions (with <code>|</code> separator)</li>
-</ul>
 <h3 id="for-content-pack-modders-3">For Content Pack modders</h3>
 <ul>
 <li>Added support for <code>OR</code> logical function between values in conditions (with <code>|</code> separator)</li>
 </ul>
-<h3 id="for-smapi-modders-2">For SMAPI modders</h3>
+<h3 id="for-content-pack-modders-4">For Content Pack modders</h3>
+<ul>
+<li>Added support for <code>OR</code> logical function between values in conditions (with <code>|</code> separator)</li>
+</ul>
+<h3 id="for-smapi-modders-3">For SMAPI modders</h3>
 <ul>
 <li>Added new extensions for class <code>CustomQuest</code>: <code>IsNeverAccepted</code> and <code>IsNeverCompleted</code></li>
 </ul>
 <h2 id="100-beta3">1.0.0-beta.3</h2>
-<h3 id="common-changes-4">Common changes</h3>
+<h3 id="common-changes-6">Common changes</h3>
 <ul>
 <li>Fixed problematic issues with Android</li>
 <li>Added Portuguese translation (thx Randy)</li>
 </ul>
 <h2 id="100-beta2">1.0.0-beta.2</h2>
-<h3 id="common-changes-5">Common changes</h3>
+<h3 id="common-changes-7">Common changes</h3>
 <ul>
 <li>Improved Bulletinboard quest offer</li>
 <li>Added <code>not:</code> prefix for negate result of checked condition (can be used in hooks and offers and in both programatic and content pack usage)</li>
@@ -168,7 +196,7 @@
 <li>Added stats support</li>
 <li>Improved some minor refactors</li>
 </ul>
-<h3 id="for-smapi-modders-3">For SMAPI modders</h3>
+<h3 id="for-smapi-modders-4">For SMAPI modders</h3>
 <ul>
 <li>Added API method <code>ForceRefresh()</code></li>
 <li>Improved accept quest API which allows add quest quietly (without popup alert message and without &quot;new&quot; flag in questlog)</li>
@@ -177,19 +205,19 @@
 <li>Added extensions for <code>CustomQuest</code> class (use namespace <code>QuestFramework.Extensions</code> for apply)</li>
 </ul>
 <h2 id="100-beta1">1.0.0-beta.1</h2>
-<h3 id="common-changes-6">Common changes</h3>
+<h3 id="common-changes-8">Common changes</h3>
 <ul>
 <li>Fixed saving game</li>
 <li>Added new global conditions: <em>MinDaysPlayed</em>, <em>MaxDaysPlayed</em>, <em>DaysPlayed</em> and <em>IsFarmerMarried</em></li>
 <li>Added support for daily quests (day limited quests)</li>
 </ul>
-<h3 id="for-content-pack-modders-4">For Content Pack modders</h3>
+<h3 id="for-content-pack-modders-5">For Content Pack modders</h3>
 <ul>
 <li>You can define days left for quests (daily quests)</li>
 <li>Added token for use objects from JsonAssets in quest triggers.
 (example for ItemDelivery quest type: <code>Willy {{ja:Fish Oil}}</code>)</li>
 </ul>
-<h3 id="for-smapi-modders-4">For SMAPI modders</h3>
+<h3 id="for-smapi-modders-5">For SMAPI modders</h3>
 <ul>
 <li>You can define days left for quests (daily quests) via SMAPI mod-provided API</li>
 <li>Added trigger parser-loader in CustomQuest class</li>

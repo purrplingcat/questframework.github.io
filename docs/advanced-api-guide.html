@@ -262,6 +262,15 @@ class ModEntry : Mod
     void ExposeQuestType&lt;TQuest&gt;(string type) where TQuest : CustomQuest, new();
 
     bool HasQuestType(string type);
+
+    /// &lt;summary&gt;
+    /// Register custom quest or special orders board
+    /// WARNING: Can't register new bopards when game is loaded. 
+    /// Please register all your boards when QF state is LAUNCHING 
+    /// (&lt;see cref=&quot;QuestFramework.Events.IQuestFrameworkEvents.GettingReady&quot;/&gt; event)
+    /// &lt;/summary&gt;
+    /// &lt;param name=&quot;boardTrigger&quot;&gt;&lt;/param&gt;
+    void RegisterCustomBoard(CustomBoardTrigger boardTrigger);
 }
 </code></pre>
 <h3 id="events-api">Events API</h3>
