@@ -76,21 +76,28 @@
   <div class="markdown level0 summary"><p>Quest observer which defines custom quest actions, acting and whatever.</p>
 </div>
   <div class="markdown level0 conceptual"></div>
+  <div class="inheritedMembers">
+    <h5>Inherited Members</h5>
+    <div>
+      <a class="xref" href="QuestFramework.Quests.IQuestInfoUpdater.html#QuestFramework_Quests_IQuestInfoUpdater_UpdateObjective_QuestFramework_Quests_IQuestInfo_System_String__">IQuestInfoUpdater.UpdateObjective(IQuestInfo, String)</a>
+    </div>
+    <div>
+      <a class="xref" href="QuestFramework.Quests.IQuestInfoUpdater.html#QuestFramework_Quests_IQuestInfoUpdater_UpdateDescription_QuestFramework_Quests_IQuestInfo_System_String__">IQuestInfoUpdater.UpdateDescription(IQuestInfo, String)</a>
+    </div>
+    <div>
+      <a class="xref" href="QuestFramework.Quests.IQuestInfoUpdater.html#QuestFramework_Quests_IQuestInfoUpdater_UpdateTitle_QuestFramework_Quests_IQuestInfo_System_String__">IQuestInfoUpdater.UpdateTitle(IQuestInfo, String)</a>
+    </div>
+  </div>
   <h6><strong>Namespace</strong>: <a class="xref" href="QuestFramework.Quests.html">QuestFramework.Quests</a></h6>
   <h6><strong>Assembly</strong>: QuestFramework.dll</h6>
   <h5 id="QuestFramework_Quests_IQuestObserver_syntax">Syntax</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public interface IQuestObserver</code></pre>
+    <pre><code class="lang-csharp hljs">public interface IQuestObserver : IQuestInfoUpdater</code></pre>
   </div>
   <h3 id="methods">Methods
   </h3>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/purrplingcat/QuestFramework/new/master/apiSpec/new?filename=QuestFramework_Quests_IQuestObserver_CheckIfComplete_QuestFramework_Quests_IQuestInfo_QuestFramework_Quests_ICompletionArgs_.md&amp;value=---%0Auid%3A%20QuestFramework.Quests.IQuestObserver.CheckIfComplete(QuestFramework.Quests.IQuestInfo%2CQuestFramework.Quests.ICompletionArgs)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/purrplingcat/QuestFramework/blob/master/src/Quests/IQuestObserver.cs/#L14">View Source</a>
-  </span>
+  
+  
   <a id="QuestFramework_Quests_IQuestObserver_CheckIfComplete_" data-uid="QuestFramework.Quests.IQuestObserver.CheckIfComplete*"></a>
   <h4 id="QuestFramework_Quests_IQuestObserver_CheckIfComplete_QuestFramework_Quests_IQuestInfo_QuestFramework_Quests_ICompletionArgs_" data-uid="QuestFramework.Quests.IQuestObserver.CheckIfComplete(QuestFramework.Quests.IQuestInfo,QuestFramework.Quests.ICompletionArgs)">CheckIfComplete(IQuestInfo, ICompletionArgs)</h4>
   <div class="markdown level1 summary"></div>
@@ -136,117 +143,6 @@
       </tr>
     </tbody>
   </table>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/purrplingcat/QuestFramework/new/master/apiSpec/new?filename=QuestFramework_Quests_IQuestObserver_UpdateDescription_QuestFramework_Quests_IQuestInfo_System_String__.md&amp;value=---%0Auid%3A%20QuestFramework.Quests.IQuestObserver.UpdateDescription(QuestFramework.Quests.IQuestInfo%2CSystem.String%40)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/purrplingcat/QuestFramework/blob/master/src/Quests/IQuestObserver.cs/#L16">View Source</a>
-  </span>
-  <a id="QuestFramework_Quests_IQuestObserver_UpdateDescription_" data-uid="QuestFramework.Quests.IQuestObserver.UpdateDescription*"></a>
-  <h4 id="QuestFramework_Quests_IQuestObserver_UpdateDescription_QuestFramework_Quests_IQuestInfo_System_String__" data-uid="QuestFramework.Quests.IQuestObserver.UpdateDescription(QuestFramework.Quests.IQuestInfo,System.String@)">UpdateDescription(IQuestInfo, ref String)</h4>
-  <div class="markdown level1 summary"></div>
-  <div class="markdown level1 conceptual"></div>
-  <h5 class="decalaration">Declaration</h5>
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">void UpdateDescription(IQuestInfo questData, ref string description)</code></pre>
-  </div>
-  <h5 class="parameters">Parameters</h5>
-  <table class="table table-bordered table-striped table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Name</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="QuestFramework.Quests.IQuestInfo.html">IQuestInfo</a></td>
-        <td><span class="parametername">questData</span></td>
-        <td></td>
-      </tr>
-      <tr>
-        <td><span class="xref">System.String</span></td>
-        <td><span class="parametername">description</span></td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/purrplingcat/QuestFramework/new/master/apiSpec/new?filename=QuestFramework_Quests_IQuestObserver_UpdateObjective_QuestFramework_Quests_IQuestInfo_System_String__.md&amp;value=---%0Auid%3A%20QuestFramework.Quests.IQuestObserver.UpdateObjective(QuestFramework.Quests.IQuestInfo%2CSystem.String%40)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/purrplingcat/QuestFramework/blob/master/src/Quests/IQuestObserver.cs/#L15">View Source</a>
-  </span>
-  <a id="QuestFramework_Quests_IQuestObserver_UpdateObjective_" data-uid="QuestFramework.Quests.IQuestObserver.UpdateObjective*"></a>
-  <h4 id="QuestFramework_Quests_IQuestObserver_UpdateObjective_QuestFramework_Quests_IQuestInfo_System_String__" data-uid="QuestFramework.Quests.IQuestObserver.UpdateObjective(QuestFramework.Quests.IQuestInfo,System.String@)">UpdateObjective(IQuestInfo, ref String)</h4>
-  <div class="markdown level1 summary"></div>
-  <div class="markdown level1 conceptual"></div>
-  <h5 class="decalaration">Declaration</h5>
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">void UpdateObjective(IQuestInfo questData, ref string objective)</code></pre>
-  </div>
-  <h5 class="parameters">Parameters</h5>
-  <table class="table table-bordered table-striped table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Name</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="QuestFramework.Quests.IQuestInfo.html">IQuestInfo</a></td>
-        <td><span class="parametername">questData</span></td>
-        <td></td>
-      </tr>
-      <tr>
-        <td><span class="xref">System.String</span></td>
-        <td><span class="parametername">objective</span></td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/purrplingcat/QuestFramework/new/master/apiSpec/new?filename=QuestFramework_Quests_IQuestObserver_UpdateTitle_QuestFramework_Quests_IQuestInfo_System_String__.md&amp;value=---%0Auid%3A%20QuestFramework.Quests.IQuestObserver.UpdateTitle(QuestFramework.Quests.IQuestInfo%2CSystem.String%40)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/purrplingcat/QuestFramework/blob/master/src/Quests/IQuestObserver.cs/#L17">View Source</a>
-  </span>
-  <a id="QuestFramework_Quests_IQuestObserver_UpdateTitle_" data-uid="QuestFramework.Quests.IQuestObserver.UpdateTitle*"></a>
-  <h4 id="QuestFramework_Quests_IQuestObserver_UpdateTitle_QuestFramework_Quests_IQuestInfo_System_String__" data-uid="QuestFramework.Quests.IQuestObserver.UpdateTitle(QuestFramework.Quests.IQuestInfo,System.String@)">UpdateTitle(IQuestInfo, ref String)</h4>
-  <div class="markdown level1 summary"></div>
-  <div class="markdown level1 conceptual"></div>
-  <h5 class="decalaration">Declaration</h5>
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">void UpdateTitle(IQuestInfo questData, ref string title)</code></pre>
-  </div>
-  <h5 class="parameters">Parameters</h5>
-  <table class="table table-bordered table-striped table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Name</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="QuestFramework.Quests.IQuestInfo.html">IQuestInfo</a></td>
-        <td><span class="parametername">questData</span></td>
-        <td></td>
-      </tr>
-      <tr>
-        <td><span class="xref">System.String</span></td>
-        <td><span class="parametername">title</span></td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
 </article>
           </div>
           
@@ -254,12 +150,6 @@
             <div class="sideaffix">
               <div class="contribution">
                 <ul class="nav">
-                  <li>
-                    <a href="https://github.com/purrplingcat/QuestFramework/new/master/apiSpec/new?filename=QuestFramework_Quests_IQuestObserver.md&amp;value=---%0Auid%3A%20QuestFramework.Quests.IQuestObserver%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" class="contribution-link">Improve this Doc</a>
-                  </li>
-                  <li>
-                    <a href="https://github.com/purrplingcat/QuestFramework/blob/master/src/Quests/IQuestObserver.cs/#L12" class="contribution-link">View Source</a>
-                  </li>
                 </ul>
               </div>
               <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">

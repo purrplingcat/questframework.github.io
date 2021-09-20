@@ -226,6 +226,16 @@
 <td></td>
 <td><code>ConversationTopic</code> Add or remove conversation topic (see conversation topic for more info)</td>
 </tr>
+<tr>
+<td>AddMailOnComplete</td>
+<td></td>
+<td>Receive the mail(s) by player after quest is completed. Supported multiple letter names. See <a href="#completion-mails">Completion Mails</a> for more details</td>
+</tr>
+<tr>
+<td>RemoveMailOnComplete</td>
+<td></td>
+<td>Remove already received mail from player (clear mail flag) after quest is completed. Supported multiple letter names. See <a href="#completion-mails">Completion Mails</a> for more details</td>
+</tr>
 </tbody>
 </table>
 <h4 id="example">Example</h4>
@@ -289,6 +299,8 @@ See the <code>Data/ObjectInformation</code> game resource for available items.</
 <p>Custom quest type. You can specify field <code>CustomTypeId</code> for more explicit which custom quest type. In JSON api you can use hooks to create custom quest handling.</p>
 <p>You can define custom quest via setup value <code>Custom</code> into field <code>Type</code> or in format <code>&lt;modUID&gt;/&lt;QuestTypeName&gt;</code> for custom quests defined by other mods which exposes their quest types for content packs.</p>
 <p><em>Trigger</em>: Custom defined. In JSON api use hooks instead for handle your pure JSON custom quest. If you target a custom quest type defined by any other mod in your JSON content pack, follow instructions of the source mod of this quest type.</p>
+<p><strong>Needs more quest types?</strong></p>
+<p>The <a href="https://www.nexusmods.com/stardewvalley/????">Quest Essentials</a> offers some new custom types for Quest Framework, like multi-staged quests, earn money quest type and etc.</p>
 <h3 id="rewards">Rewards</h3>
 <p>There are supported some reward types for quests. You can specify reward type in field <code>RewardType</code> in your quest definition. Reward is paid to player after quest is completed by clicking the reward in questlog menu (in quest details for completed quest)</p>
 <table>
@@ -367,6 +379,38 @@ See the <code>Data/ObjectInformation</code> game resource for available items.</
       &quot;RewardType&quot;: &quot;Weapon&quot;
       &quot;Cancelable&quot;: true,
       &quot;Trigger&quot;: &quot;Bat 10&quot;, // Kill 10 bats
+    }
+  ]
+}
+</code></pre>
+<h3 id="completion-mails">Completion mails</h3>
+<p>By adding fields <code>AddMailOnComplete</code> and/or <code>RemoveMailOnComplete</code> you can specify which mails will player receive after quest is completed, or which already received mail will be forgotten by player.</p>
+<p>Add mail on complete is usefull for controll your custom events based on quests or for some other purposes. You can use mail name of received mail with Content Patcher in their condition system for control loading assets in dependency on quest completion and etc. You can specify multiple mails and with some flags. The format of a mail entry is:</p>
+<pre><code>&lt;letterId&gt; [noletter|tomorrow|everyone]
+</code></pre>
+<ul>
+<li><code>noletter</code> mail is received immediatelly without letter in farmer's mailbox</li>
+<li><code>tomorrow</code> mail will be received at morning (next day)</li>
+<li><code>everyone</code> mail will be received by farmer and by all farmhands recognized in multiplayer game (for single player is the same behaviour as without this flag)</li>
+</ul>
+<p>You can combine all of these flags per letter record. For the <code>RemoveMailOnComplete</code> you can use only the flag <code>everyone</code>. Mails to remove are removed immediatelly after complete quest, other flags are ignored and unread mails in the mailbox are not affected.</p>
+<pre><code class="lang-js">{
+  &quot;Format&quot;: &quot;1.0&quot;,
+  &quot;Quests&quot;: [
+    {
+      &quot;Name&quot;: &quot;abigail_amethyst1&quot;,
+      &quot;Type&quot;: &quot;ItemDelivery&quot;,
+      &quot;Title&quot;: &quot;The purple lunch&quot;,
+      &quot;Description&quot;: &quot;Abigail are very hungry. She wants to eat something special from mines.&quot;,
+      &quot;Objective&quot;: &quot;Bring amethyst to Abigail&quot;,
+      &quot;DaysLeft&quot;: 5,
+      &quot;Reward&quot;: &quot;Chocolate Cake&quot;,
+      &quot;RewardType&quot;: &quot;Object&quot;
+      &quot;RewardAmount&quot;: 2, // Player gets two chocolate cakes after complete this quest
+      &quot;Cancelable&quot;: true, // This quest can be cancelled by player
+      &quot;Trigger&quot;: &quot;Abigail 66&quot;, // Bring amethyst to Abby
+      &quot;ReactionText&quot;: &quot;Oh, it's looks delicious. I am really hungry.&quot;
+      &quot;AddMailOnComplete:&quot; &quot;happy_abby noletter, abby_eats_rocks tomorrow everyone&quot; // two mails will be received after this quest is completed
     }
   ]
 }
@@ -473,144 +517,6 @@ See the <code>Data/ObjectInformation</code> game resource for available items.</
   ]
 }
 </code></pre>
-<h2 id="hooks">Hooks</h2>
-<p>You can add some &quot;magic&quot; to your custom quests with hooks. Hooks do specified action with your quests when something was triggered in the game.</p>
-<p>Hooks has conditions for check if the action of hook will be triggered or not. There are two types of conditions: local and environment. You don't must specify all available conditions. You can specify conditions which you need.</p>
-<table>
-<thead>
-<tr>
-<th>Field</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>When</td>
-<td>When this hook will be trigered (see hook types)</td>
-</tr>
-<tr>
-<td>Action</td>
-<td>Which action will be executed (see actions)</td>
-</tr>
-<tr>
-<td>Has</td>
-<td>Conditions for execute the hook (see conditions and hook types).</td>
-</tr>
-</tbody>
-</table>
-<h4 id="example-2">Example</h4>
-<pre><code class="lang-js">{
-  &quot;Format&quot;: &quot;1.0&quot;,
-  &quot;Quests&quot;: [
-    {
-      &quot;Name&quot;: &quot;my_custom_quest&quot;,
-      &quot;Type&quot;: &quot;ItemDelivery&quot;, // Vanilla quest type
-      &quot;Title&quot;: &quot;The purple lunch&quot;,
-      &quot;Description&quot;: &quot;Abigail are very hungry. She wants to eat something special from mines.&quot;,
-      &quot;Objective&quot;: &quot;Bring amethyst to Abigail&quot;,
-      &quot;Reward&quot;: 300, // 300g
-      &quot;Cancelable&quot;: true,
-      &quot;Trigger&quot;: &quot;Abigail 66&quot;, // Bring amethyst to Abby
-      &quot;ReactionText&quot;: &quot;Oh, it's looks delicious. I am really hungry.&quot;,
-      &quot;Hooks&quot;: [
-         // Quest will be accepted (added to quest log) 
-         // when farmer go near the tree on the west side of graveyard in Town
-         // and when is sunny weather today
-        {
-          &quot;When&quot;: &quot;Tile&quot;,
-          &quot;Has&quot;: {
-            &quot;Location&quot;: &quot;Town&quot;,
-            &quot;Area&quot;: &quot;2038 5573 326 245&quot;,
-            &quot;Weather&quot;: &quot;sunny&quot;
-          },
-          &quot;Action&quot;: &quot;Accept&quot;
-        }
-      ]
-    }
-  ]
-}
-</code></pre>
-<h3 id="actions">Actions</h3>
-<p>There are these types of actions:</p>
-<table>
-<thead>
-<tr>
-<th>Action name</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Complete</td>
-<td>Complete the quest</td>
-</tr>
-<tr>
-<td>Remove</td>
-<td>Remove the quest from player's questlog (quest is not considered complete, just removed)</td>
-</tr>
-<tr>
-<td>CheckIfComplete</td>
-<td>Handles completion checker and complete the quest if inner quest conditions are met.</td>
-</tr>
-<tr>
-<td>Accept</td>
-<td>Accept this quest and add it to player's quest log as new quest (has the sign new in quest log).</td>
-</tr>
-</tbody>
-</table>
-<h3 id="hook-types">Hook types</h3>
-<p>Some hook types has own specific conditions. See them bellow.
-<strong>NOTE:</strong> For specialized hook type's conditions you cant't use the negation <code>not:</code> prefix. This prefix is only for <a href="common-environment-conditions">common conditions</a> and for global custom conditions.</p>
-<h4 id="location-1">Location</h4>
-<p>This hook is triggered when player entered or leaved specific location and all other conditions are met.</p>
-<table>
-<thead>
-<tr>
-<th>Local condition</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Enter</td>
-<td>Name of the location the player enter</td>
-</tr>
-<tr>
-<td>Leave</td>
-<td>Name of the location the player left</td>
-</tr>
-</tbody>
-</table>
-<p>If you specify both, then the hook action will be triggered when player left the Leave location and entered the Enter location. For example:</p>
-<p>Enter condition is <code>Town</code> and leave condition is <code>BusStop</code>. This hook trigs their action when player entered Town from the Bus Stop.</p>
-<h4 id="tile">Tile</h4>
-<p>This hook is triggered when player stands on specific tile position or in specific area of specific location.</p>
-<table>
-<thead>
-<tr>
-<th>Local condition</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Location</td>
-<td>Game location</td>
-</tr>
-<tr>
-<td>Position</td>
-<td>Standing tile position (X, Y). Example <code>13 10</code></td>
-</tr>
-<tr>
-<td>Area</td>
-<td>Specified standing area (X, Y, Width, Height) Example: <code>2038 5573 326 245</code></td>
-</tr>
-<tr>
-<td>TouchAction</td>
-<td>Touch action property value must be this defined value for trig hook's action.</td>
-</tr>
-</tbody>
-</table>
 <h2 id="conversation-topic">Conversation topic</h2>
 <p><a href="https://stardewvalleywiki.com/Modding:Dialogue#Conversation_topics">Conversation topic</a> can make the character speak of certain dialogue when the specific conversation topic is active. Please refer to the conversation topic explanation on the wiki before using this feature. With this field you can make NPCs give dialogue when a quest is accepted, cancelled, and or completed. The respective dialogue itself must be added using <a href="https://github.com/Pathoschild/StardewMods/blob/develop/ContentPatcher/docs/author-guide.md#editdata">Content patcher</a></p>
 <h3 id="options">Options</h3>
@@ -655,7 +561,7 @@ See the <code>Data/ObjectInformation</code> game resource for available items.</
 </tr>
 </tbody>
 </table>
-<h4 id="example-3">Example</h4>
+<h4 id="example-2">Example</h4>
 <pre><code class="lang-js">{
   &quot;Format&quot;: &quot;1.0&quot;,
   &quot;Quests&quot;: [
@@ -834,6 +740,21 @@ See the <code>Data/ObjectInformation</code> game resource for available items.</
 <td>EPU</td>
 <td>EPU string like <code>!z spring/t 600 1000</code></td>
 <td>Condition processed by <a href="https://www.nexusmods.com/stardewvalley/mods/6529">Expanded Preconditions Utility</a>. For use this condition, EPU must be installed in SDV mods folder. See <a href="https://github.com/ChroniclerCherry/stardew-valley-mods/blob/master/ExpandedPreconditionsUtility/README.md">EPU docs</a> for more information.</td>
+</tr>
+<tr>
+<td>HasItemInInventory</td>
+<td><code>Battery Pack</code>, <code>item_amethyst</code>, <code>food_sweet, food_bakery</code></td>
+<td>Check if player has an item in inventory matches given name or context tags.</td>
+</tr>
+<tr>
+<td>HasActiveQuest</td>
+<td><code>myQuest@purrplingcat.myquestpack</code>, <code>myQuest@purrplingcat.myquestpack another@obamoose.questpack</code></td>
+<td>Check if one or more of named quests are active in player's quest log. Named quests must be managed by QF.</td>
+</tr>
+<tr>
+<td>CurrentLocation</td>
+<td><code>Town</code>, <code>Farm</code> and etc</td>
+<td>Check if player's current location is the specified location in this condition by location name.</td>
 </tr>
 </tbody>
 </table>
@@ -1243,7 +1164,7 @@ Text         | (string) Text of the quest source letter (required)</p>
 <p>Quest Framework is compatible with JsonAssets mod. The framework supports JsonAssets objects for the <code>Trigger</code> quest field via token named <code>ja</code> and supports two item types: <code>object</code> and <code>bigcraftable</code>.</p>
 <p>Token looks like: <code>{{ja: &lt;itemName&gt; [|bigcraftable]}}</code></p>
 <p>If you add suffix <code>|bigcraftable</code> after item name, then Quest Framework looks in the BigCraftable sheet. Otherwise looks in Object sheet.</p>
-<h4 id="example-4">Example</h4>
+<h4 id="example-3">Example</h4>
 <pre><code class="lang-js">{
   &quot;Format&quot;: &quot;1.0&quot;,
   &quot;Quests&quot;: [
@@ -1272,6 +1193,145 @@ Text         | (string) Text of the quest source letter (required)</p>
 }
 </code></pre>
 <p><strong>NOTE:</strong> By add quest via dialogue in this outbound way, you can't check the QF conditions and no exclamation mark will be shown above NPC head. But in this way you can offer a quest via question dialogue.</p>
+<h2 id="hooks-obsolete">Hooks (obsolete)</h2>
+<p><strong>HOOKS ARE OBSOLETE! It's not recomended this feature, because it will be removed in future versions</strong> Some of hooks features are replaced with <a href="docs/adventure-quests.md">Quest Essential's Adventure Quests</a>.</p>
+<p>You can add some &quot;magic&quot; to your custom quests with hooks. Hooks do specified action with your quests when something was triggered in the game.</p>
+<p>Hooks has conditions for check if the action of hook will be triggered or not. There are two types of conditions: local and environment. You don't must specify all available conditions. You can specify conditions which you need.</p>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>When</td>
+<td>When this hook will be trigered (see hook types)</td>
+</tr>
+<tr>
+<td>Action</td>
+<td>Which action will be executed (see actions)</td>
+</tr>
+<tr>
+<td>Has</td>
+<td>Conditions for execute the hook (see conditions and hook types).</td>
+</tr>
+</tbody>
+</table>
+<h4 id="example-4">Example</h4>
+<pre><code class="lang-js">{
+  &quot;Format&quot;: &quot;1.0&quot;,
+  &quot;Quests&quot;: [
+    {
+      &quot;Name&quot;: &quot;my_custom_quest&quot;,
+      &quot;Type&quot;: &quot;ItemDelivery&quot;, // Vanilla quest type
+      &quot;Title&quot;: &quot;The purple lunch&quot;,
+      &quot;Description&quot;: &quot;Abigail are very hungry. She wants to eat something special from mines.&quot;,
+      &quot;Objective&quot;: &quot;Bring amethyst to Abigail&quot;,
+      &quot;Reward&quot;: 300, // 300g
+      &quot;Cancelable&quot;: true,
+      &quot;Trigger&quot;: &quot;Abigail 66&quot;, // Bring amethyst to Abby
+      &quot;ReactionText&quot;: &quot;Oh, it's looks delicious. I am really hungry.&quot;,
+      &quot;Hooks&quot;: [
+         // Quest will be accepted (added to quest log) 
+         // when farmer go near the tree on the west side of graveyard in Town
+         // and when is sunny weather today
+        {
+          &quot;When&quot;: &quot;Tile&quot;,
+          &quot;Has&quot;: {
+            &quot;Location&quot;: &quot;Town&quot;,
+            &quot;Area&quot;: &quot;2038 5573 326 245&quot;,
+            &quot;Weather&quot;: &quot;sunny&quot;
+          },
+          &quot;Action&quot;: &quot;Accept&quot;
+        }
+      ]
+    }
+  ]
+}
+</code></pre>
+<h3 id="actions">Actions</h3>
+<p>There are these types of actions:</p>
+<table>
+<thead>
+<tr>
+<th>Action name</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Complete</td>
+<td>Complete the quest</td>
+</tr>
+<tr>
+<td>Remove</td>
+<td>Remove the quest from player's questlog (quest is not considered complete, just removed)</td>
+</tr>
+<tr>
+<td>CheckIfComplete</td>
+<td>Handles completion checker and complete the quest if inner quest conditions are met.</td>
+</tr>
+<tr>
+<td>Accept</td>
+<td>Accept this quest and add it to player's quest log as new quest (has the sign new in quest log).</td>
+</tr>
+</tbody>
+</table>
+<h3 id="hook-types">Hook types</h3>
+<p>Some hook types has own specific conditions. See them bellow.
+<strong>NOTE:</strong> For specialized hook type's conditions you cant't use the negation <code>not:</code> prefix. This prefix is only for <a href="common-environment-conditions">common conditions</a> and for global custom conditions.</p>
+<h4 id="location-1">Location</h4>
+<p>This hook is triggered when player entered or leaved specific location and all other conditions are met.</p>
+<table>
+<thead>
+<tr>
+<th>Local condition</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Enter</td>
+<td>Name of the location the player enter</td>
+</tr>
+<tr>
+<td>Leave</td>
+<td>Name of the location the player left</td>
+</tr>
+</tbody>
+</table>
+<p>If you specify both, then the hook action will be triggered when player left the Leave location and entered the Enter location. For example:</p>
+<p>Enter condition is <code>Town</code> and leave condition is <code>BusStop</code>. This hook trigs their action when player entered Town from the Bus Stop.</p>
+<h4 id="tile">Tile</h4>
+<p>This hook is triggered when player stands on specific tile position or in specific area of specific location.</p>
+<table>
+<thead>
+<tr>
+<th>Local condition</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Location</td>
+<td>Game location</td>
+</tr>
+<tr>
+<td>Position</td>
+<td>Standing tile position (X, Y). Example <code>13 10</code></td>
+</tr>
+<tr>
+<td>Area</td>
+<td>Specified standing area (X, Y, Width, Height) Example: <code>2038 5573 326 245</code></td>
+</tr>
+<tr>
+<td>TouchAction</td>
+<td>Touch action property value must be this defined value for trig hook's action.</td>
+</tr>
+</tbody>
+</table>
 </article>
           </div>
           
@@ -1279,9 +1339,6 @@ Text         | (string) Text of the quest source letter (required)</p>
             <div class="sideaffix">
               <div class="contribution">
                 <ul class="nav">
-                  <li>
-                    <a href="https://github.com/purrplingcat/QuestFramework/blob/master/docs/content-pack-guide.md/#L1" class="contribution-link">Improve this Doc</a>
-                  </li>
                 </ul>
               </div>
               <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">

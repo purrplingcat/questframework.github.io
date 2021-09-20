@@ -5,10 +5,10 @@
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-    <title>Class HookObserver
+    <title>Class CompletionMessageExtensions
    </title>
     <meta name="viewport" content="width=device-width">
-    <meta name="title" content="Class HookObserver
+    <meta name="title" content="Class CompletionMessageExtensions
    ">
     <meta name="generator" content="docfx 2.56.0.0">
     
@@ -68,21 +68,17 @@
         </div>
         <div class="article row grid-right">
           <div class="col-md-10">
-            <article class="content wrap" id="_content" data-uid="QuestFramework.Hooks.HookObserver">
+            <article class="content wrap" id="_content" data-uid="QuestFramework.Extensions.CompletionMessageExtensions">
   
   
-  <h1 id="QuestFramework_Hooks_HookObserver" data-uid="QuestFramework.Hooks.HookObserver" class="text-break">Class HookObserver
+  <h1 id="QuestFramework_Extensions_CompletionMessageExtensions" data-uid="QuestFramework.Extensions.CompletionMessageExtensions" class="text-break">Class CompletionMessageExtensions
   </h1>
   <div class="markdown level0 summary"></div>
   <div class="markdown level0 conceptual"></div>
   <div class="inheritance">
     <h5>Inheritance</h5>
     <div class="level0"><span class="xref">System.Object</span></div>
-    <div class="level1"><span class="xref">HookObserver</span></div>
-  </div>
-  <div classs="implements">
-    <h5>Implements</h5>
-    <div><span class="xref">System.IDisposable</span></div>
+    <div class="level1"><span class="xref">CompletionMessageExtensions</span></div>
   </div>
   <div class="inheritedMembers">
     <h5>Inherited Members</h5>
@@ -108,61 +104,23 @@
       <span class="xref">System.Object.MemberwiseClone()</span>
     </div>
   </div>
-  <h6><strong>Namespace</strong>: <a class="xref" href="QuestFramework.Hooks.html">QuestFramework.Hooks</a></h6>
+  <h6><strong>Namespace</strong>: <a class="xref" href="QuestFramework.Extensions.html">QuestFramework.Extensions</a></h6>
   <h6><strong>Assembly</strong>: QuestFramework.dll</h6>
-  <h5 id="QuestFramework_Hooks_HookObserver_syntax">Syntax</h5>
+  <h5 id="QuestFramework_Extensions_CompletionMessageExtensions_syntax">Syntax</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">[Obsolete(&quot;This hook API is deprecated. Will be replaced in future&quot;)]
-public abstract class HookObserver : IDisposable</code></pre>
+    <pre><code class="lang-csharp hljs">public static class CompletionMessageExtensions</code></pre>
   </div>
-  <h3 id="properties">Properties
-  </h3>
-  
-  
-  <a id="QuestFramework_Hooks_HookObserver_Name_" data-uid="QuestFramework.Hooks.HookObserver.Name*"></a>
-  <h4 id="QuestFramework_Hooks_HookObserver_Name" data-uid="QuestFramework.Hooks.HookObserver.Name">Name</h4>
-  <div class="markdown level1 summary"></div>
-  <div class="markdown level1 conceptual"></div>
-  <h5 class="decalaration">Declaration</h5>
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public abstract string Name { get; }</code></pre>
-  </div>
-  <h5 class="propertyValue">Property Value</h5>
-  <table class="table table-bordered table-striped table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><span class="xref">System.String</span></td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
   <h3 id="methods">Methods
   </h3>
   
   
-  <a id="QuestFramework_Hooks_HookObserver_Dispose_" data-uid="QuestFramework.Hooks.HookObserver.Dispose*"></a>
-  <h4 id="QuestFramework_Hooks_HookObserver_Dispose" data-uid="QuestFramework.Hooks.HookObserver.Dispose">Dispose()</h4>
+  <a id="QuestFramework_Extensions_CompletionMessageExtensions_Cast_" data-uid="QuestFramework.Extensions.CompletionMessageExtensions.Cast*"></a>
+  <h4 id="QuestFramework_Extensions_CompletionMessageExtensions_Cast__1_QuestFramework_Quests_ICompletionMessage_" data-uid="QuestFramework.Extensions.CompletionMessageExtensions.Cast``1(QuestFramework.Quests.ICompletionMessage)">Cast&lt;T&gt;(ICompletionMessage)</h4>
   <div class="markdown level1 summary"></div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public void Dispose()</code></pre>
-  </div>
-  
-  
-  <a id="QuestFramework_Hooks_HookObserver_Dispose_" data-uid="QuestFramework.Hooks.HookObserver.Dispose*"></a>
-  <h4 id="QuestFramework_Hooks_HookObserver_Dispose_System_Boolean_" data-uid="QuestFramework.Hooks.HookObserver.Dispose(System.Boolean)">Dispose(Boolean)</h4>
-  <div class="markdown level1 summary"></div>
-  <div class="markdown level1 conceptual"></div>
-  <h5 class="decalaration">Declaration</h5>
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">protected virtual void Dispose(bool disposing)</code></pre>
+    <pre><code class="lang-csharp hljs">public static T Cast&lt;T&gt;(this ICompletionMessage completionMessage)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -175,50 +133,8 @@ public abstract class HookObserver : IDisposable</code></pre>
     </thead>
     <tbody>
       <tr>
-        <td><span class="xref">System.Boolean</span></td>
-        <td><span class="parametername">disposing</span></td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
-  
-  
-  <a id="QuestFramework_Hooks_HookObserver_Finalize_" data-uid="QuestFramework.Hooks.HookObserver.Finalize*"></a>
-  <h4 id="QuestFramework_Hooks_HookObserver_Finalize" data-uid="QuestFramework.Hooks.HookObserver.Finalize">Finalize()</h4>
-  <div class="markdown level1 summary"></div>
-  <div class="markdown level1 conceptual"></div>
-  <h5 class="decalaration">Declaration</h5>
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">protected void Finalize()</code></pre>
-  </div>
-  
-  
-  <a id="QuestFramework_Hooks_HookObserver_CheckHookExecute_" data-uid="QuestFramework.Hooks.HookObserver.CheckHookExecute*"></a>
-  <h4 id="QuestFramework_Hooks_HookObserver_CheckHookExecute_QuestFramework_Hooks_Hook_QuestFramework_Quests_ICompletionArgs_" data-uid="QuestFramework.Hooks.HookObserver.CheckHookExecute(QuestFramework.Hooks.Hook,QuestFramework.Quests.ICompletionArgs)">CheckHookExecute(Hook, ICompletionArgs)</h4>
-  <div class="markdown level1 summary"></div>
-  <div class="markdown level1 conceptual"></div>
-  <h5 class="decalaration">Declaration</h5>
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">protected abstract bool CheckHookExecute(Hook hook, ICompletionArgs args)</code></pre>
-  </div>
-  <h5 class="parameters">Parameters</h5>
-  <table class="table table-bordered table-striped table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Name</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="QuestFramework.Hooks.Hook.html">Hook</a></td>
-        <td><span class="parametername">hook</span></td>
-        <td></td>
-      </tr>
-      <tr>
-        <td><a class="xref" href="QuestFramework.Quests.ICompletionArgs.html">ICompletionArgs</a></td>
-        <td><span class="parametername">args</span></td>
+        <td><a class="xref" href="QuestFramework.Quests.ICompletionMessage.html">ICompletionMessage</a></td>
+        <td><span class="parametername">completionMessage</span></td>
         <td></td>
       </tr>
     </tbody>
@@ -233,30 +149,35 @@ public abstract class HookObserver : IDisposable</code></pre>
     </thead>
     <tbody>
       <tr>
-        <td><span class="xref">System.Boolean</span></td>
+        <td><span class="xref">T</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="typeParameters">Type Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="parametername">T</span></td>
         <td></td>
       </tr>
     </tbody>
   </table>
   
   
-  <a id="QuestFramework_Hooks_HookObserver_Observe_" data-uid="QuestFramework.Hooks.HookObserver.Observe*"></a>
-  <h4 id="QuestFramework_Hooks_HookObserver_Observe" data-uid="QuestFramework.Hooks.HookObserver.Observe">Observe()</h4>
+  <a id="QuestFramework_Extensions_CompletionMessageExtensions_ToArray_" data-uid="QuestFramework.Extensions.CompletionMessageExtensions.ToArray*"></a>
+  <h4 id="QuestFramework_Extensions_CompletionMessageExtensions_ToArray_QuestFramework_Quests_ICompletionMessage_" data-uid="QuestFramework.Extensions.CompletionMessageExtensions.ToArray(QuestFramework.Quests.ICompletionMessage)">ToArray(ICompletionMessage)</h4>
   <div class="markdown level1 summary"></div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public void Observe()</code></pre>
-  </div>
-  
-  
-  <a id="QuestFramework_Hooks_HookObserver_Observe_" data-uid="QuestFramework.Hooks.HookObserver.Observe*"></a>
-  <h4 id="QuestFramework_Hooks_HookObserver_Observe_QuestFramework_Quests_ICompletionArgs_" data-uid="QuestFramework.Hooks.HookObserver.Observe(QuestFramework.Quests.ICompletionArgs)">Observe(ICompletionArgs)</h4>
-  <div class="markdown level1 summary"></div>
-  <div class="markdown level1 conceptual"></div>
-  <h5 class="decalaration">Declaration</h5>
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public void Observe(ICompletionArgs args)</code></pre>
+    <pre><code class="lang-csharp hljs">public static object[] ToArray(this ICompletionMessage completionMessgage)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -269,16 +190,130 @@ public abstract class HookObserver : IDisposable</code></pre>
     </thead>
     <tbody>
       <tr>
-        <td><a class="xref" href="QuestFramework.Quests.ICompletionArgs.html">ICompletionArgs</a></td>
-        <td><span class="parametername">args</span></td>
+        <td><a class="xref" href="QuestFramework.Quests.ICompletionMessage.html">ICompletionMessage</a></td>
+        <td><span class="parametername">completionMessgage</span></td>
         <td></td>
       </tr>
     </tbody>
   </table>
-  <h3 id="implements">Implements</h3>
-  <div>
-      <span class="xref">System.IDisposable</span>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Object</span>[]</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="QuestFramework_Extensions_CompletionMessageExtensions_ToDictionary_" data-uid="QuestFramework.Extensions.CompletionMessageExtensions.ToDictionary*"></a>
+  <h4 id="QuestFramework_Extensions_CompletionMessageExtensions_ToDictionary_QuestFramework_Quests_ICompletionMessage_" data-uid="QuestFramework.Extensions.CompletionMessageExtensions.ToDictionary(QuestFramework.Quests.ICompletionMessage)">ToDictionary(ICompletionMessage)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static IDictionary&lt;string, string&gt; ToDictionary(this ICompletionMessage completionMessage)</code></pre>
   </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="QuestFramework.Quests.ICompletionMessage.html">ICompletionMessage</a></td>
+        <td><span class="parametername">completionMessage</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Collections.Generic.IDictionary</span>&lt;<span class="xref">System.String</span>, <span class="xref">System.String</span>&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="QuestFramework_Extensions_CompletionMessageExtensions_ToDictionary_" data-uid="QuestFramework.Extensions.CompletionMessageExtensions.ToDictionary*"></a>
+  <h4 id="QuestFramework_Extensions_CompletionMessageExtensions_ToDictionary__2_QuestFramework_Quests_ICompletionMessage_" data-uid="QuestFramework.Extensions.CompletionMessageExtensions.ToDictionary``2(QuestFramework.Quests.ICompletionMessage)">ToDictionary&lt;TKey, TValue&gt;(ICompletionMessage)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static IDictionary&lt;TKey, TValue&gt; ToDictionary&lt;TKey, TValue&gt;(this ICompletionMessage completionMessage)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="QuestFramework.Quests.ICompletionMessage.html">ICompletionMessage</a></td>
+        <td><span class="parametername">completionMessage</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Collections.Generic.IDictionary</span>&lt;TKey, TValue&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="typeParameters">Type Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="parametername">TKey</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><span class="parametername">TValue</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
 </article>
           </div>
           

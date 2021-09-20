@@ -5,10 +5,10 @@
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-    <title>Class NpcOfferAttributes
+    <title>Interface IQuestInfoUpdater
    </title>
     <meta name="viewport" content="width=device-width">
-    <meta name="title" content="Class NpcOfferAttributes
+    <meta name="title" content="Interface IQuestInfoUpdater
    ">
     <meta name="generator" content="docfx 2.56.0.0">
     
@@ -68,121 +68,121 @@
         </div>
         <div class="article row grid-right">
           <div class="col-md-10">
-            <article class="content wrap" id="_content" data-uid="QuestFramework.Offers.NpcOfferAttributes">
+            <article class="content wrap" id="_content" data-uid="QuestFramework.Quests.IQuestInfoUpdater">
   
   
-  <h1 id="QuestFramework_Offers_NpcOfferAttributes" data-uid="QuestFramework.Offers.NpcOfferAttributes" class="text-break">Class NpcOfferAttributes
+  <h1 id="QuestFramework_Quests_IQuestInfoUpdater" data-uid="QuestFramework.Quests.IQuestInfoUpdater" class="text-break">Interface IQuestInfoUpdater
   </h1>
-  <div class="markdown level0 summary"></div>
+  <div class="markdown level0 summary"><p>Provides methods for update runtime basic quest info like objective, title and description
+on the vanilla quest proxy instance for the managed quest.</p>
+</div>
   <div class="markdown level0 conceptual"></div>
-  <div class="inheritance">
-    <h5>Inheritance</h5>
-    <div class="level0"><span class="xref">System.Object</span></div>
-    <div class="level1"><span class="xref">NpcOfferAttributes</span></div>
-  </div>
-  <div class="inheritedMembers">
-    <h5>Inherited Members</h5>
-    <div>
-      <span class="xref">System.Object.ToString()</span>
-    </div>
-    <div>
-      <span class="xref">System.Object.Equals(System.Object)</span>
-    </div>
-    <div>
-      <span class="xref">System.Object.Equals(System.Object, System.Object)</span>
-    </div>
-    <div>
-      <span class="xref">System.Object.ReferenceEquals(System.Object, System.Object)</span>
-    </div>
-    <div>
-      <span class="xref">System.Object.GetHashCode()</span>
-    </div>
-    <div>
-      <span class="xref">System.Object.GetType()</span>
-    </div>
-    <div>
-      <span class="xref">System.Object.MemberwiseClone()</span>
-    </div>
-  </div>
-  <h6><strong>Namespace</strong>: <a class="xref" href="QuestFramework.Offers.html">QuestFramework.Offers</a></h6>
+  <h6><strong>Namespace</strong>: <a class="xref" href="QuestFramework.Quests.html">QuestFramework.Quests</a></h6>
   <h6><strong>Assembly</strong>: QuestFramework.dll</h6>
-  <h5 id="QuestFramework_Offers_NpcOfferAttributes_syntax">Syntax</h5>
+  <h5 id="QuestFramework_Quests_IQuestInfoUpdater_syntax">Syntax</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public class NpcOfferAttributes</code></pre>
+    <pre><code class="lang-csharp hljs">public interface IQuestInfoUpdater</code></pre>
   </div>
-  <h3 id="properties">Properties
+  <h3 id="methods">Methods
   </h3>
   
   
-  <a id="QuestFramework_Offers_NpcOfferAttributes_DialogueText_" data-uid="QuestFramework.Offers.NpcOfferAttributes.DialogueText*"></a>
-  <h4 id="QuestFramework_Offers_NpcOfferAttributes_DialogueText" data-uid="QuestFramework.Offers.NpcOfferAttributes.DialogueText">DialogueText</h4>
-  <div class="markdown level1 summary"></div>
+  <a id="QuestFramework_Quests_IQuestInfoUpdater_UpdateDescription_" data-uid="QuestFramework.Quests.IQuestInfoUpdater.UpdateDescription*"></a>
+  <h4 id="QuestFramework_Quests_IQuestInfoUpdater_UpdateDescription_QuestFramework_Quests_IQuestInfo_System_String__" data-uid="QuestFramework.Quests.IQuestInfoUpdater.UpdateDescription(QuestFramework.Quests.IQuestInfo,System.String@)">UpdateDescription(IQuestInfo, ref String)</h4>
+  <div class="markdown level1 summary"><p>Update current quest description queried by <span class="xref">StardewValley.Quests.Quest.questDescription</span>
+for the managed quest on their vanilla quest proxy</p>
+</div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public string DialogueText { get; set; }</code></pre>
+    <pre><code class="lang-csharp hljs">void UpdateDescription(IQuestInfo questData, ref string description)</code></pre>
   </div>
-  <h5 class="propertyValue">Property Value</h5>
+  <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
     <thead>
       <tr>
         <th>Type</th>
+        <th>Name</th>
         <th>Description</th>
       </tr>
     </thead>
     <tbody>
       <tr>
+        <td><a class="xref" href="QuestFramework.Quests.IQuestInfo.html">IQuestInfo</a></td>
+        <td><span class="parametername">questData</span></td>
+        <td></td>
+      </tr>
+      <tr>
         <td><span class="xref">System.String</span></td>
+        <td><span class="parametername">description</span></td>
         <td></td>
       </tr>
     </tbody>
   </table>
   
   
-  <a id="QuestFramework_Offers_NpcOfferAttributes_NpcName_" data-uid="QuestFramework.Offers.NpcOfferAttributes.NpcName*"></a>
-  <h4 id="QuestFramework_Offers_NpcOfferAttributes_NpcName" data-uid="QuestFramework.Offers.NpcOfferAttributes.NpcName">NpcName</h4>
-  <div class="markdown level1 summary"></div>
+  <a id="QuestFramework_Quests_IQuestInfoUpdater_UpdateObjective_" data-uid="QuestFramework.Quests.IQuestInfoUpdater.UpdateObjective*"></a>
+  <h4 id="QuestFramework_Quests_IQuestInfoUpdater_UpdateObjective_QuestFramework_Quests_IQuestInfo_System_String__" data-uid="QuestFramework.Quests.IQuestInfoUpdater.UpdateObjective(QuestFramework.Quests.IQuestInfo,System.String@)">UpdateObjective(IQuestInfo, ref String)</h4>
+  <div class="markdown level1 summary"><p>Update current objective queried by <span class="xref">StardewValley.Quests.Quest.currentObjective</span>
+for the managed quest on their vanilla quest proxy</p>
+</div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public string NpcName { get; set; }</code></pre>
+    <pre><code class="lang-csharp hljs">void UpdateObjective(IQuestInfo questData, ref string objective)</code></pre>
   </div>
-  <h5 class="propertyValue">Property Value</h5>
+  <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
     <thead>
       <tr>
         <th>Type</th>
+        <th>Name</th>
         <th>Description</th>
       </tr>
     </thead>
     <tbody>
       <tr>
+        <td><a class="xref" href="QuestFramework.Quests.IQuestInfo.html">IQuestInfo</a></td>
+        <td><span class="parametername">questData</span></td>
+        <td></td>
+      </tr>
+      <tr>
         <td><span class="xref">System.String</span></td>
+        <td><span class="parametername">objective</span></td>
         <td></td>
       </tr>
     </tbody>
   </table>
   
   
-  <a id="QuestFramework_Offers_NpcOfferAttributes_Secret_" data-uid="QuestFramework.Offers.NpcOfferAttributes.Secret*"></a>
-  <h4 id="QuestFramework_Offers_NpcOfferAttributes_Secret" data-uid="QuestFramework.Offers.NpcOfferAttributes.Secret">Secret</h4>
-  <div class="markdown level1 summary"></div>
+  <a id="QuestFramework_Quests_IQuestInfoUpdater_UpdateTitle_" data-uid="QuestFramework.Quests.IQuestInfoUpdater.UpdateTitle*"></a>
+  <h4 id="QuestFramework_Quests_IQuestInfoUpdater_UpdateTitle_QuestFramework_Quests_IQuestInfo_System_String__" data-uid="QuestFramework.Quests.IQuestInfoUpdater.UpdateTitle(QuestFramework.Quests.IQuestInfo,System.String@)">UpdateTitle(IQuestInfo, ref String)</h4>
+  <div class="markdown level1 summary"><p>Update current quest title queried by <span class="xref">StardewValley.Quests.Quest.questTitle</span>
+for the managed quest on their vanilla quest proxy</p>
+</div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public bool Secret { get; set; }</code></pre>
+    <pre><code class="lang-csharp hljs">void UpdateTitle(IQuestInfo questData, ref string title)</code></pre>
   </div>
-  <h5 class="propertyValue">Property Value</h5>
+  <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
     <thead>
       <tr>
         <th>Type</th>
+        <th>Name</th>
         <th>Description</th>
       </tr>
     </thead>
     <tbody>
       <tr>
-        <td><span class="xref">System.Boolean</span></td>
+        <td><a class="xref" href="QuestFramework.Quests.IQuestInfo.html">IQuestInfo</a></td>
+        <td><span class="parametername">questData</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><span class="parametername">title</span></td>
         <td></td>
       </tr>
     </tbody>

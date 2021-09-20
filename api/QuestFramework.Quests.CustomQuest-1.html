@@ -84,6 +84,7 @@
   </div>
   <div classs="implements">
     <h5>Implements</h5>
+    <div><span class="xref">System.IDisposable</span></div>
     <div><a class="xref" href="QuestFramework.IStatefull-1.html">IStatefull</a>&lt;TState&gt;</div>
     <div><a class="xref" href="QuestFramework.IStatefull.html">IStatefull</a></div>
   </div>
@@ -150,10 +151,16 @@
       <a class="xref" href="QuestFramework.Quests.CustomQuest.html#QuestFramework_Quests_CustomQuest_FriendshipGain">CustomQuest.FriendshipGain</a>
     </div>
     <div>
+      <a class="xref" href="QuestFramework.Quests.CustomQuest.html#QuestFramework_Quests_CustomQuest_OnRegister">CustomQuest.OnRegister()</a>
+    </div>
+    <div>
       <a class="xref" href="QuestFramework.Quests.CustomQuest.html#QuestFramework_Quests_CustomQuest_Tags">CustomQuest.Tags</a>
     </div>
     <div>
       <a class="xref" href="QuestFramework.Quests.CustomQuest.html#QuestFramework_Quests_CustomQuest_Name">CustomQuest.Name</a>
+    </div>
+    <div>
+      <a class="xref" href="QuestFramework.Quests.CustomQuest.html#QuestFramework_Quests_CustomQuest_OnAdjust_System_Object_">CustomQuest.OnAdjust(Object)</a>
     </div>
     <div>
       <a class="xref" href="QuestFramework.Quests.CustomQuest.html#QuestFramework_Quests_CustomQuest_Trigger">CustomQuest.Trigger</a>
@@ -174,6 +181,18 @@
       <a class="xref" href="QuestFramework.Quests.CustomQuest.html#QuestFramework_Quests_CustomQuest_Objectives">CustomQuest.Objectives</a>
     </div>
     <div>
+      <a class="xref" href="QuestFramework.Quests.CustomQuest.html#QuestFramework_Quests_CustomQuest_OnInitialize">CustomQuest.OnInitialize()</a>
+    </div>
+    <div>
+      <a class="xref" href="QuestFramework.Quests.CustomQuest.html#QuestFramework_Quests_CustomQuest_ForceUpdate">CustomQuest.ForceUpdate()</a>
+    </div>
+    <div>
+      <a class="xref" href="QuestFramework.Quests.CustomQuest.html#QuestFramework_Quests_CustomQuest_OnUpdate">CustomQuest.OnUpdate()</a>
+    </div>
+    <div>
+      <a class="xref" href="QuestFramework.Quests.CustomQuest.html#QuestFramework_Quests_CustomQuest_OnCompletionCheck_QuestFramework_Quests_ICompletionMessage_">CustomQuest.OnCompletionCheck(ICompletionMessage)</a>
+    </div>
+    <div>
       <a class="xref" href="QuestFramework.Quests.CustomQuest.html#QuestFramework_Quests_CustomQuest_GetFullName">CustomQuest.GetFullName()</a>
     </div>
     <div>
@@ -190,6 +209,12 @@
     </div>
     <div>
       <a class="xref" href="QuestFramework.Quests.CustomQuest.html#QuestFramework_Quests_CustomQuest_GetCurrentObjectives">CustomQuest.GetCurrentObjectives()</a>
+    </div>
+    <div>
+      <a class="xref" href="QuestFramework.Quests.CustomQuest.html#QuestFramework_Quests_CustomQuest_Dispose_System_Boolean_">CustomQuest.Dispose(Boolean)</a>
+    </div>
+    <div>
+      <a class="xref" href="QuestFramework.Quests.CustomQuest.html#QuestFramework_Quests_CustomQuest_Dispose">CustomQuest.Dispose()</a>
     </div>
     <div>
       <span class="xref">System.Object.ToString()</span>
@@ -217,7 +242,7 @@
   <h6><strong>Assembly</strong>: QuestFramework.dll</h6>
   <h5 id="QuestFramework_Quests_CustomQuest_1_syntax">Syntax</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public class CustomQuest&lt;TState&gt; : CustomQuest, IStatefull&lt;TState&gt;, IStateRestorable, IStatefull where TState : class, new()</code></pre>
+    <pre><code class="lang-csharp hljs">public class CustomQuest&lt;TState&gt; : CustomQuest, IDisposable, IStatefull&lt;TState&gt;, IStateRestorable, IStatefull where TState : class, new()</code></pre>
   </div>
   <h5 class="typeParameters">Type Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -236,13 +261,8 @@
   </table>
   <h3 id="constructors">Constructors
   </h3>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/purrplingcat/QuestFramework/new/master/apiSpec/new?filename=QuestFramework_Quests_CustomQuest_1__ctor.md&amp;value=---%0Auid%3A%20QuestFramework.Quests.CustomQuest%601.%23ctor%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/purrplingcat/QuestFramework/blob/master/src/Quests/CustomQuest.stateful.cs/#L28">View Source</a>
-  </span>
+  
+  
   <a id="QuestFramework_Quests_CustomQuest_1__ctor_" data-uid="QuestFramework.Quests.CustomQuest`1.#ctor*"></a>
   <h4 id="QuestFramework_Quests_CustomQuest_1__ctor" data-uid="QuestFramework.Quests.CustomQuest`1.#ctor">CustomQuest()</h4>
   <div class="markdown level1 summary"><p>Create custom quest with state (Statefull quest)</p>
@@ -252,13 +272,8 @@
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public CustomQuest()</code></pre>
   </div>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/purrplingcat/QuestFramework/new/master/apiSpec/new?filename=QuestFramework_Quests_CustomQuest_1__ctor_System_String_.md&amp;value=---%0Auid%3A%20QuestFramework.Quests.CustomQuest%601.%23ctor(System.String)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/purrplingcat/QuestFramework/blob/master/src/Quests/CustomQuest.stateful.cs/#L37">View Source</a>
-  </span>
+  
+  
   <a id="QuestFramework_Quests_CustomQuest_1__ctor_" data-uid="QuestFramework.Quests.CustomQuest`1.#ctor*"></a>
   <h4 id="QuestFramework_Quests_CustomQuest_1__ctor_System_String_" data-uid="QuestFramework.Quests.CustomQuest`1.#ctor(System.String)">CustomQuest(String)</h4>
   <div class="markdown level1 summary"><p>Create custom quest with state (Statefull quest)</p>
@@ -288,13 +303,33 @@
   </table>
   <h3 id="properties">Properties
   </h3>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/purrplingcat/QuestFramework/new/master/apiSpec/new?filename=QuestFramework_Quests_CustomQuest_1_State.md&amp;value=---%0Auid%3A%20QuestFramework.Quests.CustomQuest%601.State%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/purrplingcat/QuestFramework/blob/master/src/Quests/CustomQuest.stateful.cs/#L23">View Source</a>
-  </span>
+  
+  
+  <a id="QuestFramework_Quests_CustomQuest_1_NeedsSync_" data-uid="QuestFramework.Quests.CustomQuest`1.NeedsSync*"></a>
+  <h4 id="QuestFramework_Quests_CustomQuest_1_NeedsSync" data-uid="QuestFramework.Quests.CustomQuest`1.NeedsSync">NeedsSync</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool NeedsSync { get; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Boolean</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
   <a id="QuestFramework_Quests_CustomQuest_1_State_" data-uid="QuestFramework.Quests.CustomQuest`1.State*"></a>
   <h4 id="QuestFramework_Quests_CustomQuest_1_State" data-uid="QuestFramework.Quests.CustomQuest`1.State">State</h4>
   <div class="markdown level1 summary"><p>A state data</p>
@@ -321,13 +356,38 @@
   </table>
   <h3 id="methods">Methods
   </h3>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/purrplingcat/QuestFramework/new/master/apiSpec/new?filename=QuestFramework_Quests_CustomQuest_1_PrepareState.md&amp;value=---%0Auid%3A%20QuestFramework.Quests.CustomQuest%601.PrepareState%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/purrplingcat/QuestFramework/blob/master/src/Quests/CustomQuest.stateful.cs/#L126">View Source</a>
-  </span>
+  
+  
+  <a id="QuestFramework_Quests_CustomQuest_1_OnStateReset_" data-uid="QuestFramework.Quests.CustomQuest`1.OnStateReset*"></a>
+  <h4 id="QuestFramework_Quests_CustomQuest_1_OnStateReset" data-uid="QuestFramework.Quests.CustomQuest`1.OnStateReset">OnStateReset()</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected virtual void OnStateReset()</code></pre>
+  </div>
+  
+  
+  <a id="QuestFramework_Quests_CustomQuest_1_OnStateRestored_" data-uid="QuestFramework.Quests.CustomQuest`1.OnStateRestored*"></a>
+  <h4 id="QuestFramework_Quests_CustomQuest_1_OnStateRestored" data-uid="QuestFramework.Quests.CustomQuest`1.OnStateRestored">OnStateRestored()</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected virtual void OnStateRestored()</code></pre>
+  </div>
+  
+  
+  <a id="QuestFramework_Quests_CustomQuest_1_PerformSync_" data-uid="QuestFramework.Quests.CustomQuest`1.PerformSync*"></a>
+  <h4 id="QuestFramework_Quests_CustomQuest_1_PerformSync" data-uid="QuestFramework.Quests.CustomQuest`1.PerformSync">PerformSync()</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void PerformSync()</code></pre>
+  </div>
+  
+  
   <a id="QuestFramework_Quests_CustomQuest_1_PrepareState_" data-uid="QuestFramework.Quests.CustomQuest`1.PrepareState*"></a>
   <h4 id="QuestFramework_Quests_CustomQuest_1_PrepareState" data-uid="QuestFramework.Quests.CustomQuest`1.PrepareState">PrepareState()</h4>
   <div class="markdown level1 summary"><p>Creates and prepares new quest state.</p>
@@ -352,13 +412,8 @@
       </tr>
     </tbody>
   </table>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/purrplingcat/QuestFramework/new/master/apiSpec/new?filename=QuestFramework_Quests_CustomQuest_1_Reset.md&amp;value=---%0Auid%3A%20QuestFramework.Quests.CustomQuest%601.Reset%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/purrplingcat/QuestFramework/blob/master/src/Quests/CustomQuest.stateful.cs/#L148">View Source</a>
-  </span>
+  
+  
   <a id="QuestFramework_Quests_CustomQuest_1_Reset_" data-uid="QuestFramework.Quests.CustomQuest`1.Reset*"></a>
   <h4 id="QuestFramework_Quests_CustomQuest_1_Reset" data-uid="QuestFramework.Quests.CustomQuest`1.Reset">Reset()</h4>
   <div class="markdown level1 summary"><p>Reset this managed quest and their state.
@@ -372,13 +427,8 @@ If you override this method, be sure to call <pre><code>base.Reset()</code></pre
   </div>
   <h5 class="overrides">Overrides</h5>
   <div><a class="xref" href="QuestFramework.Quests.CustomQuest.html#QuestFramework_Quests_CustomQuest_Reset">CustomQuest.Reset()</a></div>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/purrplingcat/QuestFramework/new/master/apiSpec/new?filename=QuestFramework_Quests_CustomQuest_1_ResetState.md&amp;value=---%0Auid%3A%20QuestFramework.Quests.CustomQuest%601.ResetState%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/purrplingcat/QuestFramework/blob/master/src/Quests/CustomQuest.stateful.cs/#L171">View Source</a>
-  </span>
+  
+  
   <a id="QuestFramework_Quests_CustomQuest_1_ResetState_" data-uid="QuestFramework.Quests.CustomQuest`1.ResetState*"></a>
   <h4 id="QuestFramework_Quests_CustomQuest_1_ResetState" data-uid="QuestFramework.Quests.CustomQuest`1.ResetState">ResetState()</h4>
   <div class="markdown level1 summary"><p>Reset quest state to default state data</p>
@@ -389,13 +439,8 @@ If you override this method, be sure to call <pre><code>base.Reset()</code></pre
     <pre><code class="lang-csharp hljs">[Obsolete(&quot;Deprecated. Use method CustomQuest.Reset instead&quot;, true)]
 public void ResetState()</code></pre>
   </div>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/purrplingcat/QuestFramework/new/master/apiSpec/new?filename=QuestFramework_Quests_CustomQuest_1_Sync.md&amp;value=---%0Auid%3A%20QuestFramework.Quests.CustomQuest%601.Sync%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/purrplingcat/QuestFramework/blob/master/src/Quests/CustomQuest.stateful.cs/#L48">View Source</a>
-  </span>
+  
+  
   <a id="QuestFramework_Quests_CustomQuest_1_Sync_" data-uid="QuestFramework.Quests.CustomQuest`1.Sync*"></a>
   <h4 id="QuestFramework_Quests_CustomQuest_1_Sync" data-uid="QuestFramework.Quests.CustomQuest`1.Sync">Sync()</h4>
   <div class="markdown level1 summary"><p>Sync quest state with the store (singleplayer or mainplayer)
@@ -408,6 +453,9 @@ or with host (server) via network in multiplayer game.</p>
     <pre><code class="lang-csharp hljs">public void Sync()</code></pre>
   </div>
   <h3 id="implements">Implements</h3>
+  <div>
+      <span class="xref">System.IDisposable</span>
+  </div>
   <div>
       <a class="xref" href="QuestFramework.IStatefull-1.html">IStatefull&lt;TState&gt;</a>
   </div>
@@ -436,6 +484,12 @@ or with host (server) via network in multiplayer game.</p>
   <div>
       <a class="xref" href="QuestFramework.Extensions.CustomQuestExtensions.html#QuestFramework_Extensions_CustomQuestExtensions_IsNeverCompleted_QuestFramework_Quests_CustomQuest_">CustomQuestExtensions.IsNeverCompleted(CustomQuest)</a>
   </div>
+  <div>
+      <a class="xref" href="QuestFramework.Extensions.CustomQuestExtensions.html#QuestFramework_Extensions_CustomQuestExtensions_CheckGlobalConditions_QuestFramework_Quests_CustomQuest_System_Collections_Generic_Dictionary_System_String_System_String__System_Collections_Generic_IEnumerable_System_String__System_Boolean_">CustomQuestExtensions.CheckGlobalConditions(CustomQuest, Dictionary&lt;String, String&gt;, IEnumerable&lt;String&gt;, Boolean)</a>
+  </div>
+  <div>
+      <a class="xref" href="QuestFramework.Extensions.CustomQuestExtensions.html#QuestFramework_Extensions_CustomQuestExtensions_CheckGlobalCondition_QuestFramework_Quests_CustomQuest_System_String_System_String_System_Boolean_">CustomQuestExtensions.CheckGlobalCondition(CustomQuest, String, String, Boolean)</a>
+  </div>
 </article>
           </div>
           
@@ -443,12 +497,6 @@ or with host (server) via network in multiplayer game.</p>
             <div class="sideaffix">
               <div class="contribution">
                 <ul class="nav">
-                  <li>
-                    <a href="https://github.com/purrplingcat/QuestFramework/new/master/apiSpec/new?filename=QuestFramework_Quests_CustomQuest_1.md&amp;value=---%0Auid%3A%20QuestFramework.Quests.CustomQuest%601%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" class="contribution-link">Improve this Doc</a>
-                  </li>
-                  <li>
-                    <a href="https://github.com/purrplingcat/QuestFramework/blob/master/src/Quests/CustomQuest.stateful.cs/#L18" class="contribution-link">View Source</a>
-                  </li>
                 </ul>
               </div>
               <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">

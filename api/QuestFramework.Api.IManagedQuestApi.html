@@ -83,13 +83,8 @@
   </div>
   <h3 id="methods">Methods
   </h3>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/purrplingcat/QuestFramework/new/master/apiSpec/new?filename=QuestFramework_Api_IManagedQuestApi_AcceptQuest_System_String_System_Boolean_.md&amp;value=---%0Auid%3A%20QuestFramework.Api.IManagedQuestApi.AcceptQuest(System.String%2CSystem.Boolean)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/purrplingcat/QuestFramework/blob/master/src/Api/IManagedQuestApi.cs/#L15">View Source</a>
-  </span>
+  
+  
   <a id="QuestFramework_Api_IManagedQuestApi_AcceptQuest_" data-uid="QuestFramework.Api.IManagedQuestApi.AcceptQuest*"></a>
   <h4 id="QuestFramework_Api_IManagedQuestApi_AcceptQuest_System_String_System_Boolean_" data-uid="QuestFramework.Api.IManagedQuestApi.AcceptQuest(System.String,System.Boolean)">AcceptQuest(String, Boolean)</h4>
   <div class="markdown level1 summary"><p>Add custom quest to player's questlog and mark then accepted and new.</p>
@@ -122,13 +117,37 @@
       </tr>
     </tbody>
   </table>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/purrplingcat/QuestFramework/new/master/apiSpec/new?filename=QuestFramework_Api_IManagedQuestApi_CompleteQuest_System_String_.md&amp;value=---%0Auid%3A%20QuestFramework.Api.IManagedQuestApi.CompleteQuest(System.String)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/purrplingcat/QuestFramework/blob/master/src/Api/IManagedQuestApi.cs/#L54">View Source</a>
-  </span>
+  
+  
+  <a id="QuestFramework_Api_IManagedQuestApi_AdjustQuest_" data-uid="QuestFramework.Api.IManagedQuestApi.AdjustQuest*"></a>
+  <h4 id="QuestFramework_Api_IManagedQuestApi_AdjustQuest_System_Object_" data-uid="QuestFramework.Api.IManagedQuestApi.AdjustQuest(System.Object)">AdjustQuest(Object)</h4>
+  <div class="markdown level1 summary"><p>Adjust a quest or make some adjustable side-effects by the quest</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">void AdjustQuest(object adjustTarget)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Object</span></td>
+        <td><span class="parametername">adjustTarget</span></td>
+        <td><p>Adjusting message</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
   <a id="QuestFramework_Api_IManagedQuestApi_CompleteQuest_" data-uid="QuestFramework.Api.IManagedQuestApi.CompleteQuest*"></a>
   <h4 id="QuestFramework_Api_IManagedQuestApi_CompleteQuest_System_String_" data-uid="QuestFramework.Api.IManagedQuestApi.CompleteQuest(System.String)">CompleteQuest(String)</h4>
   <div class="markdown level1 summary"><p>Mark quest by given name as completed,
@@ -156,13 +175,8 @@ if quest with this name exists and is managed.</p>
       </tr>
     </tbody>
   </table>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/purrplingcat/QuestFramework/new/master/apiSpec/new?filename=QuestFramework_Api_IManagedQuestApi_ExposeGlobalCondition_System_String_System_Func_System_String_QuestFramework_Quests_CustomQuest_System_Boolean__.md&amp;value=---%0Auid%3A%20QuestFramework.Api.IManagedQuestApi.ExposeGlobalCondition(System.String%2CSystem.Func%7BSystem.String%2CQuestFramework.Quests.CustomQuest%2CSystem.Boolean%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/purrplingcat/QuestFramework/blob/master/src/Api/IManagedQuestApi.cs/#L89">View Source</a>
-  </span>
+  
+  
   <a id="QuestFramework_Api_IManagedQuestApi_ExposeGlobalCondition_" data-uid="QuestFramework.Api.IManagedQuestApi.ExposeGlobalCondition*"></a>
   <h4 id="QuestFramework_Api_IManagedQuestApi_ExposeGlobalCondition_System_String_System_Func_System_String_QuestFramework_Quests_CustomQuest_System_Boolean__" data-uid="QuestFramework.Api.IManagedQuestApi.ExposeGlobalCondition(System.String,System.Func{System.String,QuestFramework.Quests.CustomQuest,System.Boolean})">ExposeGlobalCondition(String, Func&lt;String, CustomQuest, Boolean&gt;)</h4>
   <div class="markdown level1 summary"><p>Exposes global condition for usage in offers or hooks.</p>
@@ -196,13 +210,8 @@ if quest with this name exists and is managed.</p>
       </tr>
     </tbody>
   </table>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/purrplingcat/QuestFramework/new/master/apiSpec/new?filename=QuestFramework_Api_IManagedQuestApi_ExposeQuestType__1_System_String_.md&amp;value=---%0Auid%3A%20QuestFramework.Api.IManagedQuestApi.ExposeQuestType%60%601(System.String)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/purrplingcat/QuestFramework/blob/master/src/Api/IManagedQuestApi.cs/#L104">View Source</a>
-  </span>
+  
+  
   <a id="QuestFramework_Api_IManagedQuestApi_ExposeQuestType_" data-uid="QuestFramework.Api.IManagedQuestApi.ExposeQuestType*"></a>
   <h4 id="QuestFramework_Api_IManagedQuestApi_ExposeQuestType__1_System_String_" data-uid="QuestFramework.Api.IManagedQuestApi.ExposeQuestType``1(System.String)">ExposeQuestType&lt;TQuest&gt;(String)</h4>
   <div class="markdown level1 summary"><p>Exposes a quest type for content packs and other mods based on QF.</p>
@@ -247,13 +256,8 @@ if quest with this name exists and is managed.</p>
       </tr>
     </tbody>
   </table>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/purrplingcat/QuestFramework/new/master/apiSpec/new?filename=QuestFramework_Api_IManagedQuestApi_ExposeQuestType__1_System_String_System_Func___0__.md&amp;value=---%0Auid%3A%20QuestFramework.Api.IManagedQuestApi.ExposeQuestType%60%601(System.String%2CSystem.Func%7B%60%600%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/purrplingcat/QuestFramework/blob/master/src/Api/IManagedQuestApi.cs/#L97">View Source</a>
-  </span>
+  
+  
   <a id="QuestFramework_Api_IManagedQuestApi_ExposeQuestType_" data-uid="QuestFramework.Api.IManagedQuestApi.ExposeQuestType*"></a>
   <h4 id="QuestFramework_Api_IManagedQuestApi_ExposeQuestType__1_System_String_System_Func___0__" data-uid="QuestFramework.Api.IManagedQuestApi.ExposeQuestType``1(System.String,System.Func{``0})">ExposeQuestType&lt;TQuest&gt;(String, Func&lt;TQuest&gt;)</h4>
   <div class="markdown level1 summary"><p>Exposes a quest type for content packs and other mods based on QF.</p>
@@ -304,13 +308,77 @@ if quest with this name exists and is managed.</p>
       </tr>
     </tbody>
   </table>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/purrplingcat/QuestFramework/new/master/apiSpec/new?filename=QuestFramework_Api_IManagedQuestApi_GetById_System_Int32_.md&amp;value=---%0Auid%3A%20QuestFramework.Api.IManagedQuestApi.GetById(System.Int32)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/purrplingcat/QuestFramework/blob/master/src/Api/IManagedQuestApi.cs/#L22">View Source</a>
-  </span>
+  
+  
+  <a id="QuestFramework_Api_IManagedQuestApi_GetAllManagedQuests_" data-uid="QuestFramework.Api.IManagedQuestApi.GetAllManagedQuests*"></a>
+  <h4 id="QuestFramework_Api_IManagedQuestApi_GetAllManagedQuests" data-uid="QuestFramework.Api.IManagedQuestApi.GetAllManagedQuests">GetAllManagedQuests()</h4>
+  <div class="markdown level1 summary"><p>Get all registered managed quests;</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">IEnumerable&lt;CustomQuest&gt; GetAllManagedQuests()</code></pre>
+  </div>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Collections.Generic.IEnumerable</span>&lt;<a class="xref" href="QuestFramework.Quests.CustomQuest.html">CustomQuest</a>&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="QuestFramework_Api_IManagedQuestApi_GetAllManagedQuests_" data-uid="QuestFramework.Api.IManagedQuestApi.GetAllManagedQuests*"></a>
+  <h4 id="QuestFramework_Api_IManagedQuestApi_GetAllManagedQuests__1" data-uid="QuestFramework.Api.IManagedQuestApi.GetAllManagedQuests``1">GetAllManagedQuests&lt;T&gt;()</h4>
+  <div class="markdown level1 summary"><p>Get all registered managed quests by a class type</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">IEnumerable&lt;T&gt; GetAllManagedQuests&lt;T&gt;()
+    where T : CustomQuest</code></pre>
+  </div>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Collections.Generic.IEnumerable</span>&lt;T&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="typeParameters">Type Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="parametername">T</span></td>
+        <td><p>Custom quest class type</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
   <a id="QuestFramework_Api_IManagedQuestApi_GetById_" data-uid="QuestFramework.Api.IManagedQuestApi.GetById*"></a>
   <h4 id="QuestFramework_Api_IManagedQuestApi_GetById_System_Int32_" data-uid="QuestFramework.Api.IManagedQuestApi.GetById(System.Int32)">GetById(Int32)</h4>
   <div class="markdown level1 summary"><p>DEPRECATED! Resolve game quest id and returns custom quest</p>
@@ -353,13 +421,8 @@ CustomQuest GetById(int id)</code></pre>
       </tr>
     </tbody>
   </table>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/purrplingcat/QuestFramework/new/master/apiSpec/new?filename=QuestFramework_Api_IManagedQuestApi_GetQuestById_System_Int32_.md&amp;value=---%0Auid%3A%20QuestFramework.Api.IManagedQuestApi.GetQuestById(System.Int32)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/purrplingcat/QuestFramework/blob/master/src/Api/IManagedQuestApi.cs/#L30">View Source</a>
-  </span>
+  
+  
   <a id="QuestFramework_Api_IManagedQuestApi_GetQuestById_" data-uid="QuestFramework.Api.IManagedQuestApi.GetQuestById*"></a>
   <h4 id="QuestFramework_Api_IManagedQuestApi_GetQuestById_System_Int32_" data-uid="QuestFramework.Api.IManagedQuestApi.GetQuestById(System.Int32)">GetQuestById(Int32)</h4>
   <div class="markdown level1 summary"><p>Resolve game quest id and returns custom quest</p>
@@ -401,13 +464,8 @@ CustomQuest GetById(int id)</code></pre>
       </tr>
     </tbody>
   </table>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/purrplingcat/QuestFramework/new/master/apiSpec/new?filename=QuestFramework_Api_IManagedQuestApi_GetQuestByName_System_String_.md&amp;value=---%0Auid%3A%20QuestFramework.Api.IManagedQuestApi.GetQuestByName(System.String)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/purrplingcat/QuestFramework/blob/master/src/Api/IManagedQuestApi.cs/#L38">View Source</a>
-  </span>
+  
+  
   <a id="QuestFramework_Api_IManagedQuestApi_GetQuestByName_" data-uid="QuestFramework.Api.IManagedQuestApi.GetQuestByName*"></a>
   <h4 id="QuestFramework_Api_IManagedQuestApi_GetQuestByName_System_String_" data-uid="QuestFramework.Api.IManagedQuestApi.GetQuestByName(System.String)">GetQuestByName(String)</h4>
   <div class="markdown level1 summary"><p>Resolve game quest by name and return it's instance
@@ -450,13 +508,8 @@ You can request quest by fullname (with @) or localname (localname returns quest
       </tr>
     </tbody>
   </table>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/purrplingcat/QuestFramework/new/master/apiSpec/new?filename=QuestFramework_Api_IManagedQuestApi_GetTodayQuestOffers_System_String_.md&amp;value=---%0Auid%3A%20QuestFramework.Api.IManagedQuestApi.GetTodayQuestOffers(System.String)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/purrplingcat/QuestFramework/blob/master/src/Api/IManagedQuestApi.cs/#L71">View Source</a>
-  </span>
+  
+  
   <a id="QuestFramework_Api_IManagedQuestApi_GetTodayQuestOffers_" data-uid="QuestFramework.Api.IManagedQuestApi.GetTodayQuestOffers*"></a>
   <h4 id="QuestFramework_Api_IManagedQuestApi_GetTodayQuestOffers_System_String_" data-uid="QuestFramework.Api.IManagedQuestApi.GetTodayQuestOffers(System.String)">GetTodayQuestOffers(String)</h4>
   <div class="markdown level1 summary"><p>Get quest schedules for today by the source name.</p>
@@ -514,13 +567,8 @@ You can request quest by fullname (with @) or localname (localname returns quest
       </tr>
     </tbody>
   </table>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/purrplingcat/QuestFramework/new/master/apiSpec/new?filename=QuestFramework_Api_IManagedQuestApi_GetTodayQuestOffers__1_System_String_.md&amp;value=---%0Auid%3A%20QuestFramework.Api.IManagedQuestApi.GetTodayQuestOffers%60%601(System.String)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/purrplingcat/QuestFramework/blob/master/src/Api/IManagedQuestApi.cs/#L82">View Source</a>
-  </span>
+  
+  
   <a id="QuestFramework_Api_IManagedQuestApi_GetTodayQuestOffers_" data-uid="QuestFramework.Api.IManagedQuestApi.GetTodayQuestOffers*"></a>
   <h4 id="QuestFramework_Api_IManagedQuestApi_GetTodayQuestOffers__1_System_String_" data-uid="QuestFramework.Api.IManagedQuestApi.GetTodayQuestOffers``1(System.String)">GetTodayQuestOffers&lt;TAttributes&gt;(String)</h4>
   <div class="markdown level1 summary"><p>Get quest schedules with attributes (if that schedules has them)
@@ -594,13 +642,8 @@ for today by the source name.</p>
       </tr>
     </tbody>
   </table>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/purrplingcat/QuestFramework/new/master/apiSpec/new?filename=QuestFramework_Api_IManagedQuestApi_HasQuestType_System_String_.md&amp;value=---%0Auid%3A%20QuestFramework.Api.IManagedQuestApi.HasQuestType(System.String)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/purrplingcat/QuestFramework/blob/master/src/Api/IManagedQuestApi.cs/#L106">View Source</a>
-  </span>
+  
+  
   <a id="QuestFramework_Api_IManagedQuestApi_HasQuestType_" data-uid="QuestFramework.Api.IManagedQuestApi.HasQuestType*"></a>
   <h4 id="QuestFramework_Api_IManagedQuestApi_HasQuestType_System_String_" data-uid="QuestFramework.Api.IManagedQuestApi.HasQuestType(System.String)">HasQuestType(String)</h4>
   <div class="markdown level1 summary"></div>
@@ -641,13 +684,115 @@ for today by the source name.</p>
       </tr>
     </tbody>
   </table>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/purrplingcat/QuestFramework/new/master/apiSpec/new?filename=QuestFramework_Api_IManagedQuestApi_OfferQuest_QuestFramework_Offers_QuestOffer_.md&amp;value=---%0Auid%3A%20QuestFramework.Api.IManagedQuestApi.OfferQuest(QuestFramework.Offers.QuestOffer)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/purrplingcat/QuestFramework/blob/master/src/Api/IManagedQuestApi.cs/#L62">View Source</a>
-  </span>
+  
+  
+  <a id="QuestFramework_Api_IManagedQuestApi_CheckForQuestComplete_" data-uid="QuestFramework.Api.IManagedQuestApi.CheckForQuestComplete*"></a>
+  <h4 id="QuestFramework_Api_IManagedQuestApi_CheckForQuestComplete_QuestFramework_Quests_ICompletionMessage_" data-uid="QuestFramework.Api.IManagedQuestApi.CheckForQuestComplete(QuestFramework.Quests.ICompletionMessage)">CheckForQuestComplete(ICompletionMessage)</h4>
+  <div class="markdown level1 summary"><p>Check for any managed quest is completed by provided completion message.
+Internally calls <see cref="!:CustomQuest.OnCompletionCheck(object)"></see> for check the quest is completed.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">bool CheckForQuestComplete(ICompletionMessage completionMessage)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="QuestFramework.Quests.ICompletionMessage.html">ICompletionMessage</a></td>
+        <td><span class="parametername">completionMessage</span></td>
+        <td><p>The completion message</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Boolean</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="QuestFramework_Api_IManagedQuestApi_CheckForQuestComplete_" data-uid="QuestFramework.Api.IManagedQuestApi.CheckForQuestComplete*"></a>
+  <h4 id="QuestFramework_Api_IManagedQuestApi_CheckForQuestComplete__1_QuestFramework_Quests_ICompletionMessage_" data-uid="QuestFramework.Api.IManagedQuestApi.CheckForQuestComplete``1(QuestFramework.Quests.ICompletionMessage)">CheckForQuestComplete&lt;TQuest&gt;(ICompletionMessage)</h4>
+  <div class="markdown level1 summary"><p>Check for any managed quest of concrete class type is completed by provided completion message.
+Internally calls <see cref="!:CustomQuest.OnCompletionCheck(object)"></see> for check the quest is completed.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">bool CheckForQuestComplete&lt;TQuest&gt;(ICompletionMessage completionMessage)
+    where TQuest : CustomQuest</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="QuestFramework.Quests.ICompletionMessage.html">ICompletionMessage</a></td>
+        <td><span class="parametername">completionMessage</span></td>
+        <td><p>The completion message</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Boolean</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="typeParameters">Type Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="parametername">TQuest</span></td>
+        <td><p>Quest class type</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
   <a id="QuestFramework_Api_IManagedQuestApi_OfferQuest_" data-uid="QuestFramework.Api.IManagedQuestApi.OfferQuest*"></a>
   <h4 id="QuestFramework_Api_IManagedQuestApi_OfferQuest_QuestFramework_Offers_QuestOffer_" data-uid="QuestFramework.Api.IManagedQuestApi.OfferQuest(QuestFramework.Offers.QuestOffer)">OfferQuest(QuestOffer)</h4>
   <div class="markdown level1 summary"><p>Schedule a quest for add to specified quest source
@@ -676,13 +821,8 @@ which will be available to accept by player.
       </tr>
     </tbody>
   </table>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/purrplingcat/QuestFramework/new/master/apiSpec/new?filename=QuestFramework_Api_IManagedQuestApi_RegisterCustomBoard_QuestFramework_Framework_Structures_CustomBoardTrigger_.md&amp;value=---%0Auid%3A%20QuestFramework.Api.IManagedQuestApi.RegisterCustomBoard(QuestFramework.Framework.Structures.CustomBoardTrigger)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/purrplingcat/QuestFramework/blob/master/src/Api/IManagedQuestApi.cs/#L115">View Source</a>
-  </span>
+  
+  
   <a id="QuestFramework_Api_IManagedQuestApi_RegisterCustomBoard_" data-uid="QuestFramework.Api.IManagedQuestApi.RegisterCustomBoard*"></a>
   <h4 id="QuestFramework_Api_IManagedQuestApi_RegisterCustomBoard_QuestFramework_Framework_Structures_CustomBoardTrigger_" data-uid="QuestFramework.Api.IManagedQuestApi.RegisterCustomBoard(QuestFramework.Framework.Structures.CustomBoardTrigger)">RegisterCustomBoard(CustomBoardTrigger)</h4>
   <div class="markdown level1 summary"><p>Register custom quest or special orders board
@@ -712,13 +852,8 @@ Please register all your boards when QF state is LAUNCHING
       </tr>
     </tbody>
   </table>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/purrplingcat/QuestFramework/new/master/apiSpec/new?filename=QuestFramework_Api_IManagedQuestApi_RegisterQuest_QuestFramework_Quests_CustomQuest_.md&amp;value=---%0Auid%3A%20QuestFramework.Api.IManagedQuestApi.RegisterQuest(QuestFramework.Quests.CustomQuest)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/purrplingcat/QuestFramework/blob/master/src/Api/IManagedQuestApi.cs/#L47">View Source</a>
-  </span>
+  
+  
   <a id="QuestFramework_Api_IManagedQuestApi_RegisterQuest_" data-uid="QuestFramework.Api.IManagedQuestApi.RegisterQuest*"></a>
   <h4 id="QuestFramework_Api_IManagedQuestApi_RegisterQuest_QuestFramework_Quests_CustomQuest_" data-uid="QuestFramework.Api.IManagedQuestApi.RegisterQuest(QuestFramework.Quests.CustomQuest)">RegisterQuest(CustomQuest)</h4>
   <div class="markdown level1 summary"><p>Register custom quest (vanilla or custom type)
@@ -756,12 +891,6 @@ Please register all your quests when QF state is LAUNCHING
             <div class="sideaffix">
               <div class="contribution">
                 <ul class="nav">
-                  <li>
-                    <a href="https://github.com/purrplingcat/QuestFramework/new/master/apiSpec/new?filename=QuestFramework_Api_IManagedQuestApi.md&amp;value=---%0Auid%3A%20QuestFramework.Api.IManagedQuestApi%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" class="contribution-link">Improve this Doc</a>
-                  </li>
-                  <li>
-                    <a href="https://github.com/purrplingcat/QuestFramework/blob/master/src/Api/IManagedQuestApi.cs/#L9" class="contribution-link">View Source</a>
-                  </li>
                 </ul>
               </div>
               <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">

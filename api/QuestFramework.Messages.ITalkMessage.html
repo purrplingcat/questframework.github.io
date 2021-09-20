@@ -5,10 +5,10 @@
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-    <title>Class NpcOfferAttributes
+    <title>Interface ITalkMessage
    </title>
     <meta name="viewport" content="width=device-width">
-    <meta name="title" content="Class NpcOfferAttributes
+    <meta name="title" content="Interface ITalkMessage
    ">
     <meta name="generator" content="docfx 2.56.0.0">
     
@@ -68,59 +68,30 @@
         </div>
         <div class="article row grid-right">
           <div class="col-md-10">
-            <article class="content wrap" id="_content" data-uid="QuestFramework.Offers.NpcOfferAttributes">
+            <article class="content wrap" id="_content" data-uid="QuestFramework.Messages.ITalkMessage">
   
   
-  <h1 id="QuestFramework_Offers_NpcOfferAttributes" data-uid="QuestFramework.Offers.NpcOfferAttributes" class="text-break">Class NpcOfferAttributes
+  <h1 id="QuestFramework_Messages_ITalkMessage" data-uid="QuestFramework.Messages.ITalkMessage" class="text-break">Interface ITalkMessage
   </h1>
   <div class="markdown level0 summary"></div>
   <div class="markdown level0 conceptual"></div>
-  <div class="inheritance">
-    <h5>Inheritance</h5>
-    <div class="level0"><span class="xref">System.Object</span></div>
-    <div class="level1"><span class="xref">NpcOfferAttributes</span></div>
-  </div>
-  <div class="inheritedMembers">
-    <h5>Inherited Members</h5>
-    <div>
-      <span class="xref">System.Object.ToString()</span>
-    </div>
-    <div>
-      <span class="xref">System.Object.Equals(System.Object)</span>
-    </div>
-    <div>
-      <span class="xref">System.Object.Equals(System.Object, System.Object)</span>
-    </div>
-    <div>
-      <span class="xref">System.Object.ReferenceEquals(System.Object, System.Object)</span>
-    </div>
-    <div>
-      <span class="xref">System.Object.GetHashCode()</span>
-    </div>
-    <div>
-      <span class="xref">System.Object.GetType()</span>
-    </div>
-    <div>
-      <span class="xref">System.Object.MemberwiseClone()</span>
-    </div>
-  </div>
-  <h6><strong>Namespace</strong>: <a class="xref" href="QuestFramework.Offers.html">QuestFramework.Offers</a></h6>
+  <h6><strong>Namespace</strong>: <a class="xref" href="QuestFramework.Messages.html">QuestFramework.Messages</a></h6>
   <h6><strong>Assembly</strong>: QuestFramework.dll</h6>
-  <h5 id="QuestFramework_Offers_NpcOfferAttributes_syntax">Syntax</h5>
+  <h5 id="QuestFramework_Messages_ITalkMessage_syntax">Syntax</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public class NpcOfferAttributes</code></pre>
+    <pre><code class="lang-csharp hljs">public interface ITalkMessage</code></pre>
   </div>
   <h3 id="properties">Properties
   </h3>
   
   
-  <a id="QuestFramework_Offers_NpcOfferAttributes_DialogueText_" data-uid="QuestFramework.Offers.NpcOfferAttributes.DialogueText*"></a>
-  <h4 id="QuestFramework_Offers_NpcOfferAttributes_DialogueText" data-uid="QuestFramework.Offers.NpcOfferAttributes.DialogueText">DialogueText</h4>
+  <a id="QuestFramework_Messages_ITalkMessage_Farmer_" data-uid="QuestFramework.Messages.ITalkMessage.Farmer*"></a>
+  <h4 id="QuestFramework_Messages_ITalkMessage_Farmer" data-uid="QuestFramework.Messages.ITalkMessage.Farmer">Farmer</h4>
   <div class="markdown level1 summary"></div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public string DialogueText { get; set; }</code></pre>
+    <pre><code class="lang-csharp hljs">Farmer Farmer { get; }</code></pre>
   </div>
   <h5 class="propertyValue">Property Value</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -132,20 +103,20 @@
     </thead>
     <tbody>
       <tr>
-        <td><span class="xref">System.String</span></td>
+        <td><span class="xref">StardewValley.Farmer</span></td>
         <td></td>
       </tr>
     </tbody>
   </table>
   
   
-  <a id="QuestFramework_Offers_NpcOfferAttributes_NpcName_" data-uid="QuestFramework.Offers.NpcOfferAttributes.NpcName*"></a>
-  <h4 id="QuestFramework_Offers_NpcOfferAttributes_NpcName" data-uid="QuestFramework.Offers.NpcOfferAttributes.NpcName">NpcName</h4>
+  <a id="QuestFramework_Messages_ITalkMessage_Npc_" data-uid="QuestFramework.Messages.ITalkMessage.Npc*"></a>
+  <h4 id="QuestFramework_Messages_ITalkMessage_Npc" data-uid="QuestFramework.Messages.ITalkMessage.Npc">Npc</h4>
   <div class="markdown level1 summary"></div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public string NpcName { get; set; }</code></pre>
+    <pre><code class="lang-csharp hljs">NPC Npc { get; }</code></pre>
   </div>
   <h5 class="propertyValue">Property Value</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -157,32 +128,7 @@
     </thead>
     <tbody>
       <tr>
-        <td><span class="xref">System.String</span></td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
-  
-  
-  <a id="QuestFramework_Offers_NpcOfferAttributes_Secret_" data-uid="QuestFramework.Offers.NpcOfferAttributes.Secret*"></a>
-  <h4 id="QuestFramework_Offers_NpcOfferAttributes_Secret" data-uid="QuestFramework.Offers.NpcOfferAttributes.Secret">Secret</h4>
-  <div class="markdown level1 summary"></div>
-  <div class="markdown level1 conceptual"></div>
-  <h5 class="decalaration">Declaration</h5>
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public bool Secret { get; set; }</code></pre>
-  </div>
-  <h5 class="propertyValue">Property Value</h5>
-  <table class="table table-bordered table-striped table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><span class="xref">System.Boolean</span></td>
+        <td><span class="xref">StardewValley.NPC</span></td>
         <td></td>
       </tr>
     </tbody>

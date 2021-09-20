@@ -84,6 +84,7 @@
   <div classs="implements">
     <h5>Implements</h5>
     <div><a class="xref" href="QuestFramework.Quests.ICompletionArgs.html">ICompletionArgs</a></div>
+    <div><a class="xref" href="QuestFramework.Quests.ICompletionMessage.html">ICompletionMessage</a></div>
   </div>
   <div class="inheritedMembers">
     <h5>Inherited Members</h5>
@@ -113,25 +114,20 @@
   <h6><strong>Assembly</strong>: QuestFramework.dll</h6>
   <h5 id="QuestFramework_Quests_CompletionArgs_syntax">Syntax</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public class CompletionArgs : ICompletionArgs</code></pre>
+    <pre><code class="lang-csharp hljs">public class CompletionArgs : ICompletionArgs, ICompletionMessage</code></pre>
   </div>
   <h3 id="constructors">Constructors
   </h3>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/purrplingcat/QuestFramework/new/master/apiSpec/new?filename=QuestFramework_Quests_CompletionArgs__ctor_StardewValley_NPC_System_Int32_System_Int32_StardewValley_Item_System_String_.md&amp;value=---%0Auid%3A%20QuestFramework.Quests.CompletionArgs.%23ctor(StardewValley.NPC%2CSystem.Int32%2CSystem.Int32%2CStardewValley.Item%2CSystem.String)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/purrplingcat/QuestFramework/blob/master/src/Quests/CompletionArgs.cs/#L23">View Source</a>
-  </span>
+  
+  
   <a id="QuestFramework_Quests_CompletionArgs__ctor_" data-uid="QuestFramework.Quests.CompletionArgs.#ctor*"></a>
-  <h4 id="QuestFramework_Quests_CompletionArgs__ctor_StardewValley_NPC_System_Int32_System_Int32_StardewValley_Item_System_String_" data-uid="QuestFramework.Quests.CompletionArgs.#ctor(StardewValley.NPC,System.Int32,System.Int32,StardewValley.Item,System.String)">CompletionArgs(NPC, Int32, Int32, Item, String)</h4>
+  <h4 id="QuestFramework_Quests_CompletionArgs__ctor_StardewValley_NPC_System_Int32_System_Int32_StardewValley_Item_System_String_System_Int32_" data-uid="QuestFramework.Quests.CompletionArgs.#ctor(StardewValley.NPC,System.Int32,System.Int32,StardewValley.Item,System.String,System.Int32)">CompletionArgs(NPC, Int32, Int32, Item, String, Int32)</h4>
   <div class="markdown level1 summary"><p>Create completion args wrapper</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public CompletionArgs(NPC npc = null, int number1 = -1, int number2 = -1, Item item = null, string str = null)</code></pre>
+    <pre><code class="lang-csharp hljs">public CompletionArgs(NPC npc = null, int number1 = -1, int number2 = -1, Item item = null, string str = null, int type = -1)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -168,17 +164,42 @@
         <td><span class="parametername">str</span></td>
         <td></td>
       </tr>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td><span class="parametername">type</span></td>
+        <td></td>
+      </tr>
     </tbody>
   </table>
   <h3 id="properties">Properties
   </h3>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/purrplingcat/QuestFramework/new/master/apiSpec/new?filename=QuestFramework_Quests_CompletionArgs_Item.md&amp;value=---%0Auid%3A%20QuestFramework.Quests.CompletionArgs.Item%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/purrplingcat/QuestFramework/blob/master/src/Quests/CompletionArgs.cs/#L50">View Source</a>
-  </span>
+  
+  
+  <a id="QuestFramework_Quests_CompletionArgs_CompletionType_" data-uid="QuestFramework.Quests.CompletionArgs.CompletionType*"></a>
+  <h4 id="QuestFramework_Quests_CompletionArgs_CompletionType" data-uid="QuestFramework.Quests.CompletionArgs.CompletionType">CompletionType</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public int CompletionType { get; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
   <a id="QuestFramework_Quests_CompletionArgs_Item_" data-uid="QuestFramework.Quests.CompletionArgs.Item*"></a>
   <h4 id="QuestFramework_Quests_CompletionArgs_Item" data-uid="QuestFramework.Quests.CompletionArgs.Item">Item</h4>
   <div class="markdown level1 summary"><p>Which item was used for check quest completion</p>
@@ -203,13 +224,33 @@
       </tr>
     </tbody>
   </table>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/purrplingcat/QuestFramework/new/master/apiSpec/new?filename=QuestFramework_Quests_CompletionArgs_Npc.md&amp;value=---%0Auid%3A%20QuestFramework.Quests.CompletionArgs.Npc%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/purrplingcat/QuestFramework/blob/master/src/Quests/CompletionArgs.cs/#L35">View Source</a>
-  </span>
+  
+  
+  <a id="QuestFramework_Quests_CompletionArgs_Name_" data-uid="QuestFramework.Quests.CompletionArgs.Name*"></a>
+  <h4 id="QuestFramework_Quests_CompletionArgs_Name" data-uid="QuestFramework.Quests.CompletionArgs.Name">Name</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public string Name { get; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
   <a id="QuestFramework_Quests_CompletionArgs_Npc_" data-uid="QuestFramework.Quests.CompletionArgs.Npc*"></a>
   <h4 id="QuestFramework_Quests_CompletionArgs_Npc" data-uid="QuestFramework.Quests.CompletionArgs.Npc">Npc</h4>
   <div class="markdown level1 summary"><p>Interaction with NPC</p>
@@ -234,13 +275,8 @@
       </tr>
     </tbody>
   </table>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/purrplingcat/QuestFramework/new/master/apiSpec/new?filename=QuestFramework_Quests_CompletionArgs_Number1.md&amp;value=---%0Auid%3A%20QuestFramework.Quests.CompletionArgs.Number1%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/purrplingcat/QuestFramework/blob/master/src/Quests/CompletionArgs.cs/#L40">View Source</a>
-  </span>
+  
+  
   <a id="QuestFramework_Quests_CompletionArgs_Number1_" data-uid="QuestFramework.Quests.CompletionArgs.Number1*"></a>
   <h4 id="QuestFramework_Quests_CompletionArgs_Number1" data-uid="QuestFramework.Quests.CompletionArgs.Number1">Number1</h4>
   <div class="markdown level1 summary"><p>First number to test</p>
@@ -265,13 +301,8 @@
       </tr>
     </tbody>
   </table>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/purrplingcat/QuestFramework/new/master/apiSpec/new?filename=QuestFramework_Quests_CompletionArgs_Number2.md&amp;value=---%0Auid%3A%20QuestFramework.Quests.CompletionArgs.Number2%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/purrplingcat/QuestFramework/blob/master/src/Quests/CompletionArgs.cs/#L45">View Source</a>
-  </span>
+  
+  
   <a id="QuestFramework_Quests_CompletionArgs_Number2_" data-uid="QuestFramework.Quests.CompletionArgs.Number2*"></a>
   <h4 id="QuestFramework_Quests_CompletionArgs_Number2" data-uid="QuestFramework.Quests.CompletionArgs.Number2">Number2</h4>
   <div class="markdown level1 summary"><p>Second number to test</p>
@@ -296,13 +327,8 @@
       </tr>
     </tbody>
   </table>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/purrplingcat/QuestFramework/new/master/apiSpec/new?filename=QuestFramework_Quests_CompletionArgs_String.md&amp;value=---%0Auid%3A%20QuestFramework.Quests.CompletionArgs.String%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/purrplingcat/QuestFramework/blob/master/src/Quests/CompletionArgs.cs/#L55">View Source</a>
-  </span>
+  
+  
   <a id="QuestFramework_Quests_CompletionArgs_String_" data-uid="QuestFramework.Quests.CompletionArgs.String*"></a>
   <h4 id="QuestFramework_Quests_CompletionArgs_String" data-uid="QuestFramework.Quests.CompletionArgs.String">String</h4>
   <div class="markdown level1 summary"><p>Text to test</p>
@@ -331,6 +357,22 @@
   <div>
       <a class="xref" href="QuestFramework.Quests.ICompletionArgs.html">ICompletionArgs</a>
   </div>
+  <div>
+      <a class="xref" href="QuestFramework.Quests.ICompletionMessage.html">ICompletionMessage</a>
+  </div>
+  <h3 id="extensionmethods">Extension Methods</h3>
+  <div>
+      <a class="xref" href="QuestFramework.Extensions.CompletionMessageExtensions.html#QuestFramework_Extensions_CompletionMessageExtensions_Cast__1_QuestFramework_Quests_ICompletionMessage_">CompletionMessageExtensions.Cast&lt;T&gt;(ICompletionMessage)</a>
+  </div>
+  <div>
+      <a class="xref" href="QuestFramework.Extensions.CompletionMessageExtensions.html#QuestFramework_Extensions_CompletionMessageExtensions_ToArray_QuestFramework_Quests_ICompletionMessage_">CompletionMessageExtensions.ToArray(ICompletionMessage)</a>
+  </div>
+  <div>
+      <a class="xref" href="QuestFramework.Extensions.CompletionMessageExtensions.html#QuestFramework_Extensions_CompletionMessageExtensions_ToDictionary__2_QuestFramework_Quests_ICompletionMessage_">CompletionMessageExtensions.ToDictionary&lt;TKey, TValue&gt;(ICompletionMessage)</a>
+  </div>
+  <div>
+      <a class="xref" href="QuestFramework.Extensions.CompletionMessageExtensions.html#QuestFramework_Extensions_CompletionMessageExtensions_ToDictionary_QuestFramework_Quests_ICompletionMessage_">CompletionMessageExtensions.ToDictionary(ICompletionMessage)</a>
+  </div>
 </article>
           </div>
           
@@ -338,12 +380,6 @@
             <div class="sideaffix">
               <div class="contribution">
                 <ul class="nav">
-                  <li>
-                    <a href="https://github.com/purrplingcat/QuestFramework/new/master/apiSpec/new?filename=QuestFramework_Quests_CompletionArgs.md&amp;value=---%0Auid%3A%20QuestFramework.Quests.CompletionArgs%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" class="contribution-link">Improve this Doc</a>
-                  </li>
-                  <li>
-                    <a href="https://github.com/purrplingcat/QuestFramework/blob/master/src/Quests/CompletionArgs.cs/#L13" class="contribution-link">View Source</a>
-                  </li>
                 </ul>
               </div>
               <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
